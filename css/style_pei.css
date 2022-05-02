@@ -1,0 +1,155 @@
+*{
+    font-family: 微軟正黑體;
+    letter-spacing: .1em;
+    line-height: 1.5;
+}
+
+.nav-item:hover{
+    background-color: lightgray;
+    border-radius: 200px;
+}
+
+
+.deco-t-l{
+    width: 600px; 
+    height: 500px; 
+    background-color: gold;
+    border-bottom-left-radius: 100%;
+    z-index: -1;
+    position: fixed;
+    top: 56px;
+    right: 0px;
+    /*filter: blur(10px);*/
+}
+.deco-title{
+    height: 150px;
+    background-color: gold;
+    border-top-right-radius: 100%;
+}
+
+.stroked {
+    color: white;
+    -webkit-text-stroke: 1px gray;
+  }
+
+
+
+.dialog-border-bottom {
+    background-color: #fff;
+    border: 4px solid gold;
+    /*height: 70px;*/
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 20px;
+}
+.dialog-border-bottom:before {
+    border-color: gold transparent transparent; 
+    border-style: solid solid solid; 
+    border-width: 20px 16px 20px 16px; 
+    bottom: -40px;
+ 
+    content: "";
+ 
+    height: 0px;
+ 
+    position: absolute;
+        right: 17px; 
+ 
+    width: 0px;
+}
+.dialog-border-bottom:after {
+    border-color: #fff transparent transparent; 
+    border-style: solid solid solid solid; 
+    border-width: 20px 16px 20px 16px; 
+ 
+    content: "";
+ 
+    height: 0px;
+ 
+    position: absolute;
+        right: 17px;
+        bottom: -33px;
+
+    width: 0px;
+}
+
+.arrow-r{
+    z-index: 1;
+    top:16px;
+}
+.arrow-d{
+    display: none;
+}
+
+
+.scale:hover{
+    transform: scale(1.5); 
+    transition: .3s;
+}
+
+.s-my-100{
+    margin: 100px auto 100px auto;
+}
+.fix-o{
+    width: 100%;
+}
+iframe{
+    width: 750px;
+    height: 400px;
+}
+
+footer{
+    width: 100%;
+    height: 60px;
+    background: #000;
+}
+footer>p{
+    font-size: .8em;
+    line-height: 4;
+}
+
+@media screen and (max-width:767.5px)
+{
+    .deco-title{
+        background-color:#505050;
+        height: 100px;
+    }
+    .deco-title>h3{
+        color: #fff;
+        -webkit-text-stroke: .8px #000;
+    }
+
+    .scale:hover{
+        transform: scale(1.2); 
+    }
+    
+    .arrow-r{
+        display: none;
+    }
+    .arrow-d{
+        display: block;
+    }
+
+    .fix-o-768{
+        width: 100%;
+    }
+    iframe{
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (max-width:1920px) and (min_width:1024px)
+{
+    .deco-title{
+        height: 180px;
+    }
+}
+
+@media screen and (min-width:1920px)
+{
+    .deco-title{
+        height: 180px;
+    }
+}
