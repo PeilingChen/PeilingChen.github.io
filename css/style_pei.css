@@ -15,10 +15,13 @@
     right: 0px;
 }
 .deco-title{
-    width: 240px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     background-color: gold;
-    border-top-right-radius: 100%;
+    border-radius: 100%;
+    margin-left: 5%;
+    text-align: center;
+
 }
 
 .stroked {
@@ -84,6 +87,9 @@
 .s-my-100{
     margin: 100px auto 100px auto;
 }
+.s-my-200{
+    margin: 200px auto;
+}
 .fix-o{
     width: 100%;
 }
@@ -105,7 +111,7 @@ footer>p{
     line-height: 4;
 }
 .footer-work{
-    margin-bottom: 56px;
+    margin-bottom: 72px;
 }
 
 
@@ -138,9 +144,10 @@ footer>p{
 @media screen and (max-width:767.5px)
 {
     .deco-title{
-        background-color:#505050;
+        background-color:#404040;
         width: 150px;
-        height: 100px;
+        height: 150px;
+        margin: auto
     }
     .deco-title>h3{
         color: #fff;
