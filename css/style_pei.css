@@ -176,4 +176,8 @@ footer>p{
     .nav-b>div{
         width: 687px;
     }    
+
+    .t-center-768{
+        text-align: center;
+    }
 }
