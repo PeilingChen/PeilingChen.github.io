@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=devicewidth,initial-scale=1">
+      <title>陳珮翎的作品集</title>
+      <!--github、bootstrap、jquery、網路要運作順利!!!然後當上設計師做出更多更棒的設計ヽ(●´∀`●)ﾉ-->
+      
+      <link rel="stylesheet" type="text/css" href="css/style_pei.css">
+      
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+      <script src="js/script_pei.js"></script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    </head>
+
+    <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-5 sticky-top bg-white bg-opacity-50">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><b>PEI</b></a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active me-4">
+                  <a class="nav-link text-dark" href="index.html#works">WORKS</a>
+              </li>
+              <li class="nav-item active me-4">
+                <a class="nav-link text-dark" href="index.html#about">ABOUT</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link text-dark" href="index.html#contact">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!---------要改--------->
+      <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark bg-opacity-75 d-flex w-100">
+        <div class="container-fluid">
+          <div class="m-auto nav-b">
+            <div class="navbar-nav d-flex flex-row">
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#01">01現況分析</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#02">02目標族群</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#03">03設計過程</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#06">04改造結果</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <main>
+        <section class="position-relative mb-5" >
+          <div class="deco-t-l"></div>
+          <div class="card mb-3 border-0 bg-transparent text-center">
+            <img src="img/calc/00.svg" style="height: 300px;" class="card-img-top w-50 mx-auto">
+            <div class="card-body">
+              <h1 class="card-title">
+                <b>iPhone計算機</b>
+              </h1>
+              <!---------要改--------->
+              <p class="card-text"></p>
+              <p class="card-text"><small class="text-muted">Redesign App　|　2022</small></p>
+          </div>
+        </section>
+
+        <section class="fix-o s-my-200">
+          <div class="deco-title d-flex align-items-center">
+            <h3 class="container"><b>成果</b></h3>
+          </div>
+
+          <div class="container col-md-10 col-lg-7 text-center">
+            <h3><b>易用性測試回饋</b></h3>
+            <p>整體SUS量表分數提升 <span style="font-size: 1.5em;font-weight:bold">17</span><b>%</b> ，以下為五位受試者的測試分數：</p>
+            <div class="container text-center bg-white rounded">
+              <canvas id="myChart" style="max-width:700px" class="w-100 mx-auto"></canvas>
+            </div>
+            <script>
+            var xValues = ["A", "B", "C","D","E"];
+            new Chart("myChart", {
+              type: "bar",
+              data: {
+                labels: xValues,
+                datasets: [{
+                        label: "改造前",
+                        backgroundColor: "black",
+                        data: [72.5,77.5,67.5,75,85]
+                    },
+                    {
+                        label: "改造後",
+                        backgroundColor: "gold",
+                        data: [75,85,100,92.5,90]
+                    }]
+              },
+              options: {
+                legend: {
+                  display: true,
+                },
+                title: {
+                  display: false,
+                  text:""
+                },
+                scales: {
+                  xAxes: [{
+                        barPercentage: 0.5
+                  }],
+                  yAxes: [{
+                    ticks: {
+                      beginAtZero: true
+                    }
+                  }]
+                }
+              }
+            });
+            </script>
+          </div>
+
+        </section>
+
+        <section class="fix-o my-5">
+          <div class="deco-title d-flex align-items-center">
+            <h3 class="container"><b>設計</b></h3>
+          </div>
+
+          <div class="mx-auto text-center s-my-100">
+            <h3><b>Redesign背景</b></h3>
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-patch-question" viewBox="0 0 16 16">
+                    <path d="M8.05 9.6c.336 0 .504-.24.554-.627.04-.534.198-.815.847-1.26.673-.475 1.049-1.09 1.049-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.71 1.71 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745z"/>
+                    <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
+                    <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">發現問題</h4>
+                    <p class="card-text text-start">蘋果的產品以「使用體驗」受到好評，致力透過設計來提升使用者的體驗。但其內建的計算機App體驗，卻被許多使用者嫌棄。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">提升價值</h4>
+                    <p class="card-text text-start">「使用體驗」是蘋果重要的競爭優勢。而計算機是日常中被廣泛使用的產品，若能改善體驗，便能創造多一分價值。特別是近年安卓也迎頭追上，越來越重視體驗。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-flag" viewBox="0 0 16 16">
+                    <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21.294 21.294 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21.317 21.317 0 0 0 14 7.655V1.222z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">改造目標</h4>
+                    <p class="card-text text-start">考量學習成本、一致性，並透過保留蘋果的設計風格，來體現品牌形象。本次目標為善用既有元素，來改善計算機App的使用體驗。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="01" class="s-my-100">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">01</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>現況分析</b></h1></li>
+          </ul>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>現有使用者回饋</b></h3>
+            <div class="card border-0">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">App Store</h4>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gold" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gold" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <p class="card-text">iPhone內建計算機，在App Store得到的評分為2.9/5分。至於其他較熱門的計算機App，大多都能得到4.7/5分以上。</p>
+                    <p>多數熱門計算機都有大於1000則評分，而iPhone計算機只有75則，樣本數明顯較少。但有趣的是，其評分分布兩極化，1分和5分的數量不相上下，且遠遠超過中間評分的數量。</p>
+                    <p>在可見的評論裡，只有1/10人表示好用，但沒有進一步說明。其他使用者則反應以下困擾：</p>
+                    <ul>
+                      <li>缺少歷史紀錄</li>
+                      <li>沒有倒退刪除鍵</li>
+                      <li>無法預覽結果</li>
+                      <li>無法顯示打的算式</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">社群討論</h4>
+                  <p class="fs-4"> <b>626</b> 則留言</p>
+                  <p class="fs-4"> <b>830</b> 個讚</p>
+                  <p class="fs-4"> <b>1</b> 次分享</p>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <p class="card-text">某網友在社群抱怨iPhone計算機不好用，該篇貼文引起討論，並被媒體報導。該網友認為只做簡單的運算，例如將兩數值加減乘除，可以「加減用」，但許多日常情境下的使用則不太方便。</p>
+                    <p>進行質性分析時，我觀察到部分酸民言論，例如嘲諷使用者不懂得如何使用。也觀察到許多值得參考的資訊，使用者透過討論，更詳細的闡述困難情境，例如跟客戶報價、寫工作報表、購物比價等。</p>
+                    <p>綜觀之，使用者主要的痛點為：</p>
+                    <ul>
+                      <li>缺少歷史紀錄，如果忘記就得重新計算</li>
+                      <li>看不到算式，無法確定自己的輸入狀態</li>
+                      <li>輸入錯一個數字，就得全部重新操作</li>
+                    </ul>
+                    <p class="card-text text-start">而產品優點為：</p>
+                    <ul>
+                      <li>按鍵大</li>
+                      <li>介面簡潔</li>
+                      <li>可以刪除打錯的數字</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-auto text-center s-my-100">
+            <h3><b>競品分析</b></h3>
+            <div class="container col-lg-8">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">品牌</th>
+                    <th scope="col">加減乘除</th>
+                    <th scope="col">科學計算</th>
+                    <th scope="col">單位換算</th>
+                    <th scope="col">匯率換算</th>
+                    <th scope="col">歷史紀錄</th>
+                    <th scope="col">顯示算式</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Apple</th>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Samsung</th>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td></td>
+                    <td>✓</td>
+                    <td>✓</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Oppo</th>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mx-auto text-center">
+            <h3><b>競品分析</b></h3>
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">Calculator Air</h4>
+                    <ul class="text-start">
+                      <li>有歷史紀錄功能。另一大特色是可圖像掃描算式，TA為學生。</li>
+                      <li>介面配色和內建計算機很像，但畫面較複雜，讓按鍵的視覺空間較狹隘。</li>
+                      <li>雖然部分算式無法得到解答，但更多人反應進階功能需付費、使用到一半彈出評分視窗等，為他們帶來不好的體驗。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">Calculator‰</h4>
+                    <ul class="text-start">
+                      <li>設計簡單，只保留最基本的功能。</li>
+                      <li>介面視覺透過按鈕的陰影塑造出立體風格。</li>
+                      <li>使用者給予的評價為：介面不會過於複雜，很好操作。另外，按鍵與數字夠大，也滿足他們的需求。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">實體計算機</h4>
+                    <ul class="text-start">
+                      <li>面積較一般手機大，按鈕比直向介面更多。部分特別功能為切換進位法和捨去法的開關、切換小數位數的開關、稅率按鈕等。
+                      </li>
+                      <li>大多有立體按鈕設計，特色為觸覺體驗較豐富。</li>
+                      <li>常運用不同顏色，將數字和功能鍵分類。部分會將清除鍵設計成紅色，凸顯警示效果。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-auto text-center s-my-100">
+            <h3><b>Insight</b></h3>
+            <img src="img/calc/01-3.svg" alt="" class="rounded mb-3 fix-o-768" style="background-color: #fff;">
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">蘋果的設計</h4>
+                    <p class="text-start">從分解的Flow中，可以發現iPhone計算機較偏向傳統計算機，螢幕沒有顯示算式，只顯示輸入的數字以及即時的計算結果。凸顯早期iPhone的擬真風格，參考物品原本的模樣加以設計，並融入極簡風格，剔除多餘的按鈕。但沒有算式正是普遍的痛點之一，讓使用者難以掌控計算過程。也可能讓原本就有計算壓力的使用者，感到困惑或更有壓力。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">功能分析</h4>
+                    <p class="text-start">從<a href="https://support.apple.com/zh-tw/guide/iphone/iph1ac0b5cc/ios" target="blank" class="text-dark">使用手冊</a>、部落客的文章，我將計算機相關功能整理成圖表。有趣的是，部分痛點，其實有對應解方，例如以左右滑動的手勢進行倒退刪除。但因為介面過於簡約，功能被隱藏，多數使用者沒有發現該功能，導致痛點沒有被解決。另外，部分功能的實用性並不高，例如在Spotlight顯示算式。這些對於改造設計，提供了重要的參考方向。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">使用者的問題？</h4>
+                    <p class="text-start">在收集資料的過程中，我發現「五個iOS內建計算機的祕技，你知道幾個？」、「這3招隱藏功能必學！」等標題，也在社群看到「不是不好用，是你不會用」的留言。如果是「秘技」，是否代表設計不夠直覺？如果相較於其他競品，要花費更多學習成本，「不會用」到底是使用者的問題，還是設計的問題？</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="02" class="s-my-200">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">02</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>目標族群</b></h1></li>
+          </ul>
+
+          <div class="container col-md-10 col-lg-8 text-center s-mb-100">
+            <h3><b>Target Audience</b></h3>
+            <p class="mb-5">TA為iPhone使用者，年齡層廣泛。 <br>
+              使用情境多為生活中的數學計算，難度不高，但螢幕顯示要清楚、數字要能算得正確。
+            </p>
+            <img src="img/calc/02-1-ta.svg" alt="" class="rounded fix-o-768" style="background-color: #fff;">
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>User Journey - 計算多個數字</b></h3>
+            <img src="img/calc/02-2-1-uj.svg" alt="" class="rounded w-100" style="background-color: #fff;">
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>User Journey - 購物比價</b></h3>
+            <img src="img/calc/02-2-2-uj.svg" alt="" class="rounded w-100" style="background-color: #fff;">
+          </div>
+          
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>User Journey - 計算抽成</b></h3>
+            <p>即使沒有按下等於，iPhone計算機也會即時顯示計算結果。 <br>
+              當使用者看到螢幕上的數字改變，且沒有算式顯示狀態讓使用者確認、不假思索的狀況下，便以為運算已結束。
+            </p>
+            <img src="img/calc/02-2-3-uj.svg" alt="" class="rounded w-100" style="background-color: #fff;">
+          </div>
+          
+        </section>
+
+        <section id="03" class="s-my-200">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">03</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>設計過程</b></h1></li>
+          </ul>
+          <div class="mx-auto text-center">
+            <h3><b>決定功能</b></h3>
+            <p>綜合使用者的需求回饋和競品分析，我將功能開發的必要程度分成三類。</p>
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">最高</h4>
+                    <p class="text-start">非常重要，優先加入功能地圖：
+                      <ul class="text-start">
+                        <li>加減乘除</li>
+                        <li>科學計算</li>
+                        <li>顯示算式</li>
+                        <li>歷史紀錄</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-star-half" viewBox="0 0 16 16">
+                    <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">次要</h4>
+                    <p class="text-start">重要程度其次，可以考慮加入功能地圖：
+                      <ul class="text-start">
+                        <li>單位換算</li>
+                        <li>匯率換算</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">最低</h4>
+                    <p class="text-start">較不重要，暫不加入功能地圖：
+                      <ul class="text-start">
+                        <li>圖像掃描</li>
+                        <li>稅率按鈕</li>
+                        <li>進位捨去</li>
+                        <li>小數位數</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-8 col-lg-4 text-center s-my-100">
+            <h3><b>功能地圖</b></h3>
+            <img src="img/calc/03-1-map.svg" class="rounded w-100" style="background-color: #fff">
+          </div>
+
+          <div class="mx-auto text-center">
+            <h3><b>設計目標</b></h3>
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="gold" class="mx-auto my-3 bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">提升體驗</h4>
+                    <p class="text-start">
+                      <ul class="text-start">
+                        <li>顯示算式</li>
+                        <li>歷史紀錄</li>
+                        <li>更容易看見的倒退刪除功能</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="gold" class="mx-auto my-3 bi bi-calculator-fill" viewBox="0 0 16 16">
+                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">保留優點</h4>
+                    <ul class="text-start">
+                        <li>按鍵大，方便操作</li>
+                        <li>畫面乾淨，好上手</li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="gold" class="mx-auto my-3 bi bi-apple" viewBox="0 0 16 16">
+                    <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
+                    <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">品牌考量</h4>
+                    <p class="text-start">
+                      <ul class="text-start">
+                        <li>呈現蘋果的極簡風格</li>
+                        <li>視覺接近原生App</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>挑戰</b></h3>
+            <p>一旦增加功能或資訊，就可能會壓縮介面空間，或讓畫面變得較複雜。</p>
+            <img src="img/calc/03-1-challenge.png" class="img-fluid rounded-start" style="height: 350px;">
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>發想設計</b></h3>
+
+            <div class="card border-0">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/3-2-design-1.svg" class="img-fluid rounded-start" style="height: 180px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">顯示算式</h4>
+                    <p><b>降低和背景的對比</b></p>
+                    <p class="text-start">為了避免新增的資訊讓畫面變得混亂，我將算式設計成灰色，並且在不影響閱讀體驗的前提下，減少算式顏色和背景色的明度對比。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/3-2-design-2.png" class="img-fluid rounded-start" style="height: 250px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">歷史紀錄</h4>
+                    <p><b>選擇其他觸發方式</b></p>
+                    <p class="text-start">競品設置icon，做為歷史紀錄的觸點，但容易使介面變得複雜。我納入蘋果的元素，找出其他觸發方式。</p>
+                    <div class="card-body">
+                      <p class="text-start"><b>解方一：疊層卡片</b></p>
+                      <p class="text-start">常出現在鎖定螢幕上的通知、原生App的Onboarding。以卡片寬度、明暗的變化營造出「多個」、「可展開」的概念。</p>
+                    </div>
+                    <div class="card-body">
+                      <p class="text-start"><b>解方二：橫條</b></p>
+                      <p class="text-start">最常出現在Home Indicator，表現「可滑動」的概念。內建地圖和翻譯App也設計了橫條來控制Overlay視窗。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/3-2-design-3.png" class="img-fluid rounded-start" style="height: 250px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">倒退刪除</h4>
+                    <p><b>在有限的介面中找出空間</b></p>
+                    <p class="text-start">如果能善用空間，就能避免影響算式和結果的介面，保持畫面的簡潔。例如，按鍵0的寬度是其他按鍵的兩倍。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/3-2-design-4.png" class="img-fluid rounded-start" style="height: 250px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">跳脫框架</h4>
+                    <p><b>想像一個沒有等號的世界！</b></p>
+                    <p class="text-start">如果介面會顯示算式和結果，那我們還需要等號嗎？多出來的空間可以創造什麼價值？或者，人們仍然習慣按下等號，作為計算的結尾？</p>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>測試與訪談</b></h3>
+            <div class="container col-md-10 col-lg-8 my-3">
+              <div class="row row-cols-3 gy-3 text-center">
+                <div class="col">
+                  <h4 class="m-0"><b>5</b></h4>
+                  <p class="m-0">位受試者</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>15 - 51</b></h4>
+                  <p class="m-0">年齡區間</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>+17<span style="font-size: .7em;">%</span></b></h4>
+                  <p class="m-0">易用性分數</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/03-3-1.svg" class="img-fluid rounded-start" style="height: 250px;">
+                </div>
+                <div class="col-md-5 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold my-3">橫條設計</h4>
+                    <p class="text-start">測試互動時，2位受試者向下滑動Overlay，1位先點擊再向下滑動，2位點擊橫條。</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-arrow-down-circle-fill my-3" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                    </svg>
+                    <p class="text-start">一開始Redesign時，我只有設計滑動的互動。從受試者的行為中，我發現需要再設計點擊橫條的互動，讓功能可以更容易被觸發。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/03-3-2.svg" class="img-fluid rounded-start" style="height: 250px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold my-3">倒退刪除鍵</h4>
+                    <p class="text-start">在測試的任務中，4位受試者嘗試新的倒退刪除鍵，1位受試者則使用平常慣用的方法。未使用新設計的受試者表示，測試時沒注意到刪除鍵。</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-arrow-down-circle-fill my-3" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                    </svg>
+                    <p class="text-start">一開始Redesign時，我將刪除鍵設計成灰色，但考量誤觸的可能，我將它縮小尺寸，並使用背景色做為按鍵顏色。觀察後發現使用者操作順利，且考量到介面的一致性，最終將刪除鍵調回灰色。</p>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+
+          
+        </section>
+
+        <section id="06">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">04</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>改造結果</b></h1></li>
+          </ul>
+          
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>新增功能</b></h3>
+            <div class="card border-0">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/05-1.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">顯示算式</h4>
+                    <p><b>可見的操作狀態</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>無此設計</p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>減少對比，避免介面雜亂。 <br> 
+                            透過顏色、數字大小帶出階層，使結果清楚易見。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/05-2.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">歷史紀錄</h4>
+                    <p><b>減少計算多組數字的負擔</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>無此設計</p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>向下滑動Overlay或點擊橫條，展示歷史紀錄，讓介面更簡潔，保留品牌風格。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>改善功能</b></h3>
+            <div class="card border-0">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/05-3.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">看得到的刪除鍵</h4>
+                    <p><b>輸入錯誤不用從頭開始計算</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>對輸入的數字左右滑動，可達成刪除目的，但許多使用者不知道這項隱藏功能。</p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>善用空間，在介面新增刪除鍵。並且使用蘋果的倒退刪除icon，讓風格一致。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/calc/05-4.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">穩定的清除鍵</h4>
+                    <p><b>提升操作的掌控度</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>有AC和C兩種狀態。計算前是AC，計算中默默變成C，而C無法清除所有數字，需要再按一次AC。狀態複雜，讓使用者較難掌握。</p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>只有全部清除的狀態，減少觸點，使操作簡單化。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          
+          </div>
+        </section>
+
+        <div class="py-3 text-center bg-black">
+          <div class="mx-auto my-5" style="width: 200px;">
+            <a class="nav-link text-black rounded-pill py-3 px-2" style="background-color: gold;" href="index.html#works">看其他作品</a>
+          </div>
+          <div class="mx-auto my-5" style="width: 200px;">
+            <a class="nav-link text-black rounded-pill py-3 px-2" style="background-color: gold;" href="index.html">回首頁</a>
+          </div>
+        </div>
+      </main>
+
+      <footer class="text-white text-center footer-work">
+        <p>© Design & Coded by Pei-Ling</p>
+      </footer>
+    </body>
+</html>
