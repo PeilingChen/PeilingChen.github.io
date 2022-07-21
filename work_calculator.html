@@ -44,7 +44,6 @@
         </div>
       </nav>
 
-      <!---------要改--------->
       <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark bg-opacity-75 d-flex w-100">
         <div class="container-fluid">
           <div class="m-auto nav-b">
@@ -62,7 +61,15 @@
               </div>
               <a class="nav-link py-3">>></a>
               <div class="nav-work-item">
-                <a class="nav-link active py-3" href="#06">04改造結果</a>
+                <a class="nav-link active py-3" href="#04">04測試設計</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#05">05改造結果</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#05">06回顧反思</a>
               </div>
             </div>
           </div>
@@ -75,12 +82,11 @@
         <section class="position-relative mb-5" >
           <div class="deco-t-l"></div>
           <div class="card mb-3 border-0 bg-transparent text-center">
-            <img src="img/calc/00.svg" style="height: 300px;" class="card-img-top w-50 mx-auto">
+            <img src="img/demo_calc.png" class="card-img-top w-50 mx-auto" alt="...">
             <div class="card-body">
               <h1 class="card-title">
                 <b>iPhone計算機</b>
               </h1>
-              <!---------要改--------->
               <p class="card-text"></p>
               <p class="card-text"><small class="text-muted">Redesign App　|　2022</small></p>
           </div>
@@ -93,7 +99,7 @@
 
           <div class="container col-md-10 col-lg-7 text-center">
             <h3><b>易用性測試回饋</b></h3>
-            <p>整體SUS量表分數提升 <span style="font-size: 1.5em;font-weight:bold">17</span><b>%</b> ，以下為五位受試者的測試分數：</p>
+            <p>改造後的SUS量表分數平均提升 <span style="font-size: 1.5em;font-weight:bold">17</span><b>%</b> ，以下為五位受試者的測試分數：</p>
             <div class="container text-center bg-white rounded">
               <canvas id="myChart" style="max-width:700px" class="w-100 mx-auto"></canvas>
             </div>
@@ -137,6 +143,23 @@
             </script>
           </div>
 
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>受試者回饋</b></h3>
+            <div class="dialog row row-cols-3 d-flex justify-content-between">
+              <div class="dialog-border-bottom col-md-3 col-8 py-3 my-3 mx-auto">
+                <h4 class="my-3"><b>降低風險</b></h4>
+                <p class="text-start fst-italic text-muted">「刪除鍵比起重算或扣掉錯誤值，更方便、安全。」</p>
+              </div>
+              <div class="dialog-border-bottom col-md-3 col-8 py-3 my-3 mx-auto">
+                <h4 class="my-3"><b>有跡可循</b></h4>
+                <p class="text-start fst-italic text-muted">「看得到算式，我就不用擔心不知道自己輸入了什麼。」</p>
+              </div>
+              <div class="dialog-border-bottom col-md-3 col-8 py-3 my-3 mx-auto">
+                <h4 class="my-3"><b>減輕負擔</b></h4>
+                <p class="text-start fst-italic text-muted">「有了紀錄就不用再用力去記得數字了！」</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section class="fix-o my-5">
@@ -178,7 +201,7 @@
                   </svg>
                   <div class="card-body">
                     <h4 class="fw-bold card-title">改造目標</h4>
-                    <p class="card-text text-start">考量學習成本、一致性，並透過保留蘋果的設計風格，來體現品牌形象。本次目標為善用既有元素，來改善計算機App的使用體驗。</p>
+                    <p class="card-text text-start">考量學習成本、一致性，本次目標為 <span class="rounded px-1 d-inline" style="background-color: gold;">善用既有元素，來改善計算機App的使用體驗</span>。並透過保留蘋果的設計風格，來體現品牌形象。</p>
                   </div>
                 </div>
               </div>
@@ -244,9 +267,9 @@
                     <p>進行質性分析時，我觀察到部分酸民言論，例如嘲諷使用者不懂得如何使用。也觀察到許多值得參考的資訊，使用者透過討論，更詳細的闡述困難情境，例如跟客戶報價、寫工作報表、購物比價等。</p>
                     <p>綜觀之，使用者主要的痛點為：</p>
                     <ul>
-                      <li>缺少歷史紀錄，如果忘記就得重新計算</li>
-                      <li>看不到算式，無法確定自己的輸入狀態</li>
-                      <li>輸入錯一個數字，就得全部重新操作</li>
+                      <li>缺少歷史紀錄，如果忘記就得重新計算。</li>
+                      <li>看不到算式，無法確定自己的輸入狀態。</li>
+                      <li>輸入錯一個數字，就得全部重新操作。</li>
                     </ul>
                     <p class="card-text text-start">而產品優點為：</p>
                     <ul>
@@ -262,15 +285,14 @@
 
           <div class="mx-auto text-center s-my-100">
             <h3><b>競品分析</b></h3>
-            <div class="container col-lg-8">
+            <div class="container col-lg-8 my-4">
               <table class="table">
-                <thead>
+                <thead style="background-color: #f9f9f9;">
                   <tr>
                     <th scope="col">品牌</th>
                     <th scope="col">加減乘除</th>
                     <th scope="col">科學計算</th>
                     <th scope="col">單位換算</th>
-                    <th scope="col">匯率換算</th>
                     <th scope="col">歷史紀錄</th>
                     <th scope="col">顯示算式</th>
                   </tr>
@@ -283,20 +305,17 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Samsung</th>
                     <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
-                    <td></td>
                     <td>✓</td>
                     <td>✓</td>
                   </tr>
                   <tr>
-                    <th scope="row">Oppo</th>
-                    <td>✓</td>
+                    <th scope="row">小米</th>
                     <td>✓</td>
                     <td>✓</td>
                     <td>✓</td>
@@ -310,72 +329,85 @@
 
           <div class="mx-auto text-center">
             <h3><b>競品分析</b></h3>
-            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
-              <div class="col">
-                <div class="card h-100 border-0">
-                  <div class="card-body">
-                    <h4 class="fw-bold card-title">Calculator Air</h4>
-                    <ul class="text-start">
-                      <li>有歷史紀錄功能。另一大特色是可圖像掃描算式，TA為學生。</li>
-                      <li>介面配色和內建計算機很像，但畫面較複雜，讓按鍵的視覺空間較狹隘。</li>
-                      <li>雖然部分算式無法得到解答，但更多人反應進階功能需付費、使用到一半彈出評分視窗等，為他們帶來不好的體驗。</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100 border-0">
-                  <div class="card-body">
-                    <h4 class="fw-bold card-title">Calculator‰</h4>
-                    <ul class="text-start">
-                      <li>設計簡單，只保留最基本的功能。</li>
-                      <li>介面視覺透過按鈕的陰影塑造出立體風格。</li>
-                      <li>使用者給予的評價為：介面不會過於複雜，很好操作。另外，按鍵與數字夠大，也滿足他們的需求。</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100 border-0">
-                  <div class="card-body">
-                    <h4 class="fw-bold card-title">實體計算機</h4>
-                    <ul class="text-start">
-                      <li>面積較一般手機大，按鈕比直向介面更多。部分特別功能為切換進位法和捨去法的開關、切換小數位數的開關、稅率按鈕等。
-                      </li>
-                      <li>大多有立體按鈕設計，特色為觸覺體驗較豐富。</li>
-                      <li>常運用不同顏色，將數字和功能鍵分類。部分會將清除鍵設計成紅色，凸顯警示效果。</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div class="container col-lg-8 my-4 table-responsive">
+              <table class="table">
+                <thead style="background-color: #f9f9f9;">
+                  <tr>
+                    <th scope="col" style="min-width: 140px;">產品</th>
+                    <th scope="col" style="min-width: 140px;">功能</th>
+                    <th scope="col" style="min-width: 140px;">介面</th>
+                    <th scope="col" style="min-width: 140px;">其他發現</th>
+                  </tr>
+                </thead>
+                <tbody class="text-start">
+                  <tr>
+                    <th scope="row">Calculator Air</th>
+                    <td>基本功能、歷史紀錄、圖像掃描算式等。</td>
+                    <td>配色和iPhone計算機很像，但介面較複雜，視覺空間較狹隘。</td>
+                    <td>有特定TA、有付費的商業模式。突然彈出評分視窗，常造成不好的體驗。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Calculator‰</th>
+                    <td>只保留最基本的功能，設計簡單。</td>
+                    <td>擬真風格，透過按鈕的陰影塑造出立體視覺。</td>
+                    <td>簡單好操作、按鍵與數字夠大，滿足使用者的需求。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">實體計算機</th>
+                    <td>一般計算或科學計算，部分特別功能為切換進位與捨去法、切換小數位數、稅率等。</td>
+                    <td>常有立體按鈕設計，觸覺體驗較豐富。常運用不同顏色，將按鍵分類。清除鍵常被設計成紅色，凸顯警示效果。</td>
+                    <td>設計App介面時，常被用來參考。</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+
+          </div>
+
+          <div class="container col-md-10 col-lg-7 text-center s-my-100">
+            <h3><b>功能分析</b></h3>
+            <p>從<a href="https://support.apple.com/zh-tw/guide/iphone/iph1ac0b5cc/ios" target="blank" class="text-dark">使用手冊</a>、部落客的文章，我將iPhone內建計算機的相關功能整理成圖表。<br>
+              有趣的是，部分痛點其實有對應解方，例如左右滑動的手勢可刪除輸入錯的數字。<br>
+              但因介面過於簡約，功能不可見，導致多數使用者不知道。
+            </p>
+            <img src="img/calc/01-3.svg" alt="" class="rounded mb-3 fix-o-768" style="background-color: #fff;">
           </div>
 
           <div class="mx-auto text-center s-my-100">
             <h3><b>Insight</b></h3>
-            <img src="img/calc/01-3.svg" alt="" class="rounded mb-3 fix-o-768" style="background-color: #fff;">
             <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
               <div class="col">
                 <div class="card h-100 border-0">
                   <div class="card-body">
-                    <h4 class="fw-bold card-title">蘋果的設計</h4>
-                    <p class="text-start">從分解的Flow中，可以發現iPhone計算機較偏向傳統計算機，螢幕沒有顯示算式，只顯示輸入的數字以及即時的計算結果。凸顯早期iPhone的擬真風格，參考物品原本的模樣加以設計，並融入極簡風格，剔除多餘的按鈕。但沒有算式正是普遍的痛點之一，讓使用者難以掌控計算過程。也可能讓原本就有計算壓力的使用者，感到困惑或更有壓力。</p>
+                    <h4 class="fw-bold card-title">找出問題</h4>
+                    <p class="text-start">從現有使用者回饋中，整理出主要的困擾有：
+                      <ul class="text-start">
+                        <li>缺少歷史紀錄，如果忘記就得重新計算。</li>
+                        <li>沒有算式，無法確認輸入狀態。</li>
+                        <li>刪除功能被隱藏，多數使用者不知道。</li>
+                      </ul>
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card h-100 border-0">
                   <div class="card-body">
-                    <h4 class="fw-bold card-title">功能分析</h4>
-                    <p class="text-start">從<a href="https://support.apple.com/zh-tw/guide/iphone/iph1ac0b5cc/ios" target="blank" class="text-dark">使用手冊</a>、部落客的文章，我將計算機相關功能整理成圖表。有趣的是，部分痛點，其實有對應解方，例如以左右滑動的手勢進行倒退刪除。但因為介面過於簡約，功能被隱藏，多數使用者沒有發現該功能，導致痛點沒有被解決。另外，部分功能的實用性並不高，例如在Spotlight顯示算式。這些對於改造設計，提供了重要的參考方向。</p>
+                    <h4 class="fw-bold card-title">找出亮點</h4>
+                    <p class="text-start">從使用者回饋和競品分析中，整理出主要的產品優點有：
+                      <ul class="text-start">
+                        <li>按鍵大、好操作</li>
+                        <li>介面簡單、好看</li>
+                      </ul>
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card h-100 border-0">
                   <div class="card-body">
-                    <h4 class="fw-bold card-title">使用者的問題？</h4>
-                    <p class="text-start">在收集資料的過程中，我發現「五個iOS內建計算機的祕技，你知道幾個？」、「這3招隱藏功能必學！」等標題，也在社群看到「不是不好用，是你不會用」的留言。如果是「秘技」，是否代表設計不夠直覺？如果相較於其他競品，要花費更多學習成本，「不會用」到底是使用者的問題，還是設計的問題？</p>
+                    <h4 class="fw-bold card-title">iPhone的觀點</h4>
+                    <p class="text-start">與競品比較後，可以發現iPhone的介面較偏向傳統計算機，螢幕沒有顯示算式，只顯示輸入的數字以及即時的計算結果。概念是早期的擬真風格，視覺是極簡風格。產品定位則是廣泛、簡單的使用情境，不像競品額外開發其他功能。</p>
                   </div>
                 </div>
               </div>
@@ -391,19 +423,28 @@
 
           <div class="container col-md-10 col-lg-8 text-center s-mb-100">
             <h3><b>Target Audience</b></h3>
-            <p class="mb-5">TA為iPhone使用者，年齡層廣泛。 <br>
-              使用情境多為生活中的數學計算，難度不高，但螢幕顯示要清楚、數字要能算得正確。
-            </p>
+            <div class="d-flex justify-content-center">
+              <ul class="text-start">
+                <li><b>目標受眾：</b> 為iPhone使用者，年齡層廣泛。</li>
+                <li><b>使用情境：</b> 多為生活中的數學計算，難度不高。</li>
+                <li><b>使用需求：</b> 螢幕顯示清楚、數字能計算正確。</li>
+              </ul>
+            </div>
             <img src="img/calc/02-1-ta.svg" alt="" class="rounded fix-o-768" style="background-color: #fff;">
           </div>
 
           <div class="container col-md-10 col-lg-8 text-center s-my-100">
             <h3><b>User Journey - 計算多個數字</b></h3>
+            <p>清除鍵有AC和C兩種狀態，計算前是AC，計算中默默變成C。<br>
+              而C無法清除所有數字，需要再按一次AC。狀態複雜，讓使用者較難掌握。</p>
             <img src="img/calc/02-2-1-uj.svg" alt="" class="rounded w-100" style="background-color: #fff;">
           </div>
 
           <div class="container col-md-10 col-lg-8 text-center s-my-100">
             <h3><b>User Journey - 購物比價</b></h3>
+            <p>缺少歷史紀錄，如果忘記就得重新計算。<br>
+              同時要記住計算結果，又要計算別組數字，多工處理容易增加使用者的壓力。
+            </p>
             <img src="img/calc/02-2-2-uj.svg" alt="" class="rounded w-100" style="background-color: #fff;">
           </div>
           
@@ -422,7 +463,7 @@
             <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">03</h1></li>
             <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>設計過程</b></h1></li>
           </ul>
-          <div class="mx-auto text-center">
+          <div class="container mx-auto text-center">
             <h3><b>決定功能</b></h3>
             <p>綜合使用者的需求回饋和競品分析，我將功能開發的必要程度分成三類。</p>
             <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
@@ -483,6 +524,9 @@
 
           <div class="container col-md-8 col-lg-4 text-center s-my-100">
             <h3><b>功能地圖</b></h3>
+            <p>考量iPhone的商業觀點，以產品最初的簡單定位為前提，<br>
+              因此只新增上述最需要優先開發的功能。
+            </p>
             <img src="img/calc/03-1-map.svg" class="rounded w-100" style="background-color: #fff">
           </div>
 
@@ -514,8 +558,8 @@
                   <div class="card-body">
                     <h4 class="fw-bold card-title">保留優點</h4>
                     <ul class="text-start">
-                        <li>按鍵大，方便操作</li>
-                        <li>畫面乾淨，好上手</li>
+                        <li>按鍵大、方便操作</li>
+                        <li>介面乾淨、美觀</li>
                       </ul>
                   </div>
                 </div>
@@ -573,7 +617,7 @@
                   <div class="card-body">
                     <h4 class="card-title fw-bold">歷史紀錄</h4>
                     <p><b>選擇其他觸發方式</b></p>
-                    <p class="text-start">競品設置icon，做為歷史紀錄的觸點，但容易使介面變得複雜。我納入蘋果的元素，找出其他觸發方式。</p>
+                    <p class="text-start">競品設置icon，作為歷史紀錄的觸點，但容易使介面變得複雜。我納入蘋果的元素，找出其他觸發方式。</p>
                     <div class="card-body">
                       <p class="text-start"><b>解方一：疊層卡片</b></p>
                       <p class="text-start">常出現在鎖定螢幕上的通知、原生App的Onboarding。以卡片寬度、明暗的變化營造出「多個」、「可展開」的概念。</p>
@@ -582,6 +626,12 @@
                       <p class="text-start"><b>解方二：橫條</b></p>
                       <p class="text-start">最常出現在Home Indicator，表現「可滑動」的概念。內建地圖和翻譯App也設計了橫條來控制Overlay視窗。</p>
                     </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-arrow-down-circle-fill my-3" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                    </svg>
+                    <p class="text-start">
+                      考量到疊層卡片的陰影在黑色背景下，視覺效果不明顯，且橫向螢幕的垂直空間不足，決定選擇「橫條」設計。
+                    </p>
                   </div>
                 </div>
               </div>
@@ -617,9 +667,15 @@
               </div>
             </div>  
           </div>
+        </section>
+
+        <section id="04">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">04</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>測試設計</b></h1></li>
+          </ul>
 
           <div class="container col-md-10 col-lg-8 text-center s-my-100">
-            <h3><b>測試與訪談</b></h3>
             <div class="container col-md-10 col-lg-8 my-3">
               <div class="row row-cols-3 gy-3 text-center">
                 <div class="col">
@@ -636,8 +692,45 @@
                 </div>
               </div>
             </div>
-            
-            <div class="card border-0 my-5">
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>招募條件</b></h3>
+            <p>根據本次專案的TA，招募5位iPhone使用者，並盡量使生理性別比例、年齡層比例均衡。</p>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>測試計畫</b></h3>
+            <div class="d-flex justify-content-center">
+              <ul class="text-start">
+                <li>訪談使用經驗</li>
+                <li>任務操作與訪談</li>
+                <li>SUS量表評分</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>使用者得到的價值</b></h3>
+            <div class="dialog row row-cols-3 d-flex justify-content-between">
+              <div class="dialog-border-bottom col-md-3 col-8 py-3 my-3 mx-auto">
+                <h4 class="my-3"><b>降低風險</b></h4>
+                <p class="text-start fst-italic text-muted">「刪除鍵比起重算或扣掉錯誤值，更方便、安全。」</p>
+              </div>
+              <div class="dialog-border-bottom col-md-3 col-8 py-3 my-3 mx-auto">
+                <h4 class="my-3"><b>有跡可循</b></h4>
+                <p class="text-start fst-italic text-muted">「看得到算式，我就不用擔心不知道自己輸入了什麼。」</p>
+              </div>
+              <div class="dialog-border-bottom col-md-3 col-8 py-3 my-3 mx-auto">
+                <h4 class="my-3"><b>減輕負擔</b></h4>
+                <p class="text-start fst-italic text-muted">「有了紀錄就不用再用力去記得數字了！」</p>
+              </div>
+            </div>
+          </div> 
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">           
+            <h3><b>Insight</b></h3>
+            <div class="card border-0 ">
               <div class="row g-0">
                 <div class="col-md-7 py-4">
                   <img src="img/calc/03-3-1.svg" class="img-fluid rounded-start" style="height: 250px;">
@@ -649,7 +742,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-arrow-down-circle-fill my-3" viewBox="0 0 16 16">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
                     </svg>
-                    <p class="text-start">一開始Redesign時，我只有設計滑動的互動。從受試者的行為中，我發現需要再設計點擊橫條的互動，讓功能可以更容易被觸發。</p>
+                    <p class="text-start">一開始Redesign時，我只有設計滑動的互動。從受試者的行為中，我發現使用者不一定會如想像中的直接滑動，所以需要再設計點擊橫條的互動，讓功能可以更容易被觸發。</p>
                   </div>
                 </div>
               </div>
@@ -667,19 +760,18 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-arrow-down-circle-fill my-3" viewBox="0 0 16 16">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
                     </svg>
-                    <p class="text-start">一開始Redesign時，我將刪除鍵設計成灰色，但考量誤觸的可能，我將它縮小尺寸，並使用背景色做為按鍵顏色。觀察後發現使用者操作順利，且考量到介面的一致性，最終將刪除鍵調回灰色。</p>
+                    <p class="text-start">一開始Redesign時，我將刪除鍵設計成灰色，但考量誤觸的可能，我將它縮小尺寸，並使用背景色作為按鍵顏色。觀察後發現使用者操作順利，且考量到介面的一致性，最終將刪除鍵調回灰色。</p>
                   </div>
                 </div>
               </div>
             </div>  
-          </div>
-
-          
+          </div>  
         </section>
 
-        <section id="06">
+
+        <section id="05">
           <ul class="list-inline container ps-5 my-5">
-            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">04</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">05</h1></li>
             <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>改造結果</b></h1></li>
           </ul>
           
@@ -815,16 +907,100 @@
               </div>
             </div> 
           </div>
-          
           </div>
         </section>
 
-        <div class="py-3 text-center bg-black">
-          <div class="mx-auto my-5" style="width: 200px;">
-            <a class="nav-link text-black rounded-pill py-3 px-2" style="background-color: gold;" href="index.html#works">看其他作品</a>
+        <section id="06">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">06</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>回顧反思</b></h1></li>
+          </ul>
+
+          <div class="container mx-auto text-center">
+            <div class="container mx-auto col-lg-8">
+              <div class="card mb-4 border-0 w-100 text-start">
+                <div class="row g-0">
+                  <div class="col-md-3 mx-auto d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-1-circle" viewBox="0 0 16 16">
+                      <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"/>
+                    </svg>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="fw-bold card-title mb-3 t-center-768">新的設計觀點</h4>
+                      <p>我過去學到的是：好的設計應該是直覺的，學習成本是種負擔。</p>
+                      <p>但我在收集資料的過程，發現除了社群討論、媒體報導，也有許多部落客文章、書籍雜誌介紹iPhone使用攻略。另外，在測試的訪談中，一位忠實果粉的受試者提到，他喜歡使用iPhone祕技是因為感覺很酷。
+                      </p>
+                      <p>看似負向的學習成本，卻帶來「製造聲量」、「會這樣操作很酷」的效果。期許自己不被設計原則侷限，能更深入的檢視設計的潛在影響，依據商業目標活用對的效果，創造價值。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4 border-0 w-100 text-start">
+                <div class="row g-0">
+                  <div class="col-md-3 mx-auto d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-2-circle" viewBox="0 0 16 16">
+                      <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306Z"/>
+                    </svg>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="fw-bold card-title mb-3 t-center-768">建立Persona</h4>
+                      <p>之前的專案會描繪Persona，但這次考慮到iPhone的使用人口、使用情境廣泛，並且社群討論提到的使用情境十分具體，也有引起他人共鳴，便比較側重User Journey。</p>
+                      <p>但在後期測試的訪談中，看見不同群體的鮮明特性，例如管帳的家庭婦女、和朋友聚會的年輕學生、忠實果粉等。</p>
+                      <p>下次專案就算使用者族群廣泛，仍然可以試著進一步分析，訂定Persona，讓User Journey或發想階段有更深的同理。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4 border-0 w-100 text-start">
+                <div class="row g-0">
+                  <div class="col-md-3 mx-auto d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-3-circle" viewBox="0 0 16 16">
+                      <path d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318Z"/>
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Z"/>
+                    </svg>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="fw-bold card-title mb-3 t-center-768">設計的可能性</h4>
+                      <p>在研究競品介面時，我發現元祖－實體計算機的清除鍵常被設計成紅色，來達到警告效果，避免使用者誤觸。</p>
+                      <p>有趣的是，某個App沿襲這樣的設計，卻有使用者以「礙眼」形容使用感受，因為紅色太顯眼。解決問題的過程中，可能也衍生其他的問題，這也提醒我驗證解方的重要性。</p>
+                      <p>不過，設計也創造更多可行性，例如iPhone選擇清除鍵的位置設計在手指活動熱區之外。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="mx-auto my-5" style="width: 200px;">
-            <a class="nav-link text-black rounded-pill py-3 px-2" style="background-color: gold;" href="index.html">回首頁</a>
+        </section>
+
+        <div class="text-center py-5 bg-black" style="margin-top: 200px;">
+          <h4 class="mt-3 text-light"><b>看看其他作品 >></b></h4>
+          <div class="d-flex justify-content-center  mt-1 mb-5 container row row-cols-1 row-cols-md-3 g-5 mx-auto col-lg-8">
+            <div class="col">
+              <a href="work_tpe.html" class="text-decoration-none">
+                <div class="card bg-light border-0 h-100">
+                  <img src="img/demo_uiux.png" class="card-img-top mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-dark"><b>台北說書人</b></h5>
+                    <small class="text-muted">Web　|　2021</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a href="work_box.html" class="text-decoration-none">
+                <div class="card bg-light border-0 h-100">
+                  <img src="img/demo_box.png" class="card-img-top mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-dark"><b>天地盒包裝</b></h5>
+                    <small class="text-muted">平面　|　2021</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            
           </div>
         </div>
       </main>
