@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=devicewidth,initial-scale=1">
+      <title>陳珮翎的作品集</title>
+      <!--github、bootstrap、jquery、whimsical、網路要運作順利!!!然後當上設計師做出更多更棒的設計ヽ(●´∀`●)ﾉ-->
+      
+      <link rel="stylesheet" type="text/css" href="css/style_pei.css">
+      
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+      <script src="js/script_pei.js"></script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    </head>
+
+    <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-5 sticky-top bg-white bg-opacity-50">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><b>PEI</b></a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active me-4">
+                  <a class="nav-link text-dark" href="index.html#works">WORKS</a>
+              </li>
+              <li class="nav-item active me-4">
+                <a class="nav-link text-dark" href="index.html#about">ABOUT</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link text-dark" href="index.html#contact">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark bg-opacity-75 d-flex w-100">
+        <div class="container-fluid">
+          <div class="m-auto nav-b">
+            <div class="navbar-nav d-flex flex-row">
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#tpe01">01現況分析</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#tpe02">02目標族群</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#tpe03">03設計過程</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#tpe04">04設計規範</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#tpe05">05介面原型</a>
+              </div>
+              <a class="nav-link py-3">>></a>
+              <div class="nav-work-item">
+                <a class="nav-link active py-3" href="#tpe06">06回顧反思</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <main>
+        <section class="position-relative mb-5" >
+          <div class="deco-t-l"></div>
+          <div class="card mb-3 border-0 bg-transparent text-center">
+            <img src="img/demo_tbs.png" class="card-img-top w-50 mx-auto" alt="...">
+            <div class="card-body">
+              <h1 class="card-title">
+                <b>臺北轉運站</b>
+              </h1>
+              <!--<p class="card-text">可瀏覽、分享在地故事與旅遊資訊的平台<br>
+                有趣的特調遊戲，還結合在地的手搖飲優惠券
+              </p>-->
+              <p class="card-text"><small class="text-muted">Redesign App　|　2022</small></p>
+              <!--<p class="card-text"><small class="text-muted">我的角色：UI/UX 、 商業合作</small></p>-->
+          </div>
+        </section>
+
+        <section class="fix-o s-my-200">
+          <div class="deco-title d-flex align-items-center">
+            <h3 class="container"><b>成果</b></h3>
+          </div>
+
+          <div class="container col-md-10 col-lg-7 text-center">
+            <h3><b>易用性測試回饋</b></h3>
+            <p>改造後的SUS量表分數平均提升 <span style="font-size: 1.5em;font-weight:bold">35.7</span><b>%</b> ，以下為五位受試者的測試分數：</p>
+            <div class="container text-center bg-white rounded">
+              <canvas id="susChart" style="max-width:700px" class="w-100 mx-auto"></canvas>
+            </div>
+            <script>
+            var xValues = ["A", "B", "C","D","E"];
+            new Chart("susChart", {
+              type: "bar",
+              data: {
+                labels: xValues,
+                datasets: [{
+                        label: "改造前",
+                        backgroundColor: "black",
+                        data: [62.5,67.5,35,87.5,62.5]
+                    },
+                    {
+                        label: "改造後",
+                        backgroundColor: "gold",
+                        data: [72.5,75,97.5,95,87.5]
+                    }]
+              },
+              options: {
+                legend: {
+                  display: true,
+                },
+                title: {
+                  display: false,
+                  text:""
+                },
+                scales: {
+                  xAxes: [{
+                        barPercentage: 0.5,
+                  }],
+                  yAxes: [{
+                    ticks: {
+                      beginAtZero: true,
+                    }
+                  }],
+                }
+              }
+            });
+            </script>
+          </div>
+
+          <div class="container col-md-10 col-lg-7 text-center s-my-100">
+            <h3><b>NPS淨推薦值</b></h3>
+            <p>改造後的NPS分數提升 <span style="font-size: 1.5em;font-weight:bold">60</span><b>分</b> ，以下為五位受試者給予的NPS分數：</p>
+            <div class="container text-center bg-white rounded">
+              <canvas id="npsChart" style="max-width:700px" class="w-100 mx-auto"></canvas>
+            </div>
+            <script>
+            var xValues = ["A", "B", "C","D","E"];
+            new Chart("npsChart", {
+              type: "bar",
+              data: {
+                labels: xValues,
+                datasets: [{
+                        label: "改造前",
+                        backgroundColor: "black",
+                        data: [8,6,3,5,1]
+                    },
+                    {
+                        label: "改造後",
+                        backgroundColor: "gold",
+                        data: [9,6,8,5,8]
+                    }]
+              },
+              options: {
+                legend: {
+                  display: true,
+                },
+                title: {
+                  display: false,
+                  text:""
+                },
+                scales: {
+                  xAxes: [{
+                        barPercentage: 0.5
+                  }],
+                  yAxes: [{
+                    ticks: {
+                      beginAtZero: true,
+                      max: 10
+                    }
+                  }]
+                }
+              }
+            });
+            </script>
+          </div>
+
+        </section>
+
+        <section class="fix-o my-5">
+          <div class="deco-title d-flex align-items-center">
+            <h3 class="container"><b>UX</b></h3>
+          </div>
+
+          <div class="mx-auto container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>Redesign背景</b></h3>
+            <p>
+              從企業觀點出發，收集使用者需求，應用在商業目標中。<br>
+              除了提升使用者體驗，也讓改造設計更接地氣。
+            </p>
+          </div>
+        </section>
+
+        <section id="tpe01" class="s-my-100">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">01</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>現況分析</b></h1></li>
+          </ul>
+
+          <div class="mx-auto text-center s-my-100">
+            <h3><b>關於臺北轉運站App</b></h3>
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-shop" viewBox="0 0 16 16">
+                    <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">簡介</h4>
+                    <p class="card-text text-start">
+                      由萬達通實業公司推出的客運購票服務，整合多家業者，範圍涵蓋全台。
+                      初期透過公路運輸服務數位化，希望解決尖峰時刻臨櫃排隊的痛點。
+                      現今則以客運為主，旅運電商為輔，提供一站式服務。
+                      </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-card-list" viewBox="0 0 16 16">
+                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                    <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">功能</h4>
+                    <ul class="text-start">
+                      <li><b>客運票券：</b><br>購票、行動支付、取票、退換票、驗票等。</li>
+                      <li><b>旅運加值服務：</b><br>販售套裝行程、遊樂園聯票、船票、機車租賃等。</li>
+                      <li><b>會員服務：</b><br>提供轉運幣與優惠券。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-flag" viewBox="0 0 16 16">
+                    <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21.294 21.294 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21.317 21.317 0 0 0 14 7.655V1.222z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">展望</h4>
+                    <ul class="text-start">
+                      <li>優化應用程式，提升App使用率。</li>
+                      <li>整合與行銷，帶動地方觀光產業。</li>
+                      <li>大數據分析，延伸多元化服務。</li>
+                      <li>爭取政府補助，帶動大眾運輸使用率，綠色減碳。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-7 text-center s-my-100">
+            <h3><b>利害關係</b></h3>
+            <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@VsSo8s35WvokiEs8UN2mXE"></iframe>
+            <!--<img src="img/tbs/01-stakeholder.png" alt="" class="img-fluid rounded mb-3 fix-o-768" style="background-color: #fff;">-->
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>關於國道客運</b></h3>
+            <div class="container col-md-10 col-lg-8 my-3">
+              <div class="row row-cols-3 gy-3 text-center">
+                <div class="col">
+                  <h4 class="m-0"><b>167</b></h4>
+                  <p class="m-0">條路線</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>2400<span style="font-size: .7em;">+</span></b></h4>
+                  <p class="m-0">班次/日</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>1200萬<span style="font-size: .7em;">+</span></b></h4>
+                  <p class="m-0">人次/年</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-auto text-center s-my-100">
+            <h3><b>競品分析 - 客運</b></h3>
+            <p class="container">
+              臺北轉運站的優勢為功能很齊全、不須另外取票、客運業者數量多。<br>
+              特別的是，臺北轉運站有旅運加值服務。
+            </p>
+            <div class="container col-lg-8 my-4">
+              <table class="table">
+                <thead style="background-color: #f9f9f9;">
+                  <tr>
+                    <th scope="col">App</th>
+                    <th scope="col">業者數量</th>
+                    <!--<th scope="col">購票功能</th>-->
+                    <th scope="col">線上取票</th>
+                    <th scope="col">選座位</th>
+                    <th scope="col">手續費</th>
+                    <th scope="col">客運動態</th>
+                    <th scope="col">優惠</th>
+                    <th scope="col">旅運電商</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">臺北轉運站</th>
+                    <td>9</td>
+                    <!--<td>✓</td>-->
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td></td>
+                    <td>✓</td>
+                    <td>✓</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">客運通</th>
+                    <td>2</td>
+                    <!--<td>∆</td>-->
+                    <td></td>
+                    <td>∆</td>
+                    <td>∆</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">和欣客運</th>
+                    <td>1</td>
+                    <!--<td>∆</td>-->
+                    <td>∆</td>
+                    <td>✓</td>
+                    <td></td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mx-auto text-center s-my-100">
+            <h3><b>競品分析 - 大眾運輸</b></h3>
+            <p class="container">
+              臺北轉運站在客運App有「票券功能齊全」的優勢，但在大眾運輸App中，這只是標準配備。<br>
+              而高鐵、台鐵不收訂票手續費，若臺北轉運站沒有推出優惠活動時，手續費會成為產品的阻力。<br>
+              另外，相較於高鐵、台鐵，公路客運較難掌握時間。
+            </p>
+            <div class="container col-lg-8 my-4 table-responsive">
+              <table class="table">
+                <thead style="background-color: #f9f9f9;">
+                  <tr>
+                    <th scope="col" style="min-width: 140px;">App</th>
+                    <!--<th scope="col" style="min-width: 90px;">購票功能</th>-->
+                    <th scope="col" style="min-width: 90px;">線上取票</th>
+                    <th scope="col" style="min-width: 90px;">選座位</th>
+                    <th scope="col" style="min-width: 90px;">手續費</th>
+                    <th scope="col" style="min-width: 90px;">優惠</th>
+                    <th scope="col" style="min-width: 90px;">旅運電商</th>
+                    <th scope="col" style="min-width: 140px;">其他發現</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">臺北轉運站</th>
+                    <!--<td>✓</td>-->
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>∆</td>
+                    <td>✓</td>
+                    <td class="text-start">臺北轉運站的優勢為可選位、購票與多元服務同在一個App。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">台鐵</th>
+                    <!--<td>✓</td>-->
+                    <td>✓</td>
+                    <td>∆</td>
+                    <td></td>
+                    <td>∆</td>
+                    <td></td>
+                    <td class="text-start">台鐵在介面、運輸產業定位上較折衷。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">高鐵</th>
+                    <!--<td>✓</td>-->
+                    <td>✓</td>
+                    <td>∆</td>
+                    <td></td>
+                    <td>✓</td>
+                    <td>∆</td>
+                    <td class="text-start">高鐵的介面一如搭乘的舒適感，並融入CIS。但購票和旅運被分成兩個App。另外，高鐵會透過自家刊物行銷旅運商品。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mx-auto text-center s-my-100">
+            <h3><b>競品分析 - 旅遊電商</b></h3>
+            <p class="container">
+              臺北轉運站以公路客運為主，旅遊商品種類較少，價格也不一定較便宜。<br>
+              競品有較完整的商品資訊以及層級設計，例如地區、評分、原價等，值得參考。
+            </p>
+            <div class="container col-lg-8 my-4 table-responsive">
+              <table class="table">
+                <thead style="background-color: #f9f9f9;">
+                  <tr>
+                    <th scope="col" style="min-width: 140px;">App</th>
+                    <th scope="col" style="min-width: 100px;">主打類別</th>
+                    <th scope="col" style="min-width: 140px;">介面資訊層級</th>
+                    <th scope="col" style="min-width: 140px;">介面視覺</th>
+                    <th scope="col" style="min-width: 140px;">優點</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">臺北轉運站</th>
+                    <td class="text-start">公路客運</td>
+                    <td class="text-start">★★★</td>
+                    <td class="text-start">較不符主流規範</td>
+                    <td class="text-start">優惠活動時買客運較便宜</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">KKday</th>
+                    <td class="text-start">旅遊</td>
+                    <td class="text-start">★★★★★</td>
+                    <td class="text-start">簡單清爽</td>
+                    <td class="text-start">新潮的品牌風格、國際化</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Gomaji</th>
+                    <td class="text-start">購物</td>
+                    <td class="text-start">★★★★</td>
+                    <td class="text-start">略俗、眼花瞭亂</td>
+                    <td class="text-start">價格優惠<br>以熱情顏色和明顯CTA營造購物氣氛</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <section id="tpe02" class="s-my-200">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">02</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>目標族群</b></h1></li>
+          </ul>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>線上田野調查</b></h3>
+            <div class="container col-md-10 col-lg-8 my-3">
+              <div class="row row-cols-3 gy-3 text-center">
+                <div class="col">
+                  <h4 class="m-0"><b>10萬<span style="font-size: .7em;">+</span></b></h4>
+                  <p class="m-0">下載次數</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>2.7</b></h4>
+                  <p class="m-0">顆星</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>59</b></h4>
+                  <p class="m-0">旅遊類排名</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">網路討論</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <p class="card-text">從App store評論，以及Dcard、PTT等論壇討論，初步了解使用者與潛在使用者的想法。</p>
+                    <p><b>產品價值：</b></p>
+                    <ul>
+                      <li>優惠：邀請碼、不定期活動</li>
+                      <li>方便：購票、驗票都能在手機完成</li>
+                      <li>環保：票券無紙化</li>
+                    </ul>
+                    <p class="card-text"><b>阻力：</b></p>
+                    <ul>
+                      <li>手續費</li>
+                      <li>習慣購買定期票、來回票</li>
+                      <li>不常搭客運、使用其他交通工具</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>使用者訪談</b></h3>
+            <div class="container col-md-8 col-lg-6 my-3">
+              <div class="row row-cols-2 gy-3 text-center">
+                <div class="col">
+                  <h4 class="m-0"><b>5</b></h4>
+                  <p class="m-0">位受訪者</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>23 - 28</b></h4>
+                  <p class="m-0">年齡區間</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">訪談過程</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li><b>訪談形式：</b><br>部分實體、部分線上</li>
+                      <li><b>訪談計畫：</b><br>
+                        <ul>
+                          <li>下載原因</li>
+                          <li>使用習慣</li>
+                          <li>以訂票任務進行簡易的易用性測試，透過放聲思考法、觀察（實體）與訪談了解使用體驗。</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-person-check" viewBox="0 0 16 16">
+                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                    <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">體驗</h4>
+                    <ul class="text-start">
+                      <li>多數使用者能順利購票，但不完全直觀，仍有一些潛在問題。</li>
+                      <li>對於蓋版廣告較反感，認為跟需要的資訊沒關係，有強迫觀看的感覺。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-gem" viewBox="0 0 16 16">
+                    <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495 8 13.366l2.532-7.876-5.062.005zm-1.371-.999-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l5.113 6.817-2.192-6.82L1.5 5.5zm7.889 6.817 5.123-6.83-2.928.002-2.195 6.828z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">價值</h4>
+                    <ul class="text-start">
+                      <li>整合多家業者、省下分別查詢的時間</li>
+                      <li>購票方便</li>
+                      <li>優惠折扣、LINE Pay回饋</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">Insight</h4>
+                    <ul class="text-start">
+                      <li>沒注意到旅運商城，也沒有使用優惠券功能。</li>
+                      <li>比起購票，更常用來查詢班次。</li>
+                      <li>多位受訪者仍會臨櫃購買，因為App要收手續費。相較之下，客運業者提供的回數票更優惠。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>Persona</b></h3>
+            <div class="card border-0 ">
+              <div class="row g-0 d-flex justify-content-center">
+                <div class="col-md-4 py-4 px-5">
+                  <img src="img/tbs/02-persona.jpg" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li><b>身分：</b>學生、小資族</li>
+                      <li><b>年齡：</b>19 - 30</li>
+                      <li><b>價值觀：</b>能省則省</li>
+                      <li><b>需求：</b>順暢的線上購票體驗，最好能搭配優惠。</li>
+                      <li><b>產品價值：</b>方便、回饋、不定期優惠</li>
+                      <li><b>痛點：</b>手續費</li>
+                      <li><b>其他：</b>對3C掌握度高、沒有時間壓力</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 my-5 text-center">
+            <h3><b>Journey Map</b></h3>
+            <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@VsSo8s35Ww6oZwjJ9xVEB5"></iframe>
+            <!--<img src="img/tbs/02-CJM.svg" class="img-fluid rounded fix-o-768" style="background-color: #fff;">-->
+          </div>
+        </section>
+
+        <section id="tpe03" class="s-my-200">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">03</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>設計過程</b></h1></li>
+          </ul>
+          
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>Insight</b></h3>
+            
+            <div class="card border-0">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">發現問題</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <p><b>體驗：</b></p>
+                    <ul>
+                      <li>使用者能完成購票，但認為操作不完全直觀。例如部分UX文案較不清楚，容易誤導使用者。</li>
+                      <li>廣告體驗不好，特別是蓋版廣告，被強迫觀看不需要的訊息。</li>
+                      <li>在意價格，手續費是一大痛點。</li>
+                    </ul>
+                    <p><b>視覺：</b></p>
+                    <ul>
+                      <li>部分元件一致性不足</li>
+                      <li>部分元件與主流設計規範差異大</li>
+                    </ul>
+                    <p><b>其他：</b></p>
+                    <ul>
+                      <li>flow、資訊架構重複、讓人容易混淆</li>
+                      <li>商品資訊不齊全</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">商業影響</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <p><b>使用率</b></p>
+                    <ul>
+                      <li>使用體驗會影響產品滿意度、使用意願。</li>
+                      <li>使用者因為手續費，所以仍然選擇臨櫃購買，這容易讓App變成查詢班次的工具，降低購買率。</li>
+                    </ul>
+                    <p><b>廣告效果</b></p>
+                    <ul>
+                      <li>廣告體驗不好，使用者傾向本能性的略過。不但無法達到曝光效果，難以提升CTR、CVR，甚至會降低產品滿意度。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">優勢</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li>購票方便</li>
+                      <li>功能齊全</li>
+                      <li>介面簡潔</li>
+                      <li>不定期優惠活動</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">機會</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li>來回票、回數票</li>
+                      <li>環保減碳、提倡大眾運輸</li>
+                      <li>車輛動態</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>Redesign計畫</b></h3>
+            <p>
+              根據萬達通公司在新聞稿中提到的「提升使用率」、「整合觀光產業」商業目標，來優化App。<br>
+              在資源有限的狀況下，考量商業模式、業者共識、串API等層面，規劃此次的Redesign。
+              </p>
+
+            <!--<div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">目標</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li>優化使用體驗
+                        <ul>
+                          <li>改善操作介面、UX文案、資訊層級</li>
+                          <li>廣告個人化</li>
+                        </ul>
+                      </li>
+                      <li>優化視覺體驗
+                        <ul>
+                          <li>增加一致性</li>
+                          <li>參考主流設計規範與風格</li>
+                        </ul>
+                      </li>
+                      <li>增加曝光效果
+                        <ul>
+                          <li>改善廣告體驗</li>
+                          <li>掌握使用者旅程與閱讀順序</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>-->
+
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-flag" viewBox="0 0 16 16">
+                    <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21.294 21.294 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21.317 21.317 0 0 0 14 7.655V1.222z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">目標</h4>
+                    <ul class="text-start">
+                      <li><b>優化使用體驗</b>
+                        <ul>
+                          <li>改善操作介面、UX文案、資訊層級</li>
+                          <li>廣告個人化</li>
+                        </ul>
+                      </li>
+                      <li><b>優化視覺體驗</b>
+                        <ul>
+                          <li>增加一致性</li>
+                          <li>參考主流設計規範與風格</li>
+                        </ul>
+                      </li>
+                      <li><b>提升對廣告的注意</b>
+                        <ul>
+                          <li>改善廣告體驗</li>
+                          <li>掌握使用者旅程與閱讀順序</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-gem" viewBox="0 0 16 16">
+                    <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495 8 13.366l2.532-7.876-5.062.005zm-1.371-.999-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l5.113 6.817-2.192-6.82L1.5 5.5zm7.889 6.817 5.123-6.83-2.928.002-2.195 6.828z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">預期效益</h4>
+                    <ul class="text-start">
+                      <li><span class="rounded px-1 d-inline" style="background-color: gold;">提升易用性</span><br>驗證指標：<br>SUS、任務完成時間</li>
+                      <li><span class="rounded px-1 d-inline" style="background-color: gold;">提升使用者好感與使用意願</span><br>驗證指標：<br>NPS、使用率、App評分</li>
+                      <li><span class="rounded px-1 d-inline" style="background-color: gold;">增加曝光效果</span><br>驗證方式：<br>問卷與訪談、CTR、CVR、眼動研究</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-patch-exclamation" viewBox="0 0 16 16">
+                    <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.553.553 0 0 1-1.1 0L7.1 4.995z"/>
+                    <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">挑戰</h4>
+                    <ul class="text-start">
+                      <li><b>資源有限：</b><br>排除高成本、長時間、沒有可上線MVP等限制，這次使用SUS、NPS、問卷與訪談來驗證。</li>
+                      <li><b>保持客觀：</b><br>事前說明，降低社會期待偏誤。注意測試順序、避免重複資訊，減少錯誤記憶帶來的偏誤。調換測試順序，避免學習造成偏誤。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 s-my-100 text-center">
+            <h3><b>Functional Map</b></h3>
+            <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@2Ux7TurymLL5rmfJVCEc"></iframe>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 s-my-100 text-center">
+            <h3><b>Site Map</b></h3>
+            <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@2Ux7TurymN1UZsTnCqrp"></iframe>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 s-my-100 text-center">
+            <h3><b>Wireframe</b></h3>
+            <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@2Ux7TurymQ9UDvF7SAZa"></iframe>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 s-my-100 text-center">
+            <h3><b>Mockup</b></h3>
+            <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@7YNFXnKbZATa9eq5Hxgzn"></iframe>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>測試設計</b></h3>
+            <div class="container col-md-8 col-lg-6 my-3">
+              <div class="row row-cols-2 gy-3 text-center">
+                <div class="col">
+                  <h4 class="m-0"><b>5</b></h4>
+                  <p class="m-0">位受試者</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>23 - 30</b></h4>
+                  <p class="m-0">年齡區間</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">測試過程</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li><b>測試形式：</b><br>部分實體、部分線上</li>
+                      <li><b>測試計畫：</b><br>
+                        <ul>
+                          <li>易用性測試</li>
+                          <li>問卷（SUS量表、注意到的資訊）</li>
+                          <li>NPS分數</li>
+                          <li>訪談</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>測試結果</b></h3>
+            <div class="container col-md-10 col-lg-8 my-3">
+              <div class="row row-cols-3 gy-3 text-center">
+                <div class="col">
+                  <h4 class="m-0"><b>+35.7<span style="font-size: .7em;">%</span></b></h4>
+                  <p class="m-0">SUS</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>+60<span style="font-size: .7em;">分</span></b></h4>
+                  <p class="m-0">NPS</p>
+                </div>
+                <div class="col">
+                  <h4 class="m-0"><b>-28.9<span style="font-size: .7em;">%</span></b></h4>
+                  <p class="m-0">任務時間</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">受試者回饋</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <p><b>價值：</b></p>
+                    <ul>
+                      <li>改善廣告體驗、減少干擾任務的資訊</li>
+                      <li>畫面乾淨、分類清楚</li>
+                      <li>操作直覺</li>
+                    </ul>
+                    <p><b>問題：</b></p>
+                    <ul>
+                      <li>班次查詢結果的原價字較小</li>
+                      <li>班次查詢結果沒有折抵金額的資訊</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="fix-o my-5">
+          <div class="deco-title d-flex align-items-center">
+            <h3 class="container"><b>UI</b></h3>
+          </div>
+        </section>
+
+        <section id="tpe04">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">04</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>設計規範</b></h1></li>
+          </ul>
+
+          <div class="mx-auto container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>設計原則</b></h3>
+            
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">iOS/ Android</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li>延續原本的開發模式，字體和部分元件將依據系統分別設計。</li>
+                    </ul>
+                  </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">設計風格</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li>保留介面簡潔的優點。</li>
+                      <li>沿用原本的色彩計畫，降低學習成本。</li>
+                      <li>參考主流設計規範，增加一致性。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-auto text-center">
+            <h3><b>色彩</b></h3>
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto col-lg-8">
+              <div class="col">
+                <div class="card h-100 border-0 py-3">
+                  <div class="col-10 mx-auto d-flex align-items-center" style="background-color: #5693E9;height: 129.6px; border-radius: 10px;">
+                    <h6 class="py-2 px-3 mx-auto text-light">#5693E9</h6>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">主要色</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0 py-3">
+                  <div class="col-10 mx-auto d-flex align-items-center" style="background-color: #77C2EB;height: 90px; border-radius: 10px;">
+                    <h6 class="py-2 px-3 mx-auto text-light">#77C2EB</h6>
+                  </div>
+                  <div class="col-10 mx-auto d-flex align-items-center" style="background-color: #fff;height: 39.6px; border-radius: 10px;"></div>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">次要色</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0 py-3">
+                  <div class="col-10 mx-auto d-flex align-items-center" style="background-color: #BE2827;height: 60px; border-radius: 10px;">
+                    <h6 class="py-2 px-3 mx-auto text-light">#BE2827</h6>
+                  </div>
+                  <div class="col-10 mx-auto d-flex align-items-center" style="background-color: #fff;height: 69.6px; border-radius: 10px;"></div>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">強調色</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>字體</b></h3>
+
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">iOS</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li>中文：蘋方體</li>
+                      <li>英文：SF Pro</li>
+                    </ul>
+                  </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title mb-3">Android</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body text-start">
+                    <ul>
+                      <li>中文：思源黑體</li>
+                      <li>英文：Roboto</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 s-my-100 text-center">
+            <h3><b>Icon</b></h3>
+            <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@7YNFXnKbZAJpvE5GgLFBB"></iframe>
+          </div>
+
+          <div class="container col-md-10 col-lg-8 s-my-100 text-center">
+            <h3><b>Component</b></h3>
+            <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@VsSo8s35WxH3r8nWym2qzk"></iframe>
+          </div>
+        </section>
+
+        <section id="tpe05" class="s-my-200">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">05</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>介面原型</b></h1></li>
+          </ul>
+          
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>重點頁面設計</b></h3>
+
+            <div class="card border-0">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/tbs/05-home.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">首頁</h4>
+                    <p><b>提升易讀性、改善分類</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            廣告排版擁擠、分類模糊、看不出可以右滑。
+                            購票按鈕明顯，容易忽略其他訊息。
+                          </p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            版面清爽，設計常用功能區塊，商品種類一目了然。
+                            露出部分可滑動的元件，並加上縣市資訊。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/tbs/05-search.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">搜尋客運</h4>
+                    <p><b>優化引導、改善易用性</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            起訖站的UX文案為台北到高雄，但非預設值，仍需點選。
+                            picker沒有顯示星期幾，無法對照。
+                          </p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            UX文案改成起點與終點，達到更明確的引導效果，並加上icon助於理解。
+                            picker調整為日曆形式。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/tbs/05-result.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">選擇班次</h4>
+                    <p><b>介面簡潔、優惠清楚</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            許多重複的資訊。
+                            優惠折抵字太小，且需另外計算價格。
+                          </p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            捨棄多餘的資訊。
+                            放上折扣前原價、badge說明，讓優惠資訊更明確。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/tbs/05-seat.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">選擇座位</h4>
+                    <p><b>更直覺、友善的操作</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            座位的按鈕狀態不符主流規範、色彩心理學。禁用狀態應呈現忽略的引導效果，但紅色具警示意味，引人注目。
+                          </p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            無彩色與主色的設計，運用透明度表現禁用狀態。操作更直覺，也能減少色覺辨認障礙。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/tbs/05-detail.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">確認訂單</h4>
+                    <p><b>改善資訊層級</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            計費資訊不方便理解。按鈕的UX文案原本是確定，這邊突然變成「開立發票」。
+                          </p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            計費較直觀。按鈕的UX文案依據前面的邏輯，改為「確定」。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0 my-5">
+              <div class="row g-0">
+                <div class="col-md-7 py-4">
+                  <img src="img/tbs/05-done.png" class="img-fluid rounded-start w-100" style="max-width: 400px;">
+                </div>
+                <div class="col-md-5  d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title fw-bold">訂購結果</h4>
+                    <p><b>綠色行銷、個人化廣告</b></p>
+                    <div class="text-start my-4">
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline bg-dark text-light">改造前</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            只有訂購成功訊息與明細。
+                          </p>
+                        </div>
+                      </div>
+                      <div class="d-flex bd-highlight">
+                        <div class=" col-4 col-md-5 col-lg-4 col-xl-3">
+                          <h6 class="rounded-pill py-1 px-2 d-inline" style="background-color: gold;">改造後</h6>
+                        </div>
+                        <div class="flex-fill bd-highlight text-start">
+                          <p>
+                            在使用旅程中，這是情緒較放鬆的接觸點。善用此頁行銷客運的減碳價值，提升形象。並且推薦相關商品，增加曝光。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="text-center mb-5   container col-md-10 col-lg-8 ">
+              <h3><b>Prototype</b></h3>
+              <p class="mb-3 proto-pc">
+                點擊框內右上角 &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
+                </svg> &nbsp; 可體驗Prototype
+              </p>
+              <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FTHqXGpQYATcN5sioqNGt46%2F%25E8%2587%25BA%25E5%258C%2597%25E8%25BD%2589%25E9%2581%258B%25E7%25AB%2599App-redesign%3Fnode-id%3D259%253A8642%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D20%253A2140" allowfullscreen></iframe>
+              
+              <div class="proto-phone">
+                <p class="mb-3">
+                  點擊下方縮圖可體驗Prototype
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                </svg>
+                <a href="https://www.figma.com/proto/THqXGpQYATcN5sioqNGt46/%E8%87%BA%E5%8C%97%E8%BD%89%E9%81%8B%E7%AB%99App-redesign?node-id=134%3A6921&scaling=scale-down&page-id=0%3A1&starting-point-node-id=20%3A2140" target="blank" class="d-block">
+                  <img src="img/demo_tbs.png" class="img-fluid my-5 scale">
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="tpe06">
+          <ul class="list-inline container ps-5 my-5">
+            <li class="list-inline-item"><h1 class="fw-bolder display-3 stroked">06</h1></li>
+            <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>回顧反思</b></h1></li>
+          </ul>
+
+          <div class="container mx-auto text-center">
+            <div class="container mx-auto col-lg-8">
+              <div class="card mb-4 border-0 w-100 text-start">
+                <div class="row g-0">
+                  <div class="col-md-3 mx-auto d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-1-circle" viewBox="0 0 16 16">
+                      <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"/>
+                    </svg>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="fw-bold card-title mb-3 t-center-768">繪製wireframe</h4>
+                      <p>
+                        過去我習慣用紙筆繪製wireframe，這次嘗試用Figma。
+                        wireframe以規劃架構、功能為主，常以低保真形式出現。
+                        但當我使用電腦繪製，常常會在意視覺細節。
+                        未來應根據情境，以方便溝通為基礎，更有效率的製作wireframe。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4 border-0 w-100 text-start">
+                <div class="row g-0">
+                  <div class="col-md-3 mx-auto d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-2-circle" viewBox="0 0 16 16">
+                      <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306Z"/>
+                    </svg>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="fw-bold card-title mb-3 t-center-768">測試的心態轉換</h4>
+                      <p>
+                        過去進行測試，雖然對於使用者提出的困惑感到好奇，但如果回饋牽涉到產品背後的限制，我也會想向使用者解釋原因。
+                        這次發現自己很融入測試過程，想解釋的念頭不再困擾我，能專注在收集使用者的聲音。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4 border-0 w-100 text-start">
+                <div class="row g-0">
+                  <div class="col-md-3 mx-auto d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-3-circle" viewBox="0 0 16 16">
+                      <path d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318Z"/>
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Z"/>
+                    </svg>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="fw-bold card-title mb-3 t-center-768">設計的價值與限制</h4>
+                      <p>一位受試者提到，雖然redesign改善了使用體驗並增加美感，但不會讓他改變NPS分數，因為手續費的痛點沒有被解決。</p>
+                      <p>突然感覺設計的價值被磨滅，這讓我再次思考設計的成本和價值，又想起某位設計前輩曾說，「創新是找麻煩」，為了實現設計，必須進行大工程，增加同事工作量。</p>
+                      <p>綜觀此次專案的驗證數據，確實提升了易用性和滿意度。設計有其價值，但實際反映的效益很可能會受到發揮空間、專案限制的影響。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="text-center py-5 bg-black" style="margin-top: 200px;">
+          <h4 class="mt-3 text-light"><b>看看其他作品 >></b></h4>
+          <div class="d-flex justify-content-center  mt-1 mb-5 container row row-cols-1 row-cols-md-3 g-5 mx-auto col-lg-8">
+            <div class="col">
+              <a href="work_tpe.html" class="text-decoration-none">
+                <div class="card bg-light border-0 h-100">
+                  <img src="img/demo_uiux.png" class="card-img-top mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-dark"><b>台北說書人</b></h5>
+                    <small class="text-muted">Web　|　2021</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a href="work_calculator.html" class="text-decoration-none">
+                <div class="card bg-light border-0 h-100">
+                  <img src="img/demo_calc.png" class="card-img-top mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-dark"><b>計算機</b></h5>
+                    <small class="text-muted">App　|　2022</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a href="work_box.html" class="text-decoration-none">
+                <div class="card bg-light border-0 h-100">
+                  <img src="img/demo_box.png" class="card-img-top mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-dark"><b>天地盒包裝</b></h5>
+                    <small class="text-muted">平面　|　2021</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+      </main>
+
+      <footer class="text-white text-center footer-work">
+        <p>© Design & Coded by Pei-Ling</p>
+      </footer>
+    </body>
+</html>
