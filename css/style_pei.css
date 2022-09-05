@@ -95,7 +95,7 @@
 }
 iframe{
     width: 100%;
-    height: 400px;
+    height: 350px;
 }
 .proto-phone{
     display: none;
@@ -130,9 +130,6 @@ footer>p{
 
 @media screen and (max-width:992px)
 {   
-    iframe{
-        display: none;
-    }
     .proto-pc{
         display: none;
     }
