@@ -76,7 +76,7 @@
               <h1 class="card-title">
                 <b>有心溯源平台</b>
               </h1>
-              <p class="card-text">使用UX方法優化登錄溯源資料的流程、系統與部分介面。<br>
+              <p class="card-text">使用UX方法優化登錄溯源資料的流程、部分UI和UX文案。<br>
                 範圍涉及ERP、CMS、外部API。<br>
                 基於商業保密，不顯示公司內部資料。
               </p>
@@ -151,7 +151,7 @@
                   </svg>
                   <div class="card-body">
                     <h4 class="fw-bold card-title">2.0公司需求</h4>
-                    <p class="text-start">老闆認同1.0的成效，希望我提出系統的迭代方向，並嘗試讓資料登錄自動化。</p>
+                    <p class="text-start">老闆認同1.0的成效，希望我提出系統的迭代方向，並設計RPA (Robotic Process Automation)。</p>
                   </div>
                 </div>
               </div>
@@ -189,7 +189,7 @@
                   <div class="card-body text-start">
                     <p>登錄溯源資料，需要先從公司內部ERP取得銷貨資料，再操作農委會的<a href="https://taftprocess.coa.gov.tw/" target="blank" class="text-reset">產銷履歷加工系統</a>
                       ，最後到有心溯源平台的CMS，介接農委會系統的食材進出貨資訊，並匯出證明。
-                      登錄過程十分繁瑣複雜、重複性高，但也常遇到需要另外人工處理的問題。
+                        也常遇到需要額外處理的狀況，例如和利害關係人溝通，找出數據不一致的問題，或手動更新部分資訊。
                     </p>
                   </div>
                 </div>
@@ -206,6 +206,8 @@
                 <li>Outsourcing ERP</li>
                 <li>Outsourcing CMS</li>
                 <li>政府系統與法規</li>
+                <li>採購課</li>
+                <li>上游原料廠商</li>
                 <li>餐廳</li>
               </ul>
             </div>
@@ -218,7 +220,165 @@
             <li class="list-inline-item"><h1 class="fw-bolder display-5 stroked"><b>設計過程</b></h1></li>
           </ul>
           
-          <div class="container col-md-10 col-lg-7 text-center s-my-100">
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>1.0自主優化</b></h3>
+            <p>我主動改善工作流程</p>
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-bug" viewBox="0 0 16 16">
+                    <path d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A4.979 4.979 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A4.985 4.985 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623zM4 7v4a4 4 0 0 0 3.5 3.97V7H4zm4.5 0v7.97A4 4 0 0 0 12 11V7H8.5zM12 6a3.989 3.989 0 0 0-1.334-2.982A3.983 3.983 0 0 0 8 2a3.983 3.983 0 0 0-2.667 1.018A3.989 3.989 0 0 0 4 6h8z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">挑戰</h4>
+                    <ul class="text-start">
+                      <li>需要快速完成（還有其他工作要做）</li>
+                      <li>沒錢、沒權力更動系統</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">行動</h4>
+                    <ul class="text-start">
+                      <li>了解背景、系統、工具</li>
+                      <li>使用者觀察與訪談</li>
+                      <li>運用User Journey找出痛點、限制、機會</li>
+                      <li>設計解方</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">發現</h4>
+                    <ul class="text-start">
+                      <li>重複性高、步驟繁瑣、不同步驟介面相似的痛點</li>
+                      <li>使用者初步發展出自己的解方</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="mx-auto bi bi-arrow-down-circle-fill my-3" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+            </svg>
+            
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title">成果</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <ul class=" text-start">
+                      <li>提升工作效率至2倍</li>
+                      <li>產出SOP文件</li>
+                      <li>促使老闆發出2.0的需求</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="container col-md-10 col-lg-8 text-center s-my-100">
+            <h3><b>2.0公司需求</b></h3>
+            <p>老闆發下RPA和系統迭代的需求</p>
+            <div class="container row row-cols-1 row-cols-md-3 g-2 mx-auto">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-bug" viewBox="0 0 16 16">
+                    <path d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A4.979 4.979 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A4.985 4.985 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623zM4 7v4a4 4 0 0 0 3.5 3.97V7H4zm4.5 0v7.97A4 4 0 0 0 12 11V7H8.5zM12 6a3.989 3.989 0 0 0-1.334-2.982A3.983 3.983 0 0 0 8 2a3.983 3.983 0 0 0-2.667 1.018A3.989 3.989 0 0 0 4 6h8z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">挑戰</h4>
+                    <ul class="text-start">
+                      <li>規劃時需考量不同系統如何串接資料、開發成本、程式運作邏輯等。</li>
+                      <li>第一個企業專案，對寫文件、溝通開發都較陌生。</li>
+                      <li>需站在非執行資料登錄的人員的角度，跟老闆溝通，說明流程中的困難狀況。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">行動</h4>
+                    <ul class="text-start">
+                      <li>理解老闆需求</li>
+                      <li>制定並調整專案scope</li>
+                      <li>Recap 1.0 User Journey的Insight</li>
+                      <li>運用Event Flow分析自動化可行性</li>
+                      <li>運用User Journey梳理使用者和自動化程式可能的互動體驗</li>
+                      <li>運用Flow Chart呈現自動化程式的操作邏輯和流程</li>
+                      <li>
+                        規畫設計優化專案
+                        <ul>
+                          <li>定義操作自動化範圍與串接資料需求</li>
+                          <li>提出部分需人工處理的可能解方</li>
+                          <li>提出部分介面迭代方向</li>
+                        </ul>
+                      </li>
+                      <li>與委外IT、RD協作評估可行性</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="gold" class="mx-auto my-3 bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                  <div class="card-body">
+                    <h4 class="fw-bold card-title">發現</h4>
+                    <ul class="text-start">
+                      <li>需要人工處理的狀況種類過多且複雜，全自動RPA較難實現。考量溯源相關規定與系統限制，並評估全自動化風險後，決定折衷設計半自動RPA。</li>                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="mx-auto bi bi-arrow-down-circle-fill my-3" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+            </svg>
+            
+            <div class="card border-0 my-3">
+              <div class="row g-0">
+                <div class="col-md-5 py-4">
+                  <h4 class="fw-bold card-title">成果</h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <ul class=" text-start">
+                      <li>規劃RPA、優化部分UI與UX文案</li>
+                      <li>產出並迭代簡易PRD</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--<div class="container col-md-10 col-lg-7 text-center s-my-100">
             <h3><b>挑戰</b></h3>
             <div class="d-flex justify-content-center my-3">
               <ul class="text-start">
@@ -288,7 +448,8 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
+          
         </section>
 
         <section id="03">
@@ -308,9 +469,12 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h4 class="fw-bold card-title mb-3 t-center-768">認識後端開發</h4>
+                      <h4 class="fw-bold card-title mb-3 t-center-768">設計影響力</h4>
                       <p>
-                        我在設計專案的過程，保持考慮落地的可能性，大部分進行得還算順利，但當我提出使用SQL建構資料庫作為搜尋功能的解方，資訊顧問告訴我成本會很高。從這次的討論，讓我對後端實際運作有更多的概念。
+                        UX 是一種思維，幫助我們在面對問題時，創造改變、發展更多可能。
+                      </p>
+                      <p>
+                        當設計帶來的價值讓老闆或同事有感，設計成果會幫你說話。例如此次主動使用 UX 方法改善流程，得到老闆的讚賞跟好奇，並接到優化系統的需求。也許改變不快、不大，但會慢慢發酵。設計在迭代，環境對 UX 的認知也在慢慢更新。
                       </p>
                     </div>
                   </div>
@@ -325,9 +489,9 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h4 class="fw-bold card-title mb-3 t-center-768">跨領域學習的幫助</h4>
+                      <h4 class="fw-bold card-title mb-3 t-center-768">認識後端開發</h4>
                       <p>
-                        過去學習程式的知識和邏輯，讓我在這次專案發想可以兼顧使用者與機器運作的角度。雖然仍會遇到跟原本理解有出入的狀況，但程式邏輯幫助我和開發人員、資訊顧問能夠更順暢的溝通。
+                        我在設計專案的過程，保持考慮落地的可能性，大部分進行得還算順利，但當我提出使用SQL建構資料庫作為搜尋功能的解方，資訊顧問告訴我成本會很高。從這次的討論，讓我對後端實際運作有更多的概念。
                       </p>
                     </div>
                   </div>
@@ -343,8 +507,10 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h4 class="fw-bold card-title mb-3 t-center-768">面對限制的解方</h4>
-                      <p>在設計自動化程式時，遇到許多程式無法直接判斷的問題。我先發想如何以低成本的方式，給予程式其他指令，避免增加使用者任務。後來老闆針對其中一個問題，直接從現實層面排除障礙。在時程允許的狀況下，更深入的了解問題，有機會找到更完整的解方。</p>
+                      <h4 class="fw-bold card-title mb-3 t-center-768">跨領域學習的幫助</h4>
+                      <p>
+                        過去學習程式的知識和邏輯，讓我在這次專案發想可以兼顧使用者與機器運作的角度。雖然仍會遇到跟原本理解有出入的狀況，但程式邏輯的確幫助我能夠更順暢的和IT、RD溝通。
+                      </p>
                     </div>
                   </div>
                 </div>
