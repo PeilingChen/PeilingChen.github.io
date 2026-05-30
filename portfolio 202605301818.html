@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W8B52RCG');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEILING CHEN — Product Designer</title>
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<meta property="og:title" content="PEILING CHEN — Product Designer">
+<meta property="og:description" content="珮翎擁有心理學術背景，以及 3+ 年 UX 研究、UX/UI 設計、網頁開發、專案管理的經驗。">
+<meta property="og:image" content="img/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="img/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:#F5F0E8; --cream-dark:#EDE5D5; --sand:#D4C5A9; --taupe:#B8A898;
+    --brown:#7C6855; --brown-dark:#5C4E3E; --espresso:#2E2318; --charcoal:#3D3530;
+    --warm-white:#FAF7F2; --accent:#9C7E5F; --light-gray:#C8C0B5; --mid-gray:#8C8580;
+    --key-bg:rgba(156,126,95,0.12); --footer-h:72px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden;}
+  body{background:var(--cream);color:var(--espresso);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;width:100%;min-height:100vh;}
+  img,video{max-width:100%;height:auto;}
+
+  /* NAV — liquid glass, always expanded */
+  nav {
+    position:fixed;top:0;left:0;right:0;z-index:9999;
+    width:100%;box-sizing:border-box;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 48px;
+    background:rgba(245,240,232,0.65);
+    backdrop-filter:blur(20px) saturate(180%);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);
+    border-bottom:1px solid rgba(255,255,255,0.35);
+    box-shadow:0 1px 0 rgba(180,165,145,0.15), inset 0 1px 0 rgba(255,255,255,0.5);
+    transition:padding 0.3s ease, background 0.3s ease;
+  }
+
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;letter-spacing:0.08em;color:var(--espresso);text-decoration:none;transition:color 0.2s;flex-shrink:0;}
+  .nav-logo:hover{color:var(--accent);}
+
+  .nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+  .nav-links a{
+    text-decoration:none;font-size:12px;font-weight:500;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--charcoal);transition:color 0.25s;
+    position:relative;padding-bottom:3px;white-space:nowrap;
+  }
+  /* underline base (invisible) */
+  .nav-links a::after{
+    content:'';position:absolute;bottom:0;left:0;
+    width:0;height:1px;background:var(--accent);
+    transition:width 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  .nav-links a:hover{color:var(--accent);}
+  .nav-links a:hover::after{width:100%;}
+  /* active state */
+  .nav-links a.nav-active{color:var(--accent);}
+  .nav-links a.nav-active::after{width:100%;}
+  /* entry animation when becoming active */
+  .nav-links a.nav-active-animate::after{
+    animation:navUnderline 0.45s cubic-bezier(0.4,0,0.2,1) forwards;
+  }
+  @keyframes navUnderline{from{width:0}to{width:100%}}
+
+  /* hide hamburger + mobile menu entirely */
+  .hamburger{display:none!important;}
+  .mobile-menu{display:none!important;}
+
+  /* HEADER */
+  #home{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 48px;padding-top:80px;background:var(--warm-white);position:relative;width:100%;box-sizing:border-box;overflow:hidden;}
+  #home::before{content:'';position:absolute;top:-100px;right:0;width:500px;height:500px;background:radial-gradient(circle,rgba(180,165,145,0.18) 0%,transparent 70%);pointer-events:none;}
+  .header-text{z-index:2;padding-right:60px;}
+  .header-role{font-size:13px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+  .header-role::before{content:'';width:32px;height:1px;background:var(--accent);}
+  .header-name{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,6vw,80px);font-weight:300;line-height:1.05;color:var(--espresso);margin-bottom:28px;letter-spacing:-0.01em;}
+  .header-bio{font-size:16px;line-height:1.85;color:var(--charcoal);max-width:420px;font-family:'Noto Sans TC',serif;font-weight:300;}
+  .header-image-col{position:relative;display:flex;justify-content:center;align-items:center;height:100%;min-height:500px;}
+  .image-frame{position:relative;width:360px;height:440px;}
+  .image-bg-block{position:absolute;bottom:-20px;right:-20px;width:100%;height:100%;background:var(--sand);z-index:0;}
+  .header-photo{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;}
+  .scroll-hint{position:absolute;bottom:40px;left:0;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid-gray);writing-mode:vertical-rl;text-orientation:mixed;z-index:2;}
+  .scroll-line{width:1px;height:40px;background:var(--light-gray);position:relative;overflow:hidden;}
+  .scroll-line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--accent);animation:scrollDown 2s ease infinite;}
+  @keyframes scrollDown{0%{top:-100%}100%{top:100%}}
+
+  /* SECTIONS */
+  section{padding:100px 48px calc(var(--footer-h) + 40px);width:100%;box-sizing:border-box;}
+  #contact{background:var(--warm-white);text-align:center;padding-bottom:120px;}
+  .section-label{font-size:13px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:14px;}
+  .section-label::before{content:'';width:28px;height:1px;background:var(--accent);}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,56px);font-weight:300;color:var(--espresso);margin-bottom:56px;line-height:1.1;}
+
+  /* WORK */
+  #work{background:var(--espresso);color:var(--cream);}
+  #work .section-label{color:var(--sand);}
+  #work .section-label::before{background:var(--sand);}
+  #work .section-title{color:var(--cream);}
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(480px,100%),1fr));gap:24px;}
+  .work-card{background:var(--charcoal);cursor:pointer;overflow:hidden;transition:transform 0.4s ease,background 0.3s;position:relative;}
+  .work-card:hover{background:#4a3f36;transform:translateY(-4px);}
+  .card-thumb{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;}
+  .card-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+  .card-thumb-panasonic{background:linear-gradient(135deg,#1a1a1a 0%,#2e2e2e 50%,#444 100%);}
+  .card-thumb-crm{background:linear-gradient(135deg,#1a1a1a 0%,#2e2e2e 50%,#444 100%);}
+  .card-thumb-inner{width:100%;height:100%;display:flex;justify-content:center;align-items:center;position:absolute;top:0;left:0;z-index:0;}
+  .card-thumb-cover{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block;}
+  .card-thumb-inner svg{position:relative;z-index:0;opacity:0.4;}
+  .card-body{padding:28px 28px 24px;display:flex;flex-direction:column;gap:12px;}
+  .card-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--cream);line-height:1.3;white-space:normal;word-break:break-word;}
+  .card-year{font-size:13px;color:var(--taupe);letter-spacing:0.08em;margin-top:4px;}
+  .card-tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{font-size:12px;letter-spacing:0.1em;color:var(--sand);background:rgba(180,165,145,0.12);padding:3px 8px;border:1px solid rgba(180,165,145,0.25);}
+  .card-footer{display:flex;justify-content:flex-end;margin-top:4px;}
+  .btn-view{font-size:13px;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;color:var(--espresso);background:var(--sand);padding:8px 18px;border:none;cursor:pointer;transition:background 0.2s,transform 0.2s;}
+  .btn-view:hover{background:var(--cream);transform:translateX(2px);}
+
+  /* ABOUT */
+  #about{background:var(--cream-dark);overflow:visible;}
+  .about-layout{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;overflow:visible;}
+  .about-left{position:sticky;top:80px;}
+  .about-slogan{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,40px);font-weight:300;font-style:italic;color:var(--brown);line-height:1.35;margin-bottom:32px;}
+  .about-intro{font-size:16px;line-height:1.9;color:var(--charcoal);font-family:'Noto Sans TC',serif;font-weight:300;}
+  .about-intro p+p{margin-top:16px;}
+  .about-section{margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid var(--sand);}
+  .about-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .about-section-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--espresso);margin-bottom:28px;letter-spacing:0.02em;display:flex;align-items:center;gap:16px;}
+  .about-section-title::after{content:'';flex:1;height:1px;background:var(--sand);}
+  .exp-item{margin-bottom:36px;display:grid;grid-template-columns:1fr auto;gap:12px;}
+  .exp-item:last-child{margin-bottom:0;}
+  .exp-role{font-size:17px;font-weight:500;color:var(--espresso);margin-bottom:2px;}
+  .exp-company{font-size:16px;color:var(--brown);margin-bottom:12px;font-family:'Noto Sans TC',serif;font-weight:300;}
+  .exp-period{font-size:14px;color:var(--mid-gray);letter-spacing:0.08em;white-space:nowrap;text-align:right;padding-top:2px;}
+  .exp-desc{font-size:16px;line-height:1.9;color:var(--charcoal);font-family:'Noto Sans TC',serif;font-weight:300;grid-column:1/-1;}
+  .exp-desc li{list-style:none;padding-left:16px;position:relative;margin-bottom:10px;}
+  .exp-desc li::before{content:'—';position:absolute;left:0;color:var(--taupe);}
+  .exp-key{display:inline-block;font-weight:600;font-size:14px;letter-spacing:0.04em;color:var(--brown-dark);background:var(--key-bg);padding:1px 8px;margin-bottom:4px;}
+  .exp-key-block{display:block;}
+  .other-item{display:flex;flex-wrap:wrap;flex-direction:row;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(180,165,145,0.3);font-size:16px;gap:4px 12px;}
+  .other-role{color:var(--espresso);font-weight:400;flex:1;min-width:0;}
+  .other-meta-wrap{color:var(--mid-gray);font-size:14px;letter-spacing:0.06em;white-space:nowrap;}
+  @media(max-width:480px){.other-item{flex-direction:column;}.other-meta-wrap{align-self:flex-start;}}
+  .other-item:last-child{border-bottom:none;}
+
+
+  .contact-inner{max-width:560px;margin:0 auto;}
+  .contact-links{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;}
+  .contact-link{display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;}
+  .contact-icon{width:44px;height:44px;border:1px solid var(--sand);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);transition:border-color 0.2s,background 0.2s;}
+  .contact-link:hover .contact-icon{border-color:var(--accent);background:rgba(156,126,95,0.08);}
+  .contact-link-label{font-size:13px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);}
+  .contact-link-value{font-size:16px;font-weight:400;color:var(--espresso);border-bottom:1px solid transparent;transition:border-color 0.2s,color 0.2s;}
+  .contact-link:hover .contact-link-value{color:var(--accent);border-color:var(--accent);}
+
+  /* FOOTER — sticky at bottom, revealed as user scrolls past content */
+  body > footer {
+    position:sticky; bottom:0; z-index:-1;
+    width:100%; box-sizing:border-box;
+    padding:16px 48px;
+    background:rgba(46,35,24,0.92);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center;
+  }
+  /* page content sits above footer in stacking order */
+  body > section {
+    background:inherit;
+  }
+
+
+  /* footer inside project pages is normal flow */
+  .page footer {
+    position:relative; z-index:auto;
+    width:100%; box-sizing:border-box;
+    padding:16px 48px;
+    background:rgba(46,35,24,0.92);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center;
+  }
+  footer p{font-size:13px;letter-spacing:0.15em;color:var(--taupe);text-transform:uppercase;}
+  .footer-tagline{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:rgba(180,165,145,0.75);letter-spacing:0.04em;text-transform:none !important;line-height:1.6;}
+
+  /* PROJECT PAGES */
+  .page{display:none;}
+  .page.active{display:block;width:100%;background:var(--warm-white);overflow-x:hidden;animation:fadeIn 0.35s ease;}
+  /* 作品頁開啟時，隱藏所有首頁內容（!important 覆蓋 ID selector）*/
+  body.page-open > section,
+  body.page-open > footer,
+  body.page-open > .mobile-menu {
+    display:none !important;
+  }
+  /* 作品頁本身寬度與最小高度 */
+  .page.active {
+    min-height:100vh;
+  }
+  @keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  .project-hero{min-height:55vh;display:grid;grid-template-columns:1fr 1fr;align-items:end;padding:120px 48px 64px;position:relative;overflow:hidden;width:100%;box-sizing:border-box;}
+  .hero-panasonic{background:linear-gradient(145deg,#111 0%,#222 50%,#3a3a3a 100%);}
+  .hero-crm{background:linear-gradient(145deg,#111 0%,#222 50%,#3a3a3a 100%);}
+  .hero-tbs{background:linear-gradient(145deg,#111 0%,#222 50%,#3a3a3a 100%);}
+  .card-thumb-tbs{background:linear-gradient(135deg,#1a1a1a 0%,#2e2e2e 50%,#444 100%);}
+  .project-hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.35;display:block;}
+  .project-hero-text{z-index:2;}
+  .project-title-main{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:20px;}
+  .project-meta-block{display:flex;flex-direction:column;gap:10px;}
+  .meta-year{font-size:15px;color:rgba(245,240,232,0.55);letter-spacing:0.12em;}
+  .project-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+  .color-swatch{display:inline-flex;align-items:center;padding:3px 12px 3px 10px;border-radius:20px;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#fff;margin:4px 6px 4px 0;gap:6px;}
+  .color-swatch::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;filter:brightness(1.6);}
+  .chip{font-size:13px;letter-spacing:0.1em;color:rgba(245,240,232,0.85);background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;}
+  .project-content{max-width:800px;margin:0 auto;padding:72px 48px;}
+  .proj-section{margin-bottom:64px;padding-bottom:64px;border-bottom:1px solid var(--sand);}
+  .proj-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .proj-section-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--espresso);margin-bottom:32px;letter-spacing:0.02em;display:flex;align-items:center;gap:16px;}
+  .proj-section-title::after{content:'';flex:1;height:1px;background:var(--sand);}
+  .outcome-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:2px;}
+  .outcome-item{background:var(--espresso);color:var(--cream);padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;min-height:130px;}
+  .outcome-desc{font-size:16px;color:rgba(245,240,232,0.75);line-height:1.5;font-family:'Noto Sans TC',serif;font-weight:300;}
+  .outcome-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--sand);line-height:1;display:block;margin-top:20px;}
+  .bg-block{background:var(--cream-dark);padding:32px;margin-bottom:16px;}
+  .bg-subtitle{font-size:18px;font-weight:600;color:var(--espresso);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .bg-subtitle::before{content:'✦';font-size:12px;color:var(--accent);}
+  .process-heading{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--brown-dark);letter-spacing:0.04em;margin-bottom:20px;margin-top:40px;display:flex;align-items:center;gap:12px;}
+  .process-heading:first-child{margin-top:0;}
+  .process-heading::before{content:'';width:20px;height:2px;background:var(--accent);}
+  .prose{font-size:16px;line-height:1.9;color:var(--charcoal);font-family:'Noto Sans TC',serif;font-weight:300;}
+  .prose p+p{margin-top:14px;}
+  .prose ul{list-style:none;margin-top:10px;}
+  .prose ul li{padding-left:20px;position:relative;margin-bottom:6px;}
+  .prose ul li::before{content:'—';position:absolute;left:0;color:var(--taupe);}
+  .insight-item{margin-bottom:32px;background:var(--cream-dark);border-left:2px solid var(--accent);overflow:hidden;}
+  .insight-item:last-child{margin-bottom:0;}
+  .insight-title{font-size:18px;font-weight:500;color:var(--espresso);padding:24px 24px 0;margin-bottom:12px;}
+  .insight-body{padding:0 24px 24px;}
+  .insight-img{width:100%;display:block;margin-top:16px;max-height:360px;object-fit:cover;}
+  .reflection-item{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--sand);}
+  .reflection-item:last-child{border-bottom:none;margin-bottom:0;}
+  .reflection-title{font-size:18px;font-weight:500;color:var(--brown);margin-bottom:10px;}
+  .more-works-section{background:var(--espresso);padding:72px 48px;width:100%;box-sizing:border-box;}
+  .more-works-title{font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:var(--sand);margin-bottom:36px;display:flex;align-items:center;gap:14px;}
+  .more-works-title::before{content:'';width:24px;height:1px;background:var(--sand);}
+  .more-works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+  @media(max-width:900px){
+    nav{padding:14px 20px;}
+    .nav-links{gap:20px;}
+    .nav-links a{font-size:12px;letter-spacing:0.14em;}
+    section{padding:72px 24px;}
+    section{padding-bottom:calc(var(--footer-h) + 32px);}
+    #contact{padding-bottom:80px;}
+    #home{grid-template-columns:1fr;padding:100px 24px 60px;gap:48px;}
+    .header-text{padding-right:0;}
+    .header-image-col{min-height:300px;}
+    .image-frame{width:260px;height:320px;}
+    .about-layout{grid-template-columns:1fr;gap:48px;}
+    .about-left{position:static;}
+    .work-grid{grid-template-columns:1fr;}
+    .more-works-grid{grid-template-columns:1fr;}
+    .project-hero{grid-template-columns:1fr;padding:48px 24px;}
+    .project-content{padding:48px 24px;}
+    body > footer{padding:12px 20px;}
+  }
+  @media(max-width:600px){
+    .header-name{font-size:40px;}
+    .outcome-grid{grid-template-columns:1fr 1fr;}
+    .nav-links a{font-size:12px;letter-spacing:0.1em;}
+    nav,.page-nav{padding:12px 24px;}
+    .nav-links{gap:20px;}
+  }
+  @media(max-width:420px){
+    .nav-logo{font-size:18px;}
+    .nav-links a{font-size:11px;letter-spacing:0.08em;}
+    .nav-links{gap:16px;}
+  }
+
+  /* ── Embedded iframe ── */
+  .embed-wrap {
+    position:relative; width:100%; padding-top:56.25%;
+    margin:16px 0 0; border-radius:4px; overflow:hidden;
+    background:var(--cream-dark);
+  }
+  .embed-wrap iframe {
+    position:absolute; top:0; left:0;
+    width:100%; height:100%;
+    border:none; display:block;
+  }
+
+  /* ── Comparison table ── */
+  .table-wrap {
+    width:100%; overflow-x:auto;
+    margin:16px 0 0; -webkit-overflow-scrolling:touch;
+    border-radius:4px;
+  }
+  .table {
+    width:100%; border-collapse:collapse;
+    font-size:14px; font-family:'DM Sans',sans-serif;
+    background:var(--warm-white); min-width:520px;
+  }
+  .table thead tr { background:var(--cream-dark); }
+  .table th, .table td {
+    padding:10px 14px; text-align:center;
+    border:1px solid var(--sand);
+    color:var(--charcoal); vertical-align:middle;
+    line-height:1.5;
+  }
+  .table thead th {
+    font-size:12px; font-weight:600;
+    letter-spacing:0.06em; color:var(--brown-dark);
+    white-space:nowrap;
+  }
+  .table tbody th {
+    text-align:left; font-weight:500;
+    color:var(--espresso); white-space:nowrap;
+    background:rgba(245,240,232,0.6);
+  }
+  .table tbody tr:hover { background:rgba(212,197,169,0.18); }
+  .table .text-start { text-align:left; }
+  .table-note {
+    font-size:12px; color:var(--mid-gray);
+    line-height:1.7; margin-top:8px;
+  }
+
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8B52RCG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- MAIN NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo" data-action="home">PEI</a>
+  <ul class="nav-links">
+    <li><a href="#" data-action="section" data-section="work">Work</a></li>
+    <li><a href="#" data-action="section" data-section="about">About</a></li>
+    <li><a href="#" data-action="section" data-section="contact">Cont</a></li>
+  </ul>
+  <div class="hamburger" data-action="menu-open"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" data-action="menu-close">×</span>
+  <a href="#" data-action="section" data-section="work">Work</a>
+  <a href="#" data-action="section" data-section="about">About</a>
+  <a href="#" data-action="section" data-section="contact">Contact</a>
+</div>
+
+<!-- HEADER -->
+<section id="home">
+  <div class="header-text">
+    <div class="header-role">Product Designer</div>
+    <h1 class="header-name">PEILING<br>CHEN</h1>
+    <p class="header-bio">珮翎擁有心理學術背景，以及 3+ 年 UX 研究、UX/UI 設計、網頁開發、專案管理的經驗。</p>
+  </div>
+  <div class="header-image-col">
+    <div class="image-frame">
+      <div class="image-bg-block"></div>
+      <img src="img/index/01.png" alt="Peiling Chen" class="header-photo">
+    </div>
+    <div class="scroll-hint">
+      <span class="scroll-line"></span>
+      scroll
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-label">HOW I MADE IT</div>
+  <h2 class="section-title">WORK</h2>
+  <div class="work-grid">
+    <div class="work-card" data-action="project" data-project="panasonic">
+      <div class="card-thumb card-thumb-panasonic">
+        <div class="card-thumb-inner">
+          <img src="img/pan/00.png" alt="Panasonic Project" class="card-thumb-cover">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="0.8">
+            <rect x="10" y="10" width="60" height="60" rx="2"/>
+            <rect x="20" y="20" width="18" height="14" rx="1"/>
+            <rect x="44" y="20" width="16" height="14" rx="1"/>
+            <rect x="20" y="40" width="40" height="6" rx="1"/>
+            <rect x="20" y="52" width="28" height="6" rx="1"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Panasonic 會員研究與網站改版</div>
+        <div class="card-year">2023 — 2025</div>
+        <div class="card-tags">
+          <span class="tag">#2B</span><span class="tag">#2C</span><span class="tag">#網站</span>
+          <span class="tag">#後台系統</span><span class="tag">#UX</span><span class="tag">#訪談</span><span class="tag">#GA數據</span>
+        </div>
+        <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+      </div>
+    </div>
+    <div class="work-card" data-action="project" data-project="crm">
+      <div class="card-thumb card-thumb-crm">
+        <div class="card-thumb-inner">
+          <img src="img/nl/00.png" alt="新聯陽 CRM Project" class="card-thumb-cover">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="0.8">
+            <rect x="8" y="16" width="64" height="48" rx="2"/>
+            <rect x="16" y="26" width="20" height="12" rx="1"/>
+            <rect x="44" y="26" width="20" height="12" rx="1"/>
+            <line x1="8" y1="24" x2="72" y2="24"/>
+            <circle cx="13" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><circle cx="23" cy="20" r="1.5"/>
+            <rect x="16" y="46" width="48" height="5" rx="1"/>
+            <rect x="16" y="56" width="32" height="5" rx="1"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">新聯陽 CRM 系統迭代</div>
+        <div class="card-year">2025</div>
+        <div class="card-tags">
+          <span class="tag">#2B</span><span class="tag">#CRM</span><span class="tag">#UX</span>
+          <span class="tag">#客戶聯繫</span><span class="tag">#項目管理</span>
+        </div>
+        <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+      </div>
+    </div>
+    <div class="work-card" data-action="project" data-project="tbs">
+      <div class="card-thumb card-thumb-tbs">
+        <div class="card-thumb-inner">
+          <img src="img/tbs/00.png" alt="臺北轉運站 Redesign" class="card-thumb-cover">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="0.8">
+            <rect x="8" y="14" width="64" height="52" rx="3"/>
+            <rect x="18" y="24" width="44" height="8" rx="2"/>
+            <rect x="18" y="38" width="28" height="6" rx="2"/>
+            <rect x="18" y="50" width="18" height="6" rx="2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">臺北轉運站 Redesign</div>
+        <div class="card-year">2022</div>
+        <div class="card-tags">
+          <span class="tag">#Redesign</span><span class="tag">#2C</span><span class="tag">#UX</span><span class="tag">#UI</span><span class="tag">#訪談</span>
+        </div>
+        <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Who I Am</div>
+  <h2 class="section-title">ABOUT</h2>
+  <div class="about-layout">
+    <div class="about-left">
+      <div class="about-slogan">Designer &amp;<br>Problem Solver</div>
+      <div class="about-intro">
+        <p>珮翎是個積極面對挑戰、以終為始的設計師，擁有心理學術背景，以及 3+ 年 UX 研究、UX/UI 設計、網頁開發、專案管理的經驗。</p>
+        <p>服務過財星 500 大企業、非營利組織、公部門等客戶，執行 2C 網頁、2B 的 CRM 與 CMS 後台系統等專案。</p>
+        <p>珮翎不只追求使用者體驗，更致力於問題解決與回應商業需求，打造能落地、具有價值的產品及策略。</p>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-section">
+        <div class="about-section-title">工作經驗</div>
+        <div class="exp-item">
+          <div><div class="exp-role">UX Designer</div><div class="exp-company">MX Digi 創意思境｜台灣台北</div></div>
+          <div class="exp-period">2023 — 2025</div>
+          <ul class="exp-desc">
+            <li><span class="exp-key exp-key-block">體驗設計</span>梳理流程，規劃資訊架構、Wireframe、Prototype，撰寫 Spec，進行 UAT 測試，和設計師、工程師、業務團隊協作，幫助系統提升約 66% 的資料傳送效能。</li>
+            <li><span class="exp-key exp-key-block">體驗研究</span>規劃並執行使用者訪談、焦點團體訪談、利害關係人訪談等質化研究。進行問卷調查、設定 GTM 與追蹤 GA 數據。分析並擬定策略與建議，撰寫報告，幫助品牌 MGM 提升至 230%。</li>
+            <li><span class="exp-key exp-key-block">客戶聯繫與提案</span>釐清客戶需求，發展解方與策略，以及製作簡報，向客戶提案。</li>
+            <li><span class="exp-key exp-key-block">專案管理</span>制定專案時程，召集會議，帶領團隊執行專案，交付成果。</li>
+            <li><span class="exp-key exp-key-block">設計營運</span>打造具擴充性且易維護的後台 Wireframe 設計系統與範本。將 Spec 文件模組化，優化設計工作流程。</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div><div class="exp-role">Contract UX</div><div class="exp-company">有心肉舖子｜台灣台中</div></div>
+          <div class="exp-period">2021 — 2022</div>
+          <ul class="exp-desc">
+            <li><span class="exp-key exp-key-block">體驗研究與設計</span>改善有心溯源平台的資料登錄體驗，提升流程效率至 200%。規劃資料登錄半自動化、迭代部分 UI 與 UX 文案，涉及 ERP、CMS、API。</li>
+            <li><span class="exp-key exp-key-block">專案管理</span>管理專案，產出並迭代簡易 PRD。</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div><div class="exp-role">研究助理</div><div class="exp-company">UC Irvine｜美國加州</div></div>
+          <div class="exp-period">2019</div>
+          <ul class="exp-desc">
+            <li><span class="exp-key exp-key-block">訪談演練</span></li>
+            <li><span class="exp-key exp-key-block">問卷校閱</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-section">
+        <div class="about-section-title">其他經驗</div>
+        <div class="other-item"><span class="other-role">發起人 &amp; 講者｜Figma 教學計畫</span><span class="other-meta-wrap">2024 — 2025</span></div>
+        <div class="other-item"><span class="other-role">志工｜UXTW 台灣使用者經驗設計協會</span><span class="other-meta-wrap">2022 — 2024</span></div>
+        <div class="other-item"><span class="other-role">社員｜台灣大學 Design Thinking 社團</span><span class="other-meta-wrap">2022 — 2023</span></div>
+        <div class="other-item"><span class="other-role">入圍決賽｜第 5 屆 Design for Taiwan</span><span class="other-meta-wrap">2020 — 2021</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2 class="section-title">CONTACT</h2>
+  <div class="contact-inner">
+    <div class="contact-links">
+      <a href="mailto:s0511109ncue@gmail.com" class="contact-link">
+        <div class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/>
+          </svg>
+        </div>
+        <span class="contact-link-label">Email</span>
+        <span class="contact-link-value">s0511109ncue@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/pei-ling-chen-7a48bb1a4" target="_blank" class="contact-link">
+        <div class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="4"/>
+            <path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/>
+          </svg>
+        </div>
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-value">Pei-Ling Chen</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-tagline">Turn ambiguity into clarity.<br>Bridging user needs and business goals.</p>
+  <p>© 2026 Pei-Ling</p>
+</footer>
+
+
+<!-- ═══ PAGE: PANASONIC ═══ -->
+<div class="page" id="page-panasonic">
+  <div class="project-hero hero-panasonic">
+    <img src="img/pan/00.png" alt="" class="project-hero-bg">
+    <div class="project-hero-text">
+      <h1 class="project-title-main">Panasonic<br>會員研究與<br>網站改版</h1>
+      <div class="project-meta-block">
+        <div class="meta-year">2023 — 2025</div>
+        <div class="project-chips">
+          <span class="chip">#2B</span><span class="chip">#2C</span><span class="chip">#網站</span>
+          <span class="chip">#後台系統</span><span class="chip">#UX</span><span class="chip">#訪談</span><span class="chip">#GA數據</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="project-content">
+    <div class="proj-section">
+      <div class="proj-section-title">成果</div>
+      <div class="outcome-grid">
+        <div class="outcome-item"><p class="outcome-desc">品牌 MGM 提升至</p><span class="outcome-num">230%</span></div>
+        <div class="outcome-item"><p class="outcome-desc">減少開發時程約</p><span class="outcome-num">50%</span></div>
+        <div class="outcome-item"><p class="outcome-desc">建置前台網站與管理後台各一個</p><span class="outcome-num">1+1</span></div>
+        <div class="outcome-item"><p class="outcome-desc">研究報告產出</p><span class="outcome-num">4份</span></div>
+      </div>
+    </div>
+    <div class="proj-section">
+      <div class="proj-section-title">專案背景</div>
+      <div class="bg-block"><div class="bg-subtitle">簡介</div><p class="prose">Panasonic 於 2024 年推出全新會員分級制度，並整合線上線下會員服務，包含電商、門市等多通路體驗，打造完整的會員生態系。我負責會員網站改版，並在上線後持續透過研究與數據，優化會員經營策略。</p></div>
+      <div class="bg-block"><div class="bg-subtitle">任務</div><div class="prose"><ul><li><strong>C 端前台網頁：</strong>會員中心、點數兌換與訂單、心得投稿系統、線上報修表單等。</li><li><strong>B 端後台管理系統：</strong>針對前台客戶需求建置首頁輪播、活動頁面、點數兌換訂單、問卷系統、心得審核等管理單元，以及文章上稿、訊息通知等 CMS 模組。</li><li><strong>多元研究與策略：</strong>從消費者與經銷商的角度，多方探索會員服務與消費體驗。在競爭激烈的家電市場中，增加 Panasonic 的會員黏著度與品牌忠誠度。</li></ul></div></div>
+      <div class="bg-block"><div class="bg-subtitle">挑戰</div><div class="prose"><ul><li>多方利害關係人（客戶高層和行銷、IT、服務、經銷商等多個單位）</li><li>線上與線下整合（OMO）</li><li>複雜系統與法規限制下優化體驗與提升轉換</li></ul></div></div>
+      <div class="bg-block"><div class="bg-subtitle">使用者 &amp; 利害關係人</div><p class="prose">消費者（C 端前台用戶）、經銷商、Panasonic 內部行銷 / 服務 / IT 等多個部門，以及客戶高層。</p></div>
+    </div>
+    <div class="proj-section">
+      <div class="proj-section-title">設計過程</div>
+      <div class="process-heading">工作內容</div>
+      <div class="bg-block"><div class="bg-subtitle">體驗設計（2023 - 2025）</div><div class="prose"><ul><li>梳理複雜流程、規劃資訊架構、Flowchart、Wireframe、UI flow、Prototype</li><li>撰寫 Spec</li><li>進行 UAT 測試</li><li>和 UI 設計師、工程師、業務團隊協作</li><li>製作簡報、向客戶提案</li></ul></div></div>
+      <div class="bg-block"><div class="bg-subtitle">體驗研究（2024 - 2025）</div><div class="prose"><ul><li>規劃並執行易用性測試、一對一訪談、焦點團體訪談、利害關係人（經銷商）訪談等質化研究</li><li>進行問卷調查、觀察會員網站的 GA 數據等量化研究</li><li>分析、擬定策略與建議，撰寫報告</li></ul></div></div>
+      <div class="process-heading">洞察與決策</div>
+      <div class="insight-item"><div class="insight-title">融入商業目標</div><div class="insight-body"><p class="prose">增加會員數量與活躍度是專案的重要目標，因此在各種類型的使用者旅程中，規劃註冊會員的機會點，同時避免暗黑設計，在商業和體驗中取得平衡。另外，透過訪談發現，原本的會員宣傳概念較抽象而難以吸引消費者，因此建議團隊將溝通概念從點數改為具體且實惠的咖啡，使 MGM 成長至 230%。</p><img src="img/pan/01.png" alt="融入商業目標" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">數據驅動設計</div><div class="insight-body"><p class="prose">除了易用性測試，我也運用 GA 數據來輔助設計。例如透過數據找出點擊率較高的區塊，將新功能「電子票券」規劃在此處，達到宣傳效果，且方便會員快速使用。</p><img src="img/pan/02.png" alt="數據驅動設計" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">可擴展的 CMS 系統</div><div class="insight-body"><p class="prose">規劃具有一致性、擴充性的後台系統，滿足客戶持續擴增單元與管理內容的營運需求，並幫助減少約 50% 的開發時程。</p><img src="img/pan/03.png" alt="可擴展的CMS系統" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">面對資料限制的解法</div><div class="insight-body"><p class="prose">由於必須先產生投稿資料 ID，資料庫才能儲存後續的投稿內容，因此透過彈窗與流程設計，在技術限制與使用者理解之間取得平衡。</p><img src="img/pan/04.png" alt="面對資料限制的解法" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">Spec 文件管理</div><div class="insight-body"><p class="prose">將重複的開發規格邏輯，歸納成表格，幫助工程師快速掌握開發規則，打造簡潔的規格文件瀏覽體驗。</p><img src="img/pan/05.png" alt="Spec文件管理" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">將多元研究轉化為商業策略</div><div class="insight-body"><p class="prose">不僅透過會員訪談與問卷調查，探索全通路體驗，也深入第一線和經銷商進行利害關係人訪談，傾聽實務營運痛點。在商業框架下，平衡多方利益，發展出品牌、經銷商、消費者三方的共贏策略。</p><img src="img/pan/06.png" alt="將多元研究轉化為商業策略" class="insight-img"></div></div>
+    </div>
+    <div class="proj-section">
+      <div class="proj-section-title">反思</div>
+      <div class="reflection-item"><div class="reflection-title">主動探索 AI</div><p class="prose">除了運用 AI 整理研究資料提升作業效率，我也嘗試結合親和圖與後端的資料思維，建置質化訪談的資料表模板，期待未來能利用 AI 輔助，進行自動化交叉分析，更高效、深度的探索洞察。</p></div>
+      <div class="reflection-item"><div class="reflection-title">漫漫轉型路</div><p class="prose">改版過程中，受到開發架構、法務規定、部門協商等因素影響，有些優化體驗的設計無法馬上實現。但我透過訪談、數據等資料，佐證使用者的需求與商業效應，持續推動產品策略的發展。</p></div>
+      <div class="reflection-item"><div class="reflection-title">品牌與 OMO 整合</div><p class="prose">培養品牌與行銷思維，透過多渠道行銷連結會員網站、官網、官方商城、服務網、內部平台等多個系統，延伸更多品牌接觸點。串連線上與線下，善用資料，優化服務體驗。</p></div>
+    </div>
+  </div>
+  <div class="more-works-section">
+    <div class="more-works-title">瀏覽其他作品</div>
+    <div class="more-works-grid">
+      <div class="work-card" data-action="project" data-project="crm">
+        <div class="card-thumb card-thumb-crm" style="aspect-ratio:4/3;">
+          <img src="img/nl/00.png" alt="新聯陽 CRM" onerror="this.style.display='none'">
+          <div class="card-thumb-inner"><svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="8" y="16" width="64" height="48" rx="2"/><line x1="8" y1="24" x2="72" y2="24"/></svg></div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">新聯陽 CRM 系統迭代</div>
+          <div class="card-year">2025</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+      <div class="work-card" data-action="project" data-project="tbs">
+        <div class="card-thumb card-thumb-tbs" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/tbs/00.png" alt="臺北轉運站" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="8" y="14" width="64" height="52" rx="3"/><rect x="18" y="24" width="44" height="8" rx="2"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">臺北轉運站 Redesign</div>
+          <div class="card-year">2022</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><p class="footer-tagline">Turn ambiguity into clarity.<br>Bridging user needs and business goals.</p><p>© 2026 Pei-Ling</p></footer>
+</div>
+
+
+<!-- ═══ PAGE: CRM ═══ -->
+<div class="page" id="page-crm">
+  <div class="project-hero hero-crm">
+    <img src="img/nl/00.png" alt="" class="project-hero-bg">
+    <div class="project-hero-text">
+      <h1 class="project-title-main">新聯陽<br>CRM 系統迭代</h1>
+      <div class="project-meta-block">
+        <div class="meta-year">2025</div>
+        <div class="project-chips">
+          <span class="chip">#2B</span><span class="chip">#CRM</span><span class="chip">#UX</span>
+          <span class="chip">#客戶聯繫</span><span class="chip">#項目管理</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="project-content">
+    <div class="proj-section">
+      <div class="proj-section-title">成果</div>
+      <div class="outcome-grid">
+        <div class="outcome-item"><p class="outcome-desc">趨近於零的使用者學習成本</p><span class="outcome-num">≈0</span></div>
+        <div class="outcome-item"><p class="outcome-desc">提升資料傳送效能約</p><span class="outcome-num">66%</span></div>
+      </div>
+    </div>
+    <div class="proj-section">
+      <div class="proj-section-title">專案背景</div>
+      <div class="bg-block"><div class="bg-subtitle">簡介</div><p class="prose">新聯陽是知名的房地產代銷企業，代理建商銷售建案，使用 CRM 系統來管理預約賞屋與銷售的資料。我負責處理系統的各種迭代需求，本頁以「貴賓預約賞屋通知優化」的項目進行說明。</p></div>
+      <div class="bg-block"><div class="bg-subtitle">任務</div><p class="prose">因應 LINE Notify 功能停用，利用 LINE OA 打造「貴賓預約賞屋通知」的替代方案，讓新聯陽團隊能即時收到貴賓預約賞屋的通知，並且串連多個內部系統，進行後續的資料管理。</p></div>
+      <div class="bg-block"><div class="bg-subtitle">挑戰</div><div class="prose"><ul><li>專案執行必須考慮後續成本、開發可行性、平台生態系的連結等。</li><li>在現有系統的框架下開發，且其中包含房地產交易複雜的業務規則邏輯與客戶高度客製化的規格。</li></ul></div></div>
+      <div class="bg-block"><div class="bg-subtitle">使用者 &amp; 利害關係人</div><p class="prose">新聯陽內部銷售團隊、建商客戶、賞屋貴賓。</p></div>
+    </div>
+    <div class="proj-section">
+      <div class="proj-section-title">設計過程</div>
+      <div class="process-heading">工作內容</div>
+      <div class="bg-block"><div class="bg-subtitle">體驗設計</div><p class="prose">梳理 Flow、規劃資訊架構、Wireframe，撰寫 Spec，進行 UAT 測試，和工程師、業務團隊協作。</p></div>
+      <div class="bg-block"><div class="bg-subtitle">設計提案</div><p class="prose">發展解方與策略，以及製作簡報，向客戶提案。</p></div>
+      <div class="bg-block"><div class="bg-subtitle">客戶聯繫</div><p class="prose">作為窗口，直接與客戶溝通、互動，釐清客戶需求。</p></div>
+      <div class="process-heading">洞察與決策</div>
+      <div class="insight-item"><div class="insight-title">聚焦核心問題</div><div class="insight-body"><p class="prose">公司過去曾經和客戶討論過建立 LINE OA，善用行銷與訊息發佈工具。因此我研究 LINE OA 的各種功能，例如圖文選單、客製化通知型訊息等，思考是否能在專案中為客戶提供更多價值。但經過分析評估後，仍決定聚焦、回歸到重點需求——解決通知的問題。</p><img src="img/nl/01.png" alt="聚焦核心問題" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">方案評估</div><div class="insight-body"><p class="prose">思考產品沿革與專案需求後，初步發想出 2 種方案，方案 A 為群組訊息，方案 B 為個人訊息。考量到客戶使用習慣、後端資料架構，最後選擇方案 A，降低客戶的學習成本，並簡化開發工程。</p><img src="img/nl/02.png" alt="方案評估" class="insight-img"><p class="prose" style="margin-top:16px;">後續，梳理 LINE OA 與各系統平台的複雜流程，包含在貴賓操作介面後，如何觸發資料傳送、資料如何在多個平台間進行處理，確保銷售團隊能獲得通知，並讓資料成功接收與儲存。</p><img src="img/nl/021.png" alt="方案評估流程圖" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">協力解決開發問題</div><div class="insight-body"><p class="prose">當工程師提出可行性的問題，我保持開放的心態，和工程師聊聊，深入理解困難的本質。再研究 LINE Messaging API，綜合零散的資訊，以終為始，從需求出發，以目標為核心，提出運用 Webhook 的流程建議，解決後端的 groupID 與 CaseName 資料串接問題。</p><img src="img/nl/03.png" alt="解決開發問題" class="insight-img"></div></div>
+    </div>
+    <div class="proj-section">
+      <div class="proj-section-title">反思</div>
+      <div class="reflection-item"><div class="reflection-title">需求釐清</div><p class="prose">我負責直接和客戶溝通產品需求，客戶有時會用自己習慣的語言或方式表達，或突然提出想做某個項目。但項目的背後可能隱藏著真正的需求，唯有了解客戶，才能找出最佳解，這也幫助我累積和客戶、利害關係人溝通的能力。</p></div>
+      <div class="reflection-item"><div class="reflection-title">問題解決</div><p class="prose">雖然一開始工程師說方案不可行，但我相信可能還是有機會。儘管後端不是我的專長，然而善用邏輯思考、過去的資料學習經驗，努力找方法，提升可能性，最終成功讓解方落地。同時也證明設計師不只能優化體驗，還有解決問題的價值！</p></div>
+      <div class="reflection-item"><div class="reflection-title">團隊合作</div><p class="prose">同理、了解工程師所說的「開發困難」，並深入思考後，再一起討論、動腦，實現解決方案，滿足客戶的需求。和跨職能夥伴協作、突破困難很開心，是很棒的團隊合作經驗。</p></div>
+    </div>
+  </div>
+  <div class="more-works-section">
+    <div class="more-works-title">瀏覽其他作品</div>
+    <div class="more-works-grid">
+      <div class="work-card" data-action="project" data-project="panasonic">
+        <div class="card-thumb card-thumb-panasonic" style="aspect-ratio:4/3;">
+          <img src="img/pan/00.png" alt="Panasonic" onerror="this.style.display='none'">
+          <div class="card-thumb-inner"><svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="10" y="10" width="60" height="60" rx="2"/><rect x="20" y="20" width="18" height="14" rx="1"/></svg></div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Panasonic 會員研究與網站改版</div>
+          <div class="card-year">2023 — 2025</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+      <div class="work-card" data-action="project" data-project="tbs">
+        <div class="card-thumb card-thumb-tbs" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/tbs/00.png" alt="臺北轉運站" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="8" y="14" width="64" height="52" rx="3"/><rect x="18" y="24" width="44" height="8" rx="2"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">臺北轉運站 Redesign</div>
+          <div class="card-year">2022</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><p class="footer-tagline">Turn ambiguity into clarity.<br>Bridging user needs and business goals.</p><p>© 2026 Pei-Ling</p></footer>
+</div>
+
+
+<!-- ═══ PAGE: TBS ═══ -->
+<div class="page" id="page-tbs">
+
+  <div class="project-hero hero-tbs">
+    <img src="img/tbs/00.png" alt="" class="project-hero-bg">
+    <div class="project-hero-text">
+      <h1 class="project-title-main">臺北轉運站<br>Redesign</h1>
+      <div class="project-meta-block">
+        <div class="meta-year">2022</div>
+        <div class="project-chips">
+          <span class="chip">#Redesign</span><span class="chip">#2C</span><span class="chip">#UX</span><span class="chip">#UI</span><span class="chip">#訪談</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-content">
+
+    <!-- 成果 -->
+    <div class="proj-section">
+      <div class="proj-section-title">成果</div>
+      <div class="outcome-grid">
+        <div class="outcome-item"><p class="outcome-desc">易用性分數提升</p><span class="outcome-num">35.7%</span></div>
+        <div class="outcome-item"><p class="outcome-desc">NPS 提升</p><span class="outcome-num">+60分</span></div>
+      </div>
+    </div>
+
+    <!-- 專案背景 -->
+    <div class="proj-section">
+      <div class="proj-section-title">專案背景</div>
+      <div class="bg-block">
+        <div class="bg-subtitle">簡介</div>
+        <p class="prose">臺北轉運站 App 由萬達通實業公司推出，是整合多家業者的客運購票服務，範圍涵蓋全台。初期透過公路運輸服務數位化，解決尖峰時刻臨櫃排隊的痛點；現今則以客運為主、旅運電商為輔，提供一站式服務。</p>
+      </div>
+            <div class="bg-block">
+        <div class="bg-subtitle">任務</div>
+        <div class="prose">
+          <ul>
+            <li><strong>Redesign：</strong>從企業觀點出發，收集使用者需求，應用在商業目標中。除了提升使用者體驗，也讓改造設計更接地氣。</li>
+            <li><strong>優化視覺體驗：</strong>增加一致性，並參考主流設計規範與風格。</li>
+            <li><strong>提升使用者對廣告的注意：</strong>改善廣告體驗，掌握使用者旅程與閱讀順序。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">挑戰</div>
+        <div class="prose">
+          <ul>
+            <li><strong>資源有限：</strong>排除高成本、沒有可上線 MVP 等限制，這次使用 SUS、NPS、問卷與訪談來驗證。</li>
+            <li><strong>保持客觀：</strong>事前說明，降低社會期待偏誤。注意測試順序、避免重複資訊，減少錯誤記憶帶來的偏誤。調換測試順序，避免學習造成偏誤。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">使用者 &amp; 利害關係人</div>
+        <p class="prose">梳理企業目標與各方利害關係人的需求，作為設計方向的依據。</p>
+        <div class="embed-wrap"><iframe src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@VsSo8s35WvokiEs8UN2mXE" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+    </div>
+
+    <!-- 設計過程 -->
+    <div class="proj-section">
+      <div class="proj-section-title">設計過程</div>
+
+      <div class="process-heading">現況分析</div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">競品分析 - 客運</div>
+        <p class="prose">臺北轉運站的優勢為功能齊全、不須另外取票、客運業者數量多，且有獨特的旅運加值服務。</p>
+        <div class="table-wrap"><table class="table">
+  <thead><tr>
+    <th scope="col">App</th><th scope="col">業者數量</th>
+    <th scope="col">線上取票</th><th scope="col">選座位</th>
+    <th scope="col">手續費</th><th scope="col">客運動態</th>
+    <th scope="col">優惠</th><th scope="col">旅運電商</th>
+  </tr></thead>
+  <tbody>
+    <tr><th scope="row">臺北轉運站</th><td>9</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td></tr>
+    <tr><th scope="row">客運通</th><td>2</td><td></td><td>∆</td><td>∆</td><td></td><td></td><td></td></tr>
+    <tr><th scope="row">和欣客運</th><td>1</td><td>✓</td><td>✓</td><td>∆</td><td>∆</td><td>✓</td><td></td></tr>
+  </tbody>
+</table></div><p class="table-note">備註：<br>
+✓ 表示有該功能，或符合標題描述。<br>
+∆ 表示有該功能但較不齊全，或在部分情境下符合標題描述。</p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">競品分析 - 大眾運輸</div>
+        <p class="prose">票券功能齊全是客運 App 的優勢，但高鐵、台鐵不收訂票手續費，手續費在無優惠活動時會成為阻力；且公路客運較難掌握時間。</p>
+        <div class="table-wrap"><table class="table">
+  <thead><tr>
+    <th scope="col" style="min-width:130px;">App</th>
+    <th scope="col" style="min-width:80px;">線上取票</th>
+    <th scope="col" style="min-width:80px;">選座位</th>
+    <th scope="col" style="min-width:80px;">手續費</th>
+    <th scope="col" style="min-width:80px;">優惠</th>
+    <th scope="col" style="min-width:80px;">旅運電商</th>
+    <th scope="col" style="min-width:160px;">其他發現</th>
+  </tr></thead>
+  <tbody>
+    <tr><th scope="row">臺北轉運站</th><td>✓</td><td>✓</td><td>✓</td><td>∆</td><td>✓</td><td class="text-start">臺北轉運站的優勢為可選位、購票與多元服務同在一個 App。</td></tr>
+    <tr><th scope="row">台鐵</th><td>✓</td><td>∆</td><td></td><td>∆</td><td></td><td class="text-start">台鐵在介面、運輸產業定位上較折衷。</td></tr>
+    <tr><th scope="row">高鐵</th><td>✓</td><td>∆</td><td></td><td>✓</td><td>∆</td><td class="text-start">高鐵的介面一如搭乘的舒適感，並融入 CIS。但購票和旅運被分成兩個 App。另外，高鐵會透過自家刊物行銷旅運商品。</td></tr>
+  </tbody>
+</table></div><p class="table-note">備註：<br>
+✓ 表示有該功能，或符合標題描述。<br>
+∆ 表示有該功能但較不齊全，或在部分情境下符合標題描述。</p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">競品分析 - 旅遊電商</div>
+        <p class="prose">旅遊商品種類較少、價格未必較便宜。競品有較完整的商品資訊及層級設計，值得參考。</p>
+        <div class="table-wrap"><table class="table">
+  <thead><tr>
+    <th scope="col" style="min-width:130px;">App</th>
+    <th scope="col" style="min-width:100px;">主打類別</th>
+    <th scope="col" style="min-width:130px;">介面資訊層級</th>
+    <th scope="col" style="min-width:130px;">介面視覺</th>
+    <th scope="col" style="min-width:130px;">優點</th>
+  </tr></thead>
+  <tbody>
+    <tr><th scope="row">臺北轉運站</th><td class="text-start">公路客運</td><td class="text-start">★★★</td><td class="text-start">較不符主流規範</td><td class="text-start">優惠活動時買客運較便宜</td></tr>
+    <tr><th scope="row">KKday</th><td class="text-start">旅遊</td><td class="text-start">★★★★★</td><td class="text-start">簡單清爽</td><td class="text-start">新潮的品牌風格、國際化</td></tr>
+    <tr><th scope="row">Gomaji</th><td class="text-start">購物</td><td class="text-start">★★★★</td><td class="text-start">略俗、眼花撩亂</td><td class="text-start">價格優惠；以熱情顏色和明顯 CTA 營造購物氣氛</td></tr>
+  </tbody>
+</table></div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">桌面研究</div>
+        <div class="prose">
+          <p>從 App Store 評論，以及 Dcard、PTT 等論壇，初步了解使用者與潛在使用者的想法。</p>
+          <ul>
+            <li><strong>產品價值：</strong>邀請碼、不定期活動等優惠；購票、驗票都能在手機完成；票券無紙化較環保。</li>
+            <li><strong>阻力：</strong>需要手續費；習慣購買實體定期票、來回票；不常搭客運或使用其他交通工具。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">使用者訪談</div>
+        <div class="prose">
+          <ul>
+            <li><strong>體驗：</strong>多數使用者能順利購票，但不完全直觀，仍有潛在問題。對蓋版廣告較反感，認為有強迫觀看的感覺。</li>
+            <li><strong>價值：</strong>整合多家業者、省下分別查詢的時間；購票方便；優惠折扣、LINE Pay 回饋。</li>
+            <li><strong>Insight：</strong>沒注意到旅運商城，也沒有使用優惠券功能。比起購票，更常用來查詢班次。多位受訪者仍會臨櫃購買，因為 App 要收手續費。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">Persona</div>
+        <img src="img/tbs/persona.png" alt="Persona" class="insight-img" style="margin-top:16px;border-radius:4px;">
+        <div class="prose" style="margin-top:16px;">
+          <ul>
+            <li><strong>身分：</strong>學生、小資族</li>
+            <li><strong>年齡：</strong>19–30</li>
+            <li><strong>價值觀：</strong>能省則省</li>
+            <li><strong>需求：</strong>順暢的線上購票體驗，最好能搭配優惠</li>
+            <li><strong>痛點：</strong>手續費</li>
+            <li><strong>其他：</strong>對 3C 掌握度高、沒有時間壓力</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-heading">洞察整理</div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">發現問題</div>
+        <div class="prose">
+          <ul>
+            <li><strong>體驗：</strong>使用者能完成購票，但認為操作不完全直觀。廣告體驗不好，特別是蓋版廣告。手續費是一大痛點。</li>
+            <li><strong>視覺：</strong>部分元件一致性不足；部分元件與主流設計規範差異大。</li>
+            <li><strong>其他：</strong>Flow、資訊架構重複且容易混淆；商品資訊不齊全。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">商業影響</div>
+        <div class="prose">
+          <ul>
+            <li><strong>使用率：</strong>使用體驗影響產品滿意度與使用意願。手續費讓使用者傾向臨櫃購買，App 淪為查詢班次工具。</li>
+            <li><strong>廣告效果：</strong>廣告體驗不好，使用者本能性略過，難以提升 CTR、CVR，甚至降低產品滿意度。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">機會點</div>
+        <div class="prose">
+          <ul>
+            <li>來回票、回數票</li>
+            <li>環保減碳、提倡大眾運輸</li>
+            <li>車輛動態</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-heading">設計決策</div>
+
+      <div class="insight-item">
+        <div class="insight-title">首頁：提升易讀性、改善分類</div>
+        <div class="insight-body">
+          <div class="prose">
+            <p><strong>改造前（左）：</strong>廣告排版擁擠、分類模糊、看不出可以右滑。購票按鈕明顯，容易忽略其他訊息。</p>
+            <p><strong>改造後（右）：</strong>版面清爽，設計常用功能區塊，商品種類一目了然。露出部分可滑動的元件，並加上縣市資訊。</p>
+          </div>
+          <img src="img/tbs/01.png" alt="首頁改造" class="insight-img">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title">搜尋客運：優化引導、改善易用性</div>
+        <div class="insight-body">
+          <div class="prose">
+            <p><strong>改造前（左）：</strong>起訖站的 UX 文案為「台北到高雄」，但非預設值，仍需點選。Picker 沒有顯示星期幾，無法對照。</p>
+            <p><strong>改造後（右）：</strong>UX 文案改成「起點與終點」，達到更明確的引導效果，並加上 Icon 助於理解。Picker 調整為日曆形式。</p>
+          </div>
+          <img src="img/tbs/02.png" alt="搜尋客運改造" class="insight-img">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title">選擇班次：介面簡潔、優惠清楚</div>
+        <div class="insight-body">
+          <div class="prose">
+            <p><strong>改造前（左）：</strong>許多重複的資訊。優惠折抵字太小，且需另外計算價格。</p>
+            <p><strong>改造後（右）：</strong>捨棄多餘的資訊。放上折扣前原價、Badge 說明，讓優惠資訊更明確。</p>
+          </div>
+          <img src="img/tbs/03.png" alt="選擇班次改造" class="insight-img">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title">選擇座位：更直覺、友善的操作</div>
+        <div class="insight-body">
+          <div class="prose">
+            <p><strong>改造前（左）：</strong>座位的按鈕狀態不符主流規範與色彩心理學。禁用狀態應呈現忽略的引導效果，但紅色具警示意味，引人注目。</p>
+            <p><strong>改造後（右）：</strong>無彩色與主色的設計，運用透明度表現禁用狀態。操作更直覺，也能減少色覺辨認障礙。</p>
+          </div>
+          <img src="img/tbs/04.png" alt="選擇座位改造" class="insight-img">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title">確認訂單：改善資訊層級</div>
+        <div class="insight-body">
+          <div class="prose">
+            <p><strong>改造前（左）：</strong>計費資訊不方便理解。按鈕的 UX 文案突然從「確定」變成「開立發票」。</p>
+            <p><strong>改造後（右）：</strong>計費較直觀。按鈕的 UX 文案依據前面的邏輯，改為「確定」。</p>
+          </div>
+          <img src="img/tbs/05.png" alt="確認訂單改造" class="insight-img">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title">訂購結果：綠色行銷、個人化廣告</div>
+        <div class="insight-body">
+          <div class="prose">
+            <p><strong>改造前（左）：</strong>只有訂購成功訊息與明細。</p>
+            <p><strong>改造後（右）：</strong>在使用旅程中，這是情緒較放鬆的接觸點。善用此頁行銷客運的減碳價值，提升形象。並推薦相關商品，增加曝光。</p>
+          </div>
+          <img src="img/tbs/06.png" alt="訂購結果改造" class="insight-img">
+        </div>
+      </div>
+
+      <div class="process-heading">設計規範</div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">設計原則</div>
+        <div class="prose">
+          <ul>
+            <li><strong>iOS / Android：</strong>延續原本的開發模式，字體和部分元件將依據系統分別設計。</li>
+            <li><strong>設計風格：</strong>保留介面簡潔的優點；沿用原本的色彩計畫，降低學習成本；參考主流設計規範，增加一致性。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">色彩</div>
+        <div style="margin-top:4px;">
+          <span class="color-swatch" style="background:#5693E9;">#5693E9 主要色</span>
+          <span class="color-swatch" style="background:#77C2EB;">#77C2EB 次要色</span>
+          <span class="color-swatch" style="background:#BE2827;">#BE2827 強調色</span>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">字體</div>
+        <div class="prose">
+          <ul>
+            <li><strong>iOS：</strong>中文｜蘋方體 &nbsp; 英文｜SF Pro</li>
+            <li><strong>Android：</strong>中文｜思源黑體 &nbsp; 英文｜Roboto</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">Component</div>
+        <p class="prose">元件設計規範，涵蓋按鈕、輸入框、卡片等元件的樣式定義。</p>
+        <div class="embed-wrap"><iframe src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@VsSo8s35WxH3r8nWym2qzk" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+
+      <div class="process-heading">相關檔案</div>
+      <div class="bg-block">
+        <div class="bg-subtitle">Journey Map</div>
+        <div class="embed-wrap"><iframe src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@VsSo8s35Ww6oZwjJ9xVEB5" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">Functional Map</div>
+        <div class="embed-wrap"><iframe src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@2Ux7TurymLL5rmfJVCEc" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">Site Map</div>
+        <div class="embed-wrap"><iframe src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@2Ux7TurymN1UZsTnCqrp" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">Mockup</div>
+        <div class="embed-wrap"><iframe src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@7YNFXnKbZATa9eq5Hxgzn" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+    </div>
+
+    <!-- 反思 -->
+    <div class="proj-section">
+      <div class="proj-section-title">反思</div>
+      <div class="reflection-item">
+        <div class="reflection-title">繪製 Wireframe</div>
+        <p class="prose">過去我習慣用紙筆繪製 Wireframe，這次嘗試用 Figma。Wireframe 以規劃架構、功能為主，常以低保真形式出現。但當我使用電腦繪製，常常會在意視覺細節。未來應根據情境，以方便溝通為基礎，更有效率的製作 Wireframe。</p>
+      </div>
+      <div class="reflection-item">
+        <div class="reflection-title">研究的心態轉換</div>
+        <p class="prose">過去進行研究測試，雖然對於使用者提出的困惑感到好奇，但如果回饋牽涉到產品背後的限制，我也會想向使用者解釋原因。這次發現自己很融入測試過程，想解釋的念頭不再困擾我，能專注在收集使用者的聲音。</p>
+      </div>
+      <div class="reflection-item">
+        <div class="reflection-title">設計的價值與限制</div>
+        <p class="prose">一位受試者提到，雖然 Redesign 改善了使用體驗並增加美感，但不會讓他改變 NPS 分數，因為手續費的痛點沒有被解決。突然感覺設計的價值被磨滅，這讓我再次思考設計的成本和價值，又想起某位設計前輩曾說，「創新是找麻煩」，為了實現設計，必須進行大工程，增加同事工作量。綜觀此次專案的驗證數據，確實提升了易用性和滿意度。設計有其價值，但實際反映的效益很可能會受到發揮空間、專案限制的影響。</p>
+      </div>
+    </div>
+
+  </div><!-- /project-content -->
+
+  <div class="more-works-section">
+    <div class="more-works-title">瀏覽其他作品</div>
+    <div class="more-works-grid">
+      <div class="work-card" data-action="project" data-project="panasonic">
+        <div class="card-thumb card-thumb-panasonic" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/pan/00.png" alt="Panasonic" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="10" y="10" width="60" height="60" rx="2"/><rect x="20" y="20" width="18" height="14" rx="1"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Panasonic 會員研究與網站改版</div>
+          <div class="card-year">2023 — 2025</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+      <div class="work-card" data-action="project" data-project="crm">
+        <div class="card-thumb card-thumb-crm" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/nl/00.png" alt="新聯陽 CRM" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="8" y="16" width="64" height="48" rx="2"/><line x1="8" y1="24" x2="72" y2="24"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">新聯陽 CRM 系統迭代</div>
+          <div class="card-year">2025</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer><p class="footer-tagline">Turn ambiguity into clarity.<br>Bridging user needs and business goals.</p><p>© 2026 Pei-Ling</p></footer>
+</div>
+
+
+<script>
+/* PAGE FUNCTIONS */
+function showPage(id) {
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
+  var page = document.getElementById('page-' + id);
+  if (page) {
+    page.classList.add('active');
+    document.body.classList.add('page-open');
+    window.scrollTo(0, 0);
+  }
+}
+function hidePages() {
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
+  document.body.classList.remove('page-open');
+}
+function openProject(id) {
+  history.pushState({ project: id }, '', '#' + id);
+  showPage(id);
+}
+function goHome() {
+  history.pushState(null, '', location.pathname);
+  hidePages();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function goSection(sectionId) {
+  history.pushState(null, '', location.pathname);
+  hidePages();
+  setTimeout(function() {
+    var el = document.getElementById(sectionId);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }, 60);
+}
+function openMobileMenu()  { var m = document.getElementById('mobileMenu'); if (m) m.classList.add('open'); }
+function closeMobileMenu() { var m = document.getElementById('mobileMenu'); if (m) m.classList.remove('open'); }
+
+/* BROWSER BACK / FORWARD */
+window.addEventListener('popstate', function(e) {
+  if (e.state && e.state.project) { showPage(e.state.project); }
+  else { hidePages(); }
+});
+
+/* INIT */
+document.addEventListener('DOMContentLoaded', function() {
+
+  /* Restore from URL hash */
+  var hash = location.hash.replace('#', '');
+  if (hash === 'panasonic' || hash === 'crm' || hash === 'tbs') {
+    history.replaceState({ project: hash }, '', location.hash);
+    showPage(hash);
+  }
+
+  /* EVENT DELEGATION — handles all clicks via data-action */
+  document.addEventListener('click', function(e) {
+    var el = e.target;
+    /* walk up to find data-action */
+    while (el && el !== document.documentElement) {
+      var action  = el.getAttribute('data-action');
+      var section = el.getAttribute('data-section');
+      var project = el.getAttribute('data-project');
+
+      if (action === 'home') {
+        e.preventDefault();
+        closeMobileMenu();
+        goHome();
+        return;
+      }
+      if (action === 'section' && section) {
+        e.preventDefault();
+        closeMobileMenu();
+        goSection(section);
+        return;
+      }
+      if (action === 'project' && project) {
+        e.preventDefault();
+        openProject(project);
+        return;
+      }
+      if (action === 'menu-open') {
+        openMobileMenu();
+        return;
+      }
+      if (action === 'menu-close') {
+        closeMobileMenu();
+        return;
+      }
+      el = el.parentElement;
+    }
+  });
+
+  /* NAV ACTIVE SECTION TRACKING */
+  var sections = ['home', 'work', 'about', 'contact'];
+  var navLinks = document.querySelectorAll('.nav-links a[data-section]');
+  var prevActive = null;
+
+  function setActive(sectionId) {
+    if (prevActive === sectionId) return;
+    prevActive = sectionId;
+    navLinks.forEach(function(a) {
+      var isThis = a.getAttribute('data-section') === sectionId;
+      a.classList.remove('nav-active', 'nav-active-animate');
+      if (isThis) {
+        a.classList.add('nav-active');
+        void a.offsetWidth;
+        a.classList.add('nav-active-animate');
+      }
+    });
+  }
+
+  function onScroll() {
+    if (document.querySelector('.page.active')) return;
+    var scrollY = window.scrollY + 100;
+    var current = 'home';
+    sections.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) current = id;
+    });
+    setActive(current);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* NAV SHRINK ON SCROLL */
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('mainNav');
+    if (!nav) return;
+    nav.style.padding = window.scrollY > 80 ? '12px 48px' : '18px 48px';
+  }, { passive: true });
+
+  /* DYNAMIC FOOTER HEIGHT → #contact padding-bottom */
+  function setContactPadding() {
+    var footer = document.querySelector('body > footer');
+    var contact = document.getElementById('contact');
+    if (!footer || !contact) return;
+    var fh = footer.getBoundingClientRect().height;
+    contact.style.paddingBottom = (120 + fh) + 'px';
+  }
+  setContactPadding();
+  window.addEventListener('resize', setContactPadding, { passive: true });
+
+});
+</script>
+</body>
+</html>
