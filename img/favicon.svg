@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="80" fill="#F5F0E8"/>
+  <!-- Inner frame -->
+  <rect x="28" y="28" width="456" height="456" rx="56" fill="none" stroke="#C8B89A" stroke-width="2"/>
+  <!-- P large -->
+  <text x="178" y="336" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="230" font-weight="400" fill="#3A3028">P</text>
+  <!-- EI smaller -->
+  <text x="358" y="336" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="158" font-weight="400" fill="#3A3028" letter-spacing="-2">EI</text>
+  <!-- dot accent -->
+  <circle cx="256" cy="410" r="8" fill="#C8B89A"/>
+</svg>
