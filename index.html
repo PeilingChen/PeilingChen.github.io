@@ -206,12 +206,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero-crm{background:linear-gradient(145deg,#111 0%,#222 50%,#3a3a3a 100%);}
   .hero-tbs{background:linear-gradient(145deg,#111 0%,#222 50%,#3a3a3a 100%);}
   .card-thumb-tbs{background:linear-gradient(135deg,#1a1a1a 0%,#2e2e2e 50%,#444 100%);}
+  .hero-tpe{background:linear-gradient(145deg,#111 0%,#222 50%,#3a3a3a 100%);}
+  .card-thumb-tpe{background:linear-gradient(135deg,#1a1a1a 0%,#2e2e2e 50%,#444 100%);}
   .project-hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.35;display:block;}
   .project-hero-text{z-index:2;}
   .project-title-main{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:20px;}
   .project-meta-block{display:flex;flex-direction:column;gap:10px;}
   .meta-year{font-size:15px;color:rgba(245,240,232,0.55);letter-spacing:0.12em;}
   .project-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+  .text-highlight{background:var(--brown);padding:2px 6px;border-radius:3px;font-weight:500;color:var(--cream);}
   .color-swatch{display:inline-flex;align-items:center;padding:3px 12px 3px 10px;border-radius:20px;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#fff;margin:4px 6px 4px 0;gap:6px;}
   .color-swatch::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;filter:brightness(1.6);}
   .chip{font-size:13px;letter-spacing:0.1em;color:rgba(245,240,232,0.85);background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;}
@@ -429,7 +432,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="work-card" data-action="project" data-project="tbs">
       <div class="card-thumb card-thumb-tbs">
         <div class="card-thumb-inner">
-          <img src="img/tbs/00.png" alt="臺北轉運站 Redesign" class="card-thumb-cover">
+          <img src="img/tbs/00.png" alt="臺北轉運站 App Redesign" class="card-thumb-cover">
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="0.8">
             <rect x="8" y="14" width="64" height="52" rx="3"/>
             <rect x="18" y="24" width="44" height="8" rx="2"/>
@@ -439,10 +442,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-title">臺北轉運站 Redesign</div>
+        <div class="card-title">臺北轉運站 App Redesign</div>
         <div class="card-year">2022</div>
         <div class="card-tags">
           <span class="tag">#Redesign</span><span class="tag">#2C</span><span class="tag">#UX</span><span class="tag">#UI</span><span class="tag">#訪談</span>
+        </div>
+        <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+      </div>
+    </div>
+    <div class="work-card" data-action="project" data-project="tpe">
+      <div class="card-thumb card-thumb-tpe">
+        <div class="card-thumb-inner">
+          <img src="img/tpe/00.png" alt="台北說書人 & 城市特調" class="card-thumb-cover">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="0.8">
+            <circle cx="40" cy="32" r="16"/>
+            <path d="M28 50q12 8 24 0"/>
+            <path d="M22 60h36"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">台北說書人 &amp; 城市特調網站</div>
+        <div class="card-year">2020 — 2021</div>
+        <div class="card-tags">
+          <span class="tag">#2C</span><span class="tag">#網站</span><span class="tag">#UX</span><span class="tag">#UI</span><span class="tag">#PM</span><span class="tag">#BD</span><span class="tag">#從0到1</span>
         </div>
         <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
       </div>
@@ -569,7 +592,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="proj-section">
       <div class="proj-section-title">專案背景</div>
       <div class="bg-block"><div class="bg-subtitle">簡介</div><p class="prose">Panasonic 於 2024 年推出全新會員分級制度，並整合線上線下會員服務，包含電商、門市等多通路體驗，打造完整的會員生態系。我負責會員網站改版，並在上線後持續透過研究與數據，優化會員經營策略。</p></div>
-      <div class="bg-block"><div class="bg-subtitle">任務</div><div class="prose"><ul><li><strong>C 端前台網頁：</strong>會員中心、點數兌換與訂單、心得投稿系統、線上報修表單等。</li><li><strong>B 端後台管理系統：</strong>針對前台客戶需求建置首頁輪播、活動頁面、點數兌換訂單、問卷系統、心得審核等管理單元，以及文章上稿、訊息通知等 CMS 模組。</li><li><strong>多元研究與策略：</strong>從消費者與經銷商的角度，多方探索會員服務與消費體驗。在競爭激烈的家電市場中，增加 Panasonic 的會員黏著度與品牌忠誠度。</li></ul></div></div>
+      <div class="bg-block"><div class="bg-subtitle">任務</div><div class="prose"><ul><li><strong class="text-highlight">C 端前台網頁：</strong>會員中心、點數兌換與訂單、心得投稿系統、線上報修表單等。</li><li><strong class="text-highlight">B 端後台管理系統：</strong>針對前台客戶需求建置首頁輪播、活動頁面、點數兌換訂單、問卷系統、心得審核等管理單元，以及文章上稿、訊息通知等 CMS 模組。</li><li><strong class="text-highlight">多元研究與策略：</strong>從消費者與經銷商的角度，多方探索會員服務與消費體驗。在競爭激烈的家電市場中，增加 Panasonic 的會員黏著度與品牌忠誠度。</li></ul></div></div>
       <div class="bg-block"><div class="bg-subtitle">挑戰</div><div class="prose"><ul><li>多方利害關係人（客戶高層和行銷、IT、服務、經銷商等多個單位）</li><li>線上與線下整合（OMO）</li><li>複雜系統與法規限制下優化體驗與提升轉換</li></ul></div></div>
       <div class="bg-block"><div class="bg-subtitle">使用者 &amp; 利害關係人</div><p class="prose">消費者（C 端前台用戶）、經銷商、Panasonic 內部行銷 / 服務 / IT 等多個部門，以及客戶高層。</p></div>
     </div>
@@ -579,10 +602,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="bg-block"><div class="bg-subtitle">體驗設計（2023 - 2025）</div><div class="prose"><ul><li>梳理複雜流程、規劃資訊架構、Flowchart、Wireframe、UI flow、Prototype</li><li>撰寫 Spec</li><li>進行 UAT 測試</li><li>和 UI 設計師、工程師、業務團隊協作</li><li>製作簡報、向客戶提案</li></ul></div></div>
       <div class="bg-block"><div class="bg-subtitle">體驗研究（2024 - 2025）</div><div class="prose"><ul><li>規劃並執行易用性測試、一對一訪談、焦點團體訪談、利害關係人（經銷商）訪談等質化研究</li><li>進行問卷調查、觀察會員網站的 GA 數據等量化研究</li><li>分析、擬定策略與建議，撰寫報告</li></ul></div></div>
       <div class="process-heading">洞察與決策</div>
-      <div class="insight-item"><div class="insight-title">融入商業目標</div><div class="insight-body"><p class="prose">增加會員數量與活躍度是專案的重要目標，因此在各種類型的使用者旅程中，規劃註冊會員的機會點，同時避免暗黑設計，在商業和體驗中取得平衡。另外，透過訪談發現，原本的會員宣傳概念較抽象而難以吸引消費者，因此建議團隊將溝通概念從點數改為具體且實惠的咖啡，使 MGM 成長至 230%。</p><img src="img/pan/01.png" alt="融入商業目標" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">數據驅動設計</div><div class="insight-body"><p class="prose">除了易用性測試，我也運用 GA 數據來輔助設計。例如透過數據找出點擊率較高的區塊，將新功能「電子票券」規劃在此處，達到宣傳效果，且方便會員快速使用。</p><img src="img/pan/02.png" alt="數據驅動設計" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">可擴展的 CMS 系統</div><div class="insight-body"><p class="prose">規劃具有一致性、擴充性的後台系統，滿足客戶持續擴增單元與管理內容的營運需求，並幫助減少約 50% 的開發時程。</p><img src="img/pan/03.png" alt="可擴展的CMS系統" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">面對資料限制的解法</div><div class="insight-body"><p class="prose">由於必須先產生投稿資料 ID，資料庫才能儲存後續的投稿內容，因此透過彈窗與流程設計，在技術限制與使用者理解之間取得平衡。</p><img src="img/pan/04.png" alt="面對資料限制的解法" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">融入商業目標</div><div class="insight-body"><p class="prose">增加會員數量與活躍度是專案的重要目標，因此在各種類型的使用者旅程中，規劃註冊會員的機會點，同時避免暗黑設計，在商業和體驗中取得平衡。另外，透過訪談發現，原本的會員宣傳概念較抽象而難以吸引消費者，因此建議團隊<span class="text-highlight">將溝通概念從點數改為具體且實惠的咖啡，使 MGM 成長至 230%。</span></p><img src="img/pan/01.png" alt="融入商業目標" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">數據驅動設計</div><div class="insight-body"><p class="prose"><span class="text-highlight">除了易用性測試，我也運用 GA 數據來輔助設計。</span>例如透過數據找出點擊率較高的區塊，將新功能「電子票券」規劃在此處，達到宣傳效果，且方便會員快速使用。</p><img src="img/pan/02.png" alt="數據驅動設計" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">可擴展的 CMS 系統</div><div class="insight-body"><p class="prose">滿足客戶持續擴增單元與管理內容的營運需求，<span class="text-highlight">規劃具有一致性、擴充性的後台系統，幫助減少約 50% 的開發時程。</span></p><img src="img/pan/03.png" alt="可擴展的CMS系統" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title">面對資料限制的解法</div><div class="insight-body"><p class="prose">由於必須先產生投稿資料 ID，資料庫才能儲存後續的投稿內容，因此透過彈窗與流程設計，<span class="text-highlight">在技術限制與使用者理解之間取得平衡</span>。</p><img src="img/pan/04.png" alt="面對資料限制的解法" class="insight-img"></div></div>
       <div class="insight-item"><div class="insight-title">Spec 文件管理</div><div class="insight-body"><p class="prose">將重複的開發規格邏輯，歸納成表格，幫助工程師快速掌握開發規則，打造簡潔的規格文件瀏覽體驗。</p><img src="img/pan/05.png" alt="Spec文件管理" class="insight-img"></div></div>
       <div class="insight-item"><div class="insight-title">將多元研究轉化為商業策略</div><div class="insight-body"><p class="prose">不僅透過會員訪談與問卷調查，探索全通路體驗，也深入第一線和經銷商進行利害關係人訪談，傾聽實務營運痛點。在商業框架下，平衡多方利益，發展出品牌、經銷商、消費者三方的共贏策略。</p><img src="img/pan/06.png" alt="將多元研究轉化為商業策略" class="insight-img"></div></div>
     </div>
@@ -615,8 +638,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="card-body">
-          <div class="card-title">臺北轉運站 Redesign</div>
+          <div class="card-title">臺北轉運站 App Redesign</div>
           <div class="card-year">2022</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+      <div class="work-card" data-action="project" data-project="tpe">
+        <div class="card-thumb card-thumb-tpe" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/tpe/00.png" alt="台北說書人" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><circle cx="40" cy="32" r="16"/><path d="M28 50q12 8 24 0"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">台北說書人 &amp; 城市特調</div>
+          <div class="card-year">2020 — 2021</div>
           <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
         </div>
       </div>
@@ -696,8 +732,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="card-body">
-          <div class="card-title">臺北轉運站 Redesign</div>
+          <div class="card-title">臺北轉運站 App Redesign</div>
           <div class="card-year">2022</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+      <div class="work-card" data-action="project" data-project="tpe">
+        <div class="card-thumb card-thumb-tpe" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/tpe/00.png" alt="台北說書人" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><circle cx="40" cy="32" r="16"/><path d="M28 50q12 8 24 0"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">台北說書人 &amp; 城市特調</div>
+          <div class="card-year">2020 — 2021</div>
           <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
         </div>
       </div>
@@ -713,7 +762,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="project-hero hero-tbs">
     <img src="img/tbs/00.png" alt="" class="project-hero-bg">
     <div class="project-hero-text">
-      <h1 class="project-title-main">臺北轉運站<br>Redesign</h1>
+      <h1 class="project-title-main">臺北轉運站<br>App Redesign</h1>
       <div class="project-meta-block">
         <div class="meta-year">2022</div>
         <div class="project-chips">
@@ -912,7 +961,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="insight-body">
           <div class="prose">
             <p><strong>改造前（左）：</strong>廣告排版擁擠、分類模糊、看不出可以右滑。購票按鈕明顯，容易忽略其他訊息。</p>
-            <p><strong>改造後（右）：</strong>版面清爽，設計常用功能區塊，商品種類一目了然。露出部分可滑動的元件，並加上縣市資訊。</p>
+            <p><strong>改造後（右）：</strong>版面清爽，設計常用功能區塊，商品種類一目了然。露出部分可滑動的元件，並加上縣市資訊。<span class="text-highlight">SUS +35.7%，NPS +60 分。</span></p>
           </div>
           <img src="img/tbs/01.png" alt="首頁改造" class="insight-img">
         </div>
@@ -1076,11 +1125,367 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
         </div>
       </div>
+      <div class="work-card" data-action="project" data-project="tpe">
+        <div class="card-thumb card-thumb-tpe" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/tpe/00.png" alt="台北說書人" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><circle cx="40" cy="32" r="16"/><path d="M28 50q12 8 24 0"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">台北說書人 &amp; 城市特調</div>
+          <div class="card-year">2020 — 2021</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
     </div>
   </div>
 
   <footer><p class="footer-tagline">Turn ambiguity into clarity.<br>Bridging user needs and business goals.</p><p>© 2026 Pei-Ling</p></footer>
 </div>
+
+
+<!-- ═══ PAGE: TPE ═══ -->
+<div class="page" id="page-tpe">
+
+  <div class="project-hero hero-tpe">
+    <img src="img/tpe/00.png" alt="" class="project-hero-bg">
+    <div class="project-hero-text">
+      <h1 class="project-title-main">台北說書人<br>&amp; 城市特調網站</h1>
+      <div class="project-meta-block">
+        <div class="meta-year">2020 — 2021</div>
+        <div class="project-chips">
+          <span class="chip">#2C</span><span class="chip">#網站</span><span class="chip">#UX</span><span class="chip">#UI</span><span class="chip">#PM</span><span class="chip">#BD</span><span class="chip">#從0到1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-content">
+
+    <!-- 成果 -->
+    <div class="proj-section">
+      <div class="proj-section-title">成果</div>
+      <div class="outcome-grid">
+        <div class="outcome-item"><p class="outcome-desc">O2O 轉換率</p><span class="outcome-num">25%</span></div>
+        <div class="outcome-item"><p class="outcome-desc">入圍決選前</p><span class="outcome-num">12%</span></div>
+      </div>
+    </div>
+
+    <!-- 專案背景 -->
+    <div class="proj-section">
+      <div class="proj-section-title">專案背景</div>
+      <div class="bg-block">
+        <div class="bg-subtitle">簡介</div>
+        <p class="prose">可瀏覽、分享在地故事與旅遊資訊的平台，有趣的特調遊戲，並結合在地的手搖飲優惠券！</p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">任務</div>
+        <div class="prose"><ul><li>運用設計思考，解決「認為：人與地方的連結很重要——想要幫助年輕人，從旅遊資訊中認識地方故事。」的 HMW。</li><li>從 0 到 1，發展台北說書人與城市特調 Citea 的創意策略，把對在地的感覺融入台灣特色—手搖飲，打造網站 Prototype。</li></ul></div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">挑戰</div>
+        <div class="prose">
+          <ul>
+            <li>創造現有社群媒體無法取代的獨特性與誘因</li>
+            <li>滿足使用者與各方利害關係人的需求</li>
+            <li>陌生開發在地店家作為 O2O 機制夥伴</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle">使用者 &amp; 利害關係人</div>
+        <div class="prose">
+          <ul>
+            <li>具有認識在地意願的族群</li>
+            <li>內容創作者</li>
+            <li>在地店家（成功提案並合作）</li>
+            <li>Flytech 基金會（提供經費資源）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 設計過程 -->
+    <div class="proj-section">
+      <div class="proj-section-title">設計過程</div>
+
+      <div class="process-heading">現況分析</div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">背景研究</div>
+        <div class="prose">
+          <p>從背景研究發現以下趨勢：</p>
+          <ul>
+            <li><strong>探索在地：</strong>深度體驗的「偽在地人」旅遊型態攻佔旅人的心！旅客越來越放心探索居住地附近的地方，當地小旅行的新趨勢也逐漸成為人氣之選。</li>
+            <li><strong>深度小旅行：</strong>深度且高品質的小旅行方式，受到旅客歡迎。52% 的台灣旅客計畫安排更多週末小旅行。而輕旅行也能隨著旅客的需求更加彈性與個人化。</li>
+            <li><strong>渴望旅遊：</strong>64% 的台灣受訪者，對探索世界展現出比以往更強烈的渴望。45% 的人未來想要以報復性旅遊的方式，以追回 2020 年錯失的旅行時光！</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">訪談與問卷</div>
+        <div class="prose">
+          <p>從訪談、問卷發現年輕族群：</p>
+          <ul>
+            <li><strong>對在地好奇：</strong>91.7% 的 TA 喜歡和當地貼近的感覺，92.3% 的 TA 想嘗試在旅行中更認識在地，95.5% 的 TA 在旅行過程中常對當地保持好奇心。</li>
+            <li><strong>認識地方不輕鬆：</strong>TA 在訪談中提到，認識地方雖然有意義，但較讓人感到耗時、耗心力。此為最重、最普遍的痛點。</li>
+            <li><strong>旅遊資訊的需求：</strong>93% 的 TA 希望能找到一些在地人推薦的資訊，卻只有 32.6% 的 TA 的需求被滿足。而 49.5% 的 TA 認為私房景點的資訊不多、不易收集。</li>
+          </ul>
+        </div>
+        
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">競品分析</div>
+        <div class="prose">
+          <ul>
+            <li><strong>微笑台灣：</strong>透過廣告刊登、雜誌訂閱、微笑選品等方式營利。以電子和紙本記錄台灣在地美好，也有製作 podcast。雜誌專欄與投稿門檻較高。</li>
+            <li><strong>社群媒體：</strong>商業模式較不一，最常見為 KOL 行銷，但也有無收益的純分享。社群軟體普遍，門檻較低，但資訊較雜。其中社團交流特別有 bottom-up 的精神。</li>
+            <li><strong>島內散步：</strong>以導覽起家，也有企業活動、國際交流、品牌合作等服務。可客製行程，具有獨特深入的在地體驗。近年更結合科技，推出雲端散步。</li>
+            <li><strong>Airbnb：</strong>短期租屋與販售體驗的平台，也提供房東保險的服務。將閒置房源轉為共享經濟，是全球成功的商業模式之一。</li>
+          </ul>
+        </div>
+        
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">目標族群</div>
+        <p class="prose"><strong>Persona Matrix：</strong>TA 為有認識在地意願、旅行實踐的「在地旅遊家」。</p>
+        <img src="img/tpe/pm.svg" alt="Persona Matrix" class="insight-img" style="margin-top:16px;">
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">Persona</div>
+
+        <div style="margin-bottom:28px;">
+          <p class="prose"><strong>阿豪，22 歲大學生</strong></p>
+          <p class="prose" style="font-style:italic;color:var(--brown);margin-top:4px;">「如果景點有故事，造訪時能更有感覺，例如這條街誰走過、發生什麼事。」</p>
+          <div class="prose" style="margin-top:16px;">
+            <ul>
+              <li><strong>爽點：</strong>較喜歡靜態的故事傳遞媒介（例如展覽），可以讓他感到自在。</li>
+              <li><strong>痛點：</strong>重視與朋友的互動、話題。認識在地、和朋友相處，可能會有時間上的衝突。</li>
+            </ul>
+          </div>
+          <img src="img/tpe/22.png" alt="阿豪 Persona" class="insight-img" style="margin-top:16px;">
+        </div>
+
+        <div style="margin-bottom:28px;">
+          <p class="prose"><strong>邱邱，24 歲碩士生</strong></p>
+          <p class="prose" style="font-style:italic;color:var(--brown);margin-top:4px;">「還記得那次的居民導覽，不但更認識在地，而且那份感動一直在我心裡。」</p>
+          <div class="prose" style="margin-top:16px;">
+            <ul>
+              <li><strong>爽點：</strong>喜歡體驗在地、和當地人互動，走進他們的世界！</li>
+              <li><strong>痛點：</strong>認識在地需耗神，如果外務、課業太繁忙時，疲憊感會讓人不想出門。</li>
+            </ul>
+          </div>
+          <img src="img/tpe/24.png" alt="邱邱 Persona" class="insight-img" style="margin-top:16px;">
+        </div>
+
+        <div>
+          <p class="prose"><strong>小黃，27 歲上班族</strong></p>
+          <p class="prose" style="font-style:italic;color:var(--brown);margin-top:4px;">「平常上班這麼累，週末就是要來趟小旅行啊！等不及要探索這座城市了！」</p>
+          <div class="prose" style="margin-top:16px;">
+            <ul>
+              <li><strong>爽點：</strong>喜歡探索，也喜歡美食。身為小資族，如果得到優惠，會更吸引他。</li>
+              <li><strong>痛點：</strong>有時缺乏探索在地的資訊管道，認為網路找到的景點常常太大眾或無趣。</li>
+            </ul>
+          </div>
+          <img src="img/tpe/27.png" alt="小黃 Persona" class="insight-img" style="margin-top:16px;">
+        </div>
+      </div>
+
+      <div class="process-heading">洞察整理</div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">三大洞察</div>
+        <div class="prose">
+          <ul>
+            <li><strong>需求：認識地方</strong> — 根據背景研究與問卷、訪談，發現 TA 對在地感到好奇，有認識地方、旅遊資訊的需求。</li>
+            <li><strong>痛點：耗神</strong> — TA 表示，認識地方有時很耗神，某些現有解方很枯燥。另外，發現 TA 喜歡新奇創意的事物、手搖飲、優惠等。</li>
+            <li><strong>需求：使用彈性</strong> — 關於認識在地的時機，部分 TA 傾向在旅遊中，但也有部分 TA 希望在旅遊前後或等朋友的空閒時間。另外根據研究，使用手機上網的民眾佔比 85%。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">三大目標</div>
+        <div class="prose">
+          <ul>
+            <li><strong>連結在地：</strong>產品需包含地方資訊、在地旅遊資訊等，來滿足 TA 需求。</li>
+            <li><strong>新奇有趣：</strong>透過趣味性來減輕 TA 痛點，吸引年輕族群。並且融入 TA 喜歡的元素。</li>
+            <li><strong>彈性方便：</strong>產品需減少時間、空間的障礙，並依據使用趨勢，以方便性為主，提升使用的彈性。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">設計方向</div>
+        <div class="prose">
+          <ul>
+            <li><strong>台北說書人：</strong>線上為可瀏覽、分享在地與旅遊資訊的平台。線下則結合特調優惠券，增加使用者走入在地的機會。</li>
+            <li><strong>城市特調：</strong>將具有台灣特色且受到 TA 喜愛的手搖飲，轉換為對在地的感覺，並且結合商業合作，發放在地飲品優惠券，行銷在地、店家、平台內容。</li>
+            <li><strong>初期：平台網站：</strong>產品定位為線上平台。裝置則以手機為主，電腦為輔。產品開發初期，先以網站為主。可降低開發和維護成本，並善用 SEO。並利用現有技術消除與 App 之間的差距（例如將網頁捷徑加到手機桌布）。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-heading">設計決策</div>
+
+      <div class="insight-item">
+        <div class="insight-title">首頁：可瀏覽、分享在地故事與旅遊資訊</div>
+        <div class="insight-body">
+          <div class="prose">
+            <ul>
+              <li><strong>同理用戶：</strong>搜尋欄固定上方，方便查找。</li>
+              <li><strong>商業策略：</strong>使用固定的懸浮按鈕，提升發文動機。為降低跳出率，將內容來源規劃在關於頁。</li>
+            </ul>
+          </div>
+          <img src="img/tpe/01.png" alt="首頁設計" class="insight-img">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title">發文：可使用文字、相片、影片、聲音來發布</div>
+        <div class="insight-body">
+          <div class="prose">
+            <ul>
+              <li><strong>同理用戶：</strong>提供多元的表達方式，並減少步驟，將發文濃縮成一頁，讓發文更容易。</li>
+              <li><strong>商業策略：</strong>右側 ✔ 較左側 ✖ 的線條更粗，引導使用者完成發文。</li>
+            </ul>
+          </div>
+          <img src="img/tpe/02.png" alt="發文設計" class="insight-img">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title">我的特調：有趣的特調和在地飲品優惠券</div>
+        <div class="insight-body">
+          <div class="prose">
+            <ul>
+              <li><strong>同理用戶：</strong>當特調 Icon 被點擊，會切換 Icon 狀態，讓使用者知道自己目前位於城市特調。</li>
+              <li><strong>商業策略：</strong><span class="text-highlight">行銷在地、店家、平台內容，並且透過優惠券 O2O 制度，將線上流量導到實體店家，轉換率 25%。</span></li>
+              <li><strong>利害關係：</strong>將訪談中挖掘到的店家需求轉化到解方中。</li>
+            </ul>
+          </div>
+          <img src="img/tpe/03.png" alt="我的特調設計" class="insight-img">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title">調製特調：調出屬於你的台北，看見更多故事</div>
+        <div class="insight-body">
+          <div class="prose">
+            <ul>
+              <li><strong>同理用戶：</strong>顯示進度條，讓使用者知道自己目前處於哪個步驟。</li>
+              <li><strong>商業策略：</strong>增加曝光，推薦使用者瀏覽平台內容。</li>
+              <li><strong>融入創意：</strong>把對在地的感覺結合手搖飲，既新奇有趣，又融入台灣特色。</li>
+            </ul>
+          </div>
+          <img src="img/tpe/04.png" alt="調製特調設計" class="insight-img">
+        </div>
+      </div>
+
+      <div class="process-heading">設計規範</div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">設計原則</div>
+        <div class="prose">
+          <ul>
+            <li><strong>品牌概念：</strong>以色彩帶出「在地」、「茶飲」的概念。並在說書的介面設計加上對話框，以引號來傳達「說書」的概念。</li>
+            <li><strong>介面簡單：</strong>我將平台結構簡單化、觸點最少化，使介面設計清楚易瞭。讓使用者體驗更友善、降低學習成本。</li>
+            <li><strong>風格年輕：</strong>比較 TA 常用的產品後，把介面設計得更貼近 TA 熟悉的風格。並加入亮色漸層、毛玻璃等流行元素，吸引 TA。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">色彩</div>
+        <div style="margin-top:4px;">
+          <span class="color-swatch" style="background:#724E39;">#724E39 在地棕（主要色）</span>
+          <span class="color-swatch" style="background:#598214;">#598214 特調綠（次要色）</span>
+        </div>
+      </div>
+
+      <div class="bg-block">
+        <div class="bg-subtitle">字體</div>
+        <div class="prose">
+          <ul>
+            <li><strong>中文：</strong>思源黑體</li>
+            <li><strong>英文：</strong>Roboto</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 反思 -->
+    <div class="proj-section">
+      <div class="proj-section-title">反思</div>
+      <div class="reflection-item">
+        <div class="reflection-title">設計思考非線性步驟</div>
+        <p class="prose">一開始學到設計思考的步驟是「同理、定義、發想、原型、測試」，回頭整理專案的時候有點卡住，感覺有些東西難以被特定分類到單一步驟。在前輩的分享中，聽到設計思考不是線性，而是反覆的過程。這解開了我的困惑，也提醒我要把設計思考當成一種思維，帶著同理心、勇於嘗試的精神活用它。</p>
+      </div>
+      <div class="reflection-item">
+        <div class="reflection-title">Scope Creep</div>
+        <p class="prose">專案中後期，剛好遇到疫情大爆發，多了很多時間在家，讓我更想把設計做得更完整，於是不小心擴大 scope。初出茅廬，雄心壯志，什麼都想做到最好。雖然廢寢忘食的調整設計、畫 Figma 很快樂，但也讓我反思專案管理。這次專案較彈性、時間充裕，提供我探索的機會。未來應該考慮到情境和資源，更有效率、更敏捷的執行專案。</p>
+      </div>
+      <div class="reflection-item">
+        <div class="reflection-title">新的領域與挑戰</div>
+        <p class="prose">第一次深入接觸 UI/UX、設計思考和商業概念，這些都是在助人背景不太會碰到的。雖然起步有些艱難，但這一年從使用者研究到體驗設計，做了很多嘗試，也收穫滿滿！發現到好的設計背後除了貼近使用者需求，也要考量利害關係人跟技術限制，並且有商業模式支撐。</p>
+      </div>
+    </div>
+
+  </div><!-- /project-content -->
+
+  <div class="more-works-section">
+    <div class="more-works-title">瀏覽其他作品</div>
+    <div class="more-works-grid">
+      <div class="work-card" data-action="project" data-project="panasonic">
+        <div class="card-thumb card-thumb-panasonic" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/pan/00.png" alt="Panasonic" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="10" y="10" width="60" height="60" rx="2"/><rect x="20" y="20" width="18" height="14" rx="1"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Panasonic 會員研究與網站改版</div>
+          <div class="card-year">2023 — 2025</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+      <div class="work-card" data-action="project" data-project="tbs">
+        <div class="card-thumb card-thumb-tbs" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/tbs/00.png" alt="臺北轉運站" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="8" y="14" width="64" height="52" rx="3"/><rect x="18" y="24" width="44" height="8" rx="2"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">臺北轉運站 App Redesign</div>
+          <div class="card-year">2022</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+      <div class="work-card" data-action="project" data-project="crm">
+        <div class="card-thumb card-thumb-crm" style="aspect-ratio:4/3;">
+          <div class="card-thumb-inner">
+            <img src="img/nl/00.png" alt="新聯陽 CRM" class="card-thumb-cover">
+            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="8" y="16" width="64" height="48" rx="2"/><line x1="8" y1="24" x2="72" y2="24"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">新聯陽 CRM 系統迭代</div>
+          <div class="card-year">2025</div>
+          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer><p class="footer-tagline">Turn ambiguity into clarity.<br>Bridging user needs and business goals.</p><p>© 2026 Pei-Ling</p></footer>
+</div>
+
 
 
 <script>
@@ -1131,7 +1536,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* Restore from URL hash */
   var hash = location.hash.replace('#', '');
-  if (hash === 'panasonic' || hash === 'crm' || hash === 'tbs') {
+  if (hash === 'panasonic' || hash === 'crm' || hash === 'tbs' || hash === 'tpe') {
     history.replaceState({ project: hash }, '', location.hash);
     showPage(hash);
   }
