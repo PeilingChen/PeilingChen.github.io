@@ -116,7 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .card-thumb-cover{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block;}
   .card-thumb-inner svg{position:relative;z-index:0;opacity:0.4;}
   .card-body{padding:28px 28px 24px;display:flex;flex-direction:column;gap:12px;}
-  .card-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--cream);line-height:1.3;white-space:normal;word-break:break-word;}
+  .card-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--cream);line-height:1.3;white-space:normal;word-break:break-word;min-height:3.9em;display:flex;align-items:flex-start;}
   .card-year{font-size:13px;color:var(--taupe);letter-spacing:0.08em;margin-top:4px;}
   .card-tags{display:flex;flex-wrap:wrap;gap:6px;}
   .tag{font-size:12px;letter-spacing:0.1em;color:var(--sand);background:rgba(180,165,145,0.12);padding:3px 8px;border:1px solid rgba(180,165,145,0.25);}
@@ -330,6 +330,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     line-height:1.7; margin-top:8px;
   }
 
+
+  /* ── EN hide (elements hidden in EN mode) ── */
+  body.lang-en .en-hide { display:none !important; }
+
+  /* ── Language Toggle ── */
+  .lang-toggle {
+    display:flex; align-items:center; gap:0;
+    background:rgba(180,165,145,0.15);
+    border:1px solid rgba(180,165,145,0.35);
+    border-radius:20px; overflow:hidden;
+    flex-shrink:0; margin-left:24px;
+  }
+  .lang-btn {
+    font-size:11px; font-weight:500; letter-spacing:0.12em;
+    padding:5px 12px; border:none; background:transparent;
+    cursor:pointer; color:var(--mid-gray);
+    transition:background 0.2s, color 0.2s;
+    font-family:'DM Sans',sans-serif;
+  }
+  .lang-btn.active {
+    background:var(--brown); color:var(--cream);
+    border-radius:20px;
+  }
+  .lang-btn:hover:not(.active) { color:var(--accent); }
+
+
+  /* ── EN hide (elements hidden in EN mode) ── */
+  body.lang-en .en-hide { display:none !important; }
+
+  /* ── Language Toggle ── */
+  .lang-toggle {
+    display:flex; align-items:center; gap:0;
+    border:1px solid rgba(124,104,85,0.4); border-radius:20px;
+    overflow:hidden; flex-shrink:0; margin-left:8px;
+    list-style:none; padding:0;
+  }
+  .lang-btn {
+    font-size:11px; font-weight:500; letter-spacing:0.12em;
+    padding:5px 12px; cursor:pointer; border:none; background:transparent;
+    color:var(--charcoal); transition:background 0.2s, color 0.2s;
+    font-family:'DM Sans',sans-serif;
+  }
+  .lang-btn.active {
+    background:var(--brown); color:var(--cream);
+  }
+  .lang-btn:not(.active):hover {
+    background:var(--cream-dark);
+  }
 </style>
 </head>
 <body>
@@ -345,6 +393,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#" data-action="section" data-section="work">Work</a></li>
     <li><a href="#" data-action="section" data-section="about">About</a></li>
     <li><a href="#" data-action="section" data-section="contact">Cont</a></li>
+    <li class="lang-toggle" id="langToggle">
+      <button class="lang-btn active" id="btnZH" data-action="lang" data-lang="zh">中文</button>
+      <button class="lang-btn" id="btnEN" data-action="lang" data-lang="en">EN</button>
+    </li>
   </ul>
   <div class="hamburger" data-action="menu-open"><span></span><span></span><span></span></div>
 </nav>
@@ -360,9 +412,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HEADER -->
 <section id="home">
   <div class="header-text">
-    <div class="header-role">Product Designer</div>
+    <div class="header-role"><span data-zh="產品設計師" data-en="Product Designer">產品設計師</span></div>
     <h1 class="header-name">PEILING<br>CHEN</h1>
-    <p class="header-bio">珮翎擁有心理學術背景，以及 3+ 年 UX 研究、UX/UI 設計、網頁開發、專案管理的經驗。</p>
+    <p class="header-bio" data-zh="珮翎擁有心理學術背景，以及 3+ 年 UX 研究、UX/UI 設計、網頁開發、專案管理的經驗。" data-en="has an academic background in Psychology and 3+ years of experience in UX research, UX/UI design, web development, and project management.">珮翎擁有心理學術背景，以及 3+ 年 UX 研究、UX/UI 設計、網頁開發、專案管理的經驗。</p>
   </div>
   <div class="header-image-col">
     <div class="image-frame">
@@ -378,7 +430,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- WORK -->
 <section id="work">
-  <div class="section-label">HOW I MADE IT</div>
+  <div class="section-label" data-zh="HOW I MADE IT" data-en="HOW I MADE IT">HOW I MADE IT</div>
   <h2 class="section-title">WORK</h2>
   <div class="work-grid">
     <div class="work-card" data-action="project" data-project="panasonic">
@@ -395,16 +447,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-title">Panasonic 會員研究與網站改版</div>
+        <div class="card-title" data-zh="Panasonic 會員研究與網站改版" data-en="Panasonic Membership Research &amp; Website Redesign">Panasonic 會員研究與網站改版</div>
         <div class="card-year">2023 — 2025</div>
         <div class="card-tags">
-          <span class="tag">#2B</span><span class="tag">#2C</span><span class="tag">#網站</span>
-          <span class="tag">#後台系統</span><span class="tag">#UX</span><span class="tag">#訪談</span><span class="tag">#GA數據</span>
+          <span class="tag">#B2B</span><span class="tag">#B2C</span><span class="tag">#Web</span><span class="tag">#CMS</span><span class="tag">#UX</span><span class="tag">#Interview</span><span class="tag">#GA</span>
         </div>
-        <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
       </div>
     </div>
-    <div class="work-card" data-action="project" data-project="crm">
+    <div class="work-card en-hide" data-action="project" data-project="crm">
       <div class="card-thumb card-thumb-crm">
         <div class="card-thumb-inner">
           <img src="img/nl/00.png" alt="新聯陽 CRM Project" class="card-thumb-cover">
@@ -420,16 +471,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-title">新聯陽 CRM 系統迭代</div>
+        <div class="card-title" data-zh="新聯陽 CRM 系統迭代" data-en="Newland CRM System Iteration">新聯陽 CRM 系統迭代</div>
         <div class="card-year">2025</div>
         <div class="card-tags">
-          <span class="tag">#2B</span><span class="tag">#CRM</span><span class="tag">#UX</span>
-          <span class="tag">#客戶聯繫</span><span class="tag">#項目管理</span>
+          <span class="tag">#B2B</span><span class="tag">#CRM</span><span class="tag">#UX</span><span class="tag">#Client-facing</span>
         </div>
-        <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
       </div>
     </div>
-    <div class="work-card" data-action="project" data-project="tbs">
+    <div class="work-card en-hide" data-action="project" data-project="tbs">
       <div class="card-thumb card-thumb-tbs">
         <div class="card-thumb-inner">
           <img src="img/tbs/00.png" alt="臺北轉運站 App Redesign" class="card-thumb-cover">
@@ -442,15 +492,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-title">臺北轉運站 App Redesign</div>
+        <div class="card-title" data-zh="臺北轉運站 App Redesign" data-en="Taipei Bus Station (TBS) App Redesign">臺北轉運站 App Redesign</div>
         <div class="card-year">2022</div>
         <div class="card-tags">
-          <span class="tag">#Redesign</span><span class="tag">#2C</span><span class="tag">#UX</span><span class="tag">#UI</span><span class="tag">#訪談</span>
+          <span class="tag">#Redesign</span><span class="tag">#2C</span><span class="tag">#UX</span><span class="tag">#UI</span><span class="tag">#Interview</span>
         </div>
-        <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
       </div>
     </div>
-    <div class="work-card" data-action="project" data-project="tpe">
+    <div class="work-card en-hide" data-action="project" data-project="tpe">
       <div class="card-thumb card-thumb-tpe">
         <div class="card-thumb-inner">
           <img src="img/tpe/00.png" alt="台北說書人 & 城市特調" class="card-thumb-cover">
@@ -462,12 +512,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-title">台北說書人 &amp; 城市特調網站</div>
+        <div class="card-title" data-zh="台北說書人 &amp; 城市特調網站" data-en="Taipei Story-teller &amp; Citea Website">台北說書人 &amp; 城市特調網站</div>
         <div class="card-year">2020 — 2021</div>
         <div class="card-tags">
-          <span class="tag">#2C</span><span class="tag">#網站</span><span class="tag">#UX</span><span class="tag">#UI</span><span class="tag">#PM</span><span class="tag">#BD</span><span class="tag">#從0到1</span>
+          <span class="tag">#2C</span><span class="tag">#Web</span><span class="tag">#UX</span><span class="tag">#UI</span><span class="tag">#PM</span><span class="tag">#BD</span><span class="tag">#0 to 1</span>
         </div>
-        <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+        <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
       </div>
     </div>
   </div>
@@ -475,54 +525,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-label">Who I Am</div>
+  <div class="section-label" data-zh="關於我" data-en="Who I Am">關於我</div>
   <h2 class="section-title">ABOUT</h2>
   <div class="about-layout">
     <div class="about-left">
-      <div class="about-slogan">Designer &amp;<br>Problem Solver</div>
+      <div class="about-slogan" data-zh="Designer &amp;<br>Problem Solver" data-en="Designer &amp;<br>Problem Solver">Designer &amp;<br>Problem Solver</div>
       <div class="about-intro">
-        <p>珮翎是個積極面對挑戰、以終為始的設計師，擁有心理學術背景，以及 3+ 年 UX 研究、UX/UI 設計、網頁開發、專案管理的經驗。</p>
-        <p>服務過財星 500 大企業、非營利組織、公部門等客戶，執行 2C 網頁、2B 的 CRM 與 CMS 後台系統等專案。</p>
-        <p>珮翎不只追求使用者體驗，更致力於問題解決與回應商業需求，打造能落地、具有價值的產品及策略。</p>
+        <p data-zh="珮翎擁有心理學術背景，以及 3+ 年 UX 研究、UX/UI 設計、網頁開發的經驗。" data-en="Embrace challenges with a goal-oriented mindset. I have a background in psychology and 3+ years of experience in UX research, UX/UI design, and web development.">珮翎擁有心理學術背景，以及 3+ 年 UX 研究、UX/UI 設計、網頁開發的經驗。</p>
+        <p data-zh="服務過財星 500 大企業，也曾執行 2C 網頁、2B 的 CRM 與 CMS 後台系統等專案。" data-en="Served clients including Fortune Global 500 companies, delivering projects across websites and B2B systems.">服務過財星 500 大企業，也曾執行 2C 網頁、2B 的 CRM 與 CMS 後台系統等專案。</p>
+        <p data-zh="不只追求使用者體驗，更致力於問題解決與回應商業需求，打造能落地、具有價值的產品及策略。" data-en="">不只追求使用者體驗，更致力於問題解決與回應商業需求，打造能落地、具有價值的產品及策略。</p>
       </div>
     </div>
     <div class="about-right">
       <div class="about-section">
-        <div class="about-section-title">工作經驗</div>
+        <div class="about-section-title" data-zh="工作經驗" data-en="Work Experience">工作經驗</div>
         <div class="exp-item">
-          <div><div class="exp-role">UX Designer</div><div class="exp-company">MX Digi 創意思境｜台灣台北</div></div>
+          <div><div class="exp-role">UX Designer</div><div class="exp-company" data-zh="MX Digi 創意思境｜Taipei, Taiwan" data-en="MX Digi｜Taipei, Taiwan">MX Digi 創意思境｜Taipei, Taiwan</div></div>
           <div class="exp-period">2023 — 2025</div>
           <ul class="exp-desc">
-            <li><span class="exp-key exp-key-block">體驗設計</span>梳理流程，規劃資訊架構、Wireframe、Prototype，撰寫 Spec，進行 UAT 測試，和設計師、工程師、業務團隊協作，幫助系統提升約 66% 的資料傳送效能。</li>
-            <li><span class="exp-key exp-key-block">體驗研究</span>規劃並執行使用者訪談、焦點團體訪談、利害關係人訪談等質化研究。進行問卷調查、設定 GTM 與追蹤 GA 數據。分析並擬定策略與建議，撰寫報告，幫助品牌 MGM 提升至 230%。</li>
-            <li><span class="exp-key exp-key-block">客戶聯繫與提案</span>釐清客戶需求，發展解方與策略，以及製作簡報，向客戶提案。</li>
-            <li><span class="exp-key exp-key-block">專案管理</span>制定專案時程，召集會議，帶領團隊執行專案，交付成果。</li>
-            <li><span class="exp-key exp-key-block">設計營運</span>打造具擴充性且易維護的後台 Wireframe 設計系統與範本。將 Spec 文件模組化，優化設計工作流程。</li>
+            <li><span class="exp-key exp-key-block" data-zh="體驗設計" data-en="UX Design">體驗設計</span><span data-zh="梳理流程，規劃資訊架構、Wireframe、Prototype，撰寫 Spec，進行 UAT 測試，和設計師、工程師、業務團隊協作，幫助系統提升約 66% 的資料傳送效能。" data-en="Mapped user flows, defined information architecture, created wireframes and prototypes, wrote specs, conducted UAT, and collaborated with designers, engineers, and the business team — helping improve system data transmission efficiency by approximately 66%.">梳理流程，規劃資訊架構、Wireframe、Prototype，撰寫 Spec，進行 UAT 測試，和設計師、工程師、業務團隊協作，幫助系統提升約 66% 的資料傳送效能。</span></li>
+            <li><span class="exp-key exp-key-block" data-zh="體驗研究" data-en="UX Research">體驗研究</span><span data-zh="規劃並執行使用者訪談、焦點團體訪談、利害關係人訪談等質化研究。進行問卷調查、設定 GTM 與追蹤 GA 數據。分析並擬定策略與建議，撰寫報告，幫助品牌 MGM 提升至 230%。" data-en="Planned and conducted user interviews, focus group interviews, and stakeholder interviews. Ran surveys, set up GTM, and tracked GA data. Analyzed findings, developed strategies, and wrote reports — helping grow brand MGM to 230%.">規劃並執行使用者訪談、焦點團體訪談、利害關係人訪談等質化研究。進行問卷調查、設定 GTM 與追蹤 GA 數據。分析並擬定策略與建議，撰寫報告，幫助品牌 MGM 提升至 230%。</span></li>
+            <li><span class="exp-key exp-key-block" data-zh="客戶聯繫與提案" data-en="Client Communication &amp; Presentation">客戶聯繫與提案</span><span data-zh="釐清客戶需求，發展解方與策略，以及製作簡報，向客戶提案。" data-en="Clarified client requirements, developed solutions, and presented to clients.">釐清客戶需求，發展解方與策略，以及製作簡報，向客戶提案。</span></li>
+            <li><span class="exp-key exp-key-block" data-zh="專案管理" data-en="Project Management">專案管理</span><span data-zh="制定專案時程，召集會議，帶領團隊執行專案，交付成果。" data-en="Defined project timelines, facilitated meetings, led teams in project execution, and delivered outcomes.">制定專案時程，召集會議，帶領團隊執行專案，交付成果。</span></li>
+            <li><span class="exp-key exp-key-block" data-zh="設計營運" data-en="Design Operations">設計營運</span><span data-zh="打造具擴充性且易維護的後台 Wireframe 設計系統與範本。將 Spec 文件模組化，優化設計工作流程。" data-en="Built a scalable and maintainable backend wireframe design system and templates.">打造具擴充性且易維護的後台 Wireframe 設計系統與範本。將 Spec 文件模組化，優化設計工作流程。</span></li>
           </ul>
         </div>
         <div class="exp-item">
-          <div><div class="exp-role">Contract UX</div><div class="exp-company">有心肉舖子｜台灣台中</div></div>
+          <div><div class="exp-role">Contract UX</div><div class="exp-company" data-zh="Withheart Meat Shop 有心肉舖子｜Taichung, Taiwan" data-en="Withheart Meat Shop｜Taichung, Taiwan">Withheart Meat Shop 有心肉舖子｜Taichung, Taiwan</div></div>
           <div class="exp-period">2021 — 2022</div>
           <ul class="exp-desc">
-            <li><span class="exp-key exp-key-block">體驗研究與設計</span>改善有心溯源平台的資料登錄體驗，提升流程效率至 200%。規劃資料登錄半自動化、迭代部分 UI 與 UX 文案，涉及 ERP、CMS、API。</li>
-            <li><span class="exp-key exp-key-block">專案管理</span>管理專案，產出並迭代簡易 PRD。</li>
+            <li><span class="exp-key exp-key-block" data-zh="體驗研究與設計" data-en="UX Research &amp; Design">體驗研究與設計</span><span data-zh="改善有心溯源平台的資料登錄體驗，提升流程效率至 200%。規劃資料登錄半自動化、迭代部分 UI 與 UX 文案，涉及 ERP、CMS、API。" data-en="Improved the data entry experience on the Agriproduct traceability platform, boosting process efficiency to 200%. Designed semi-automated process, iterated UI and UX copywriting.">改善有心溯源平台的資料登錄體驗，提升流程效率至 200%。規劃資料登錄半自動化、迭代部分 UI 與 UX 文案，涉及 ERP、CMS、API。</span></li>
+            <li><span class="exp-key exp-key-block" data-zh="專案管理" data-en="Project Management">專案管理</span><span data-zh="管理專案，產出並迭代簡易 PRD。" data-en="Managed the project and produced the PRD.">管理專案，產出並迭代簡易 PRD。</span></li>
           </ul>
         </div>
         <div class="exp-item">
-          <div><div class="exp-role">研究助理</div><div class="exp-company">UC Irvine｜美國加州</div></div>
+          <div><div class="exp-role" data-zh="研究助理" data-en="Research Assistant">Research Assistant</div><div class="exp-company" data-zh="UC Irvine｜California, USA" data-en="UC Irvine｜California, USA">UC Irvine｜California, USA</div></div>
           <div class="exp-period">2019</div>
           <ul class="exp-desc">
-            <li><span class="exp-key exp-key-block">訪談演練</span></li>
-            <li><span class="exp-key exp-key-block">問卷校閱</span></li>
+            <li><span class="exp-key exp-key-block" data-zh="訪談演練" data-en="Qualitative Interview Rehearsal">訪談演練</span></li>
+            <li><span class="exp-key exp-key-block" data-zh="問卷校閱" data-en="Questionnaire Proofreading">問卷校閱</span></li>
           </ul>
         </div>
       </div>
       <div class="about-section">
-        <div class="about-section-title">其他經驗</div>
-        <div class="other-item"><span class="other-role">發起人 &amp; 講者｜Figma 教學計畫</span><span class="other-meta-wrap">2024 — 2025</span></div>
-        <div class="other-item"><span class="other-role">志工｜UXTW 台灣使用者經驗設計協會</span><span class="other-meta-wrap">2022 — 2024</span></div>
-        <div class="other-item"><span class="other-role">社員｜台灣大學 Design Thinking 社團</span><span class="other-meta-wrap">2022 — 2023</span></div>
-        <div class="other-item"><span class="other-role">入圍決賽｜第 5 屆 Design for Taiwan</span><span class="other-meta-wrap">2020 — 2021</span></div>
+        <div class="about-section-title" data-zh="其他經驗" data-en="Other Experience">其他經驗</div>
+        <div class="other-item"><span class="other-role" data-zh="發起人 &amp; 講者｜Figma 教學計畫" data-en="Founder &amp; Speaker｜Figma Tutorial Program">發起人 &amp; 講者｜Figma 教學計畫</span><span class="other-meta-wrap">2024 — 2025</span></div>
+        <div class="other-item"><span class="other-role" data-zh="志工｜UXTW 台灣使用者經驗設計協會" data-en="Volunteer｜UXTW">志工｜UXTW 台灣使用者經驗設計協會</span><span class="other-meta-wrap">2022 — 2024</span></div>
+        <div class="other-item"><span class="other-role" data-zh="社員｜台灣大學 Design Thinking 社團" data-en="Member｜NTU Design Thinking Club">社員｜台灣大學 Design Thinking 社團</span><span class="other-meta-wrap">2022 — 2023</span></div>
+        <div class="other-item"><span class="other-role" data-zh="入圍決賽｜第 5 屆 Design for Taiwan" data-en="Finalist｜5th Design for Taiwan">入圍決賽｜第 5 屆 Design for Taiwan</span><span class="other-meta-wrap">2020 — 2021</span></div>
       </div>
     </div>
   </div>
@@ -569,149 +619,199 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="project-hero hero-panasonic">
     <img src="img/pan/00.png" alt="" class="project-hero-bg">
     <div class="project-hero-text">
-      <h1 class="project-title-main">Panasonic<br>會員研究與<br>網站改版</h1>
+      <h1 class="project-title-main" data-zh="Panasonic<br>會員研究與<br>網站改版" data-en="Panasonic<br>Membership Research<br>&amp; Website Redesign">Panasonic<br>會員研究與<br>網站改版</h1>
       <div class="project-meta-block">
         <div class="meta-year">2023 — 2025</div>
         <div class="project-chips">
-          <span class="chip">#2B</span><span class="chip">#2C</span><span class="chip">#網站</span>
-          <span class="chip">#後台系統</span><span class="chip">#UX</span><span class="chip">#訪談</span><span class="chip">#GA數據</span>
+          <span class="chip">#B2B</span><span class="chip">#B2C</span><span class="chip">#Web</span><span class="chip">#CMS</span><span class="chip">#UX</span><span class="chip">#Interview</span><span class="chip">#GA</span>
         </div>
       </div>
     </div>
   </div>
   <div class="project-content">
+
     <div class="proj-section">
-      <div class="proj-section-title">成果</div>
+      <div class="proj-section-title" data-zh="成果" data-en="Results">成果</div>
       <div class="outcome-grid">
-        <div class="outcome-item"><p class="outcome-desc">品牌 MGM 提升至</p><span class="outcome-num">230%</span></div>
-        <div class="outcome-item"><p class="outcome-desc">減少開發時程約</p><span class="outcome-num">50%</span></div>
-        <div class="outcome-item"><p class="outcome-desc">建置前台網站與管理後台各一個</p><span class="outcome-num">1+1</span></div>
-        <div class="outcome-item"><p class="outcome-desc">研究報告產出</p><span class="outcome-num">4份</span></div>
+        <div class="outcome-item"><p class="outcome-desc" data-zh="品牌 MGM 提升至" data-en="Grew MGM to">品牌 MGM 提升至</p><span class="outcome-num">230%</span></div>
+        <div class="outcome-item"><p class="outcome-desc" data-zh="減少開發時程約" data-en="Reduced development timeline by">減少開發時程約</p><span class="outcome-num" data-zh="50%" data-en="~50%">50%</span></div>
+        <div class="outcome-item"><p class="outcome-desc" data-zh="建置前台網站與管理後台各一個" data-en="Built one consumer-facing website and one management backend">建置前台網站與管理後台各一個</p><span class="outcome-num">1+1</span></div>
       </div>
     </div>
+
     <div class="proj-section">
-      <div class="proj-section-title">專案背景</div>
-      <div class="bg-block"><div class="bg-subtitle">簡介</div><p class="prose">Panasonic 於 2024 年推出全新會員分級制度，並整合線上線下會員服務，包含電商、門市等多通路體驗，打造完整的會員生態系。我負責會員網站改版，並在上線後持續透過研究與數據，優化會員經營策略。</p></div>
-      <div class="bg-block"><div class="bg-subtitle">任務</div><div class="prose"><ul><li><strong class="text-highlight">C 端前台網頁：</strong>會員中心、點數兌換與訂單、心得投稿系統、線上報修表單等。</li><li><strong class="text-highlight">B 端後台管理系統：</strong>針對前台客戶需求建置首頁輪播、活動頁面、點數兌換訂單、問卷系統、心得審核等管理單元，以及文章上稿、訊息通知等 CMS 模組。</li><li><strong class="text-highlight">多元研究與策略：</strong>從消費者與經銷商的角度，多方探索會員服務與消費體驗。在競爭激烈的家電市場中，增加 Panasonic 的會員黏著度與品牌忠誠度。</li></ul></div></div>
-      <div class="bg-block"><div class="bg-subtitle">挑戰</div><div class="prose"><ul><li>多方利害關係人（客戶高層和行銷、IT、服務、經銷商等多個單位）</li><li>線上與線下整合（OMO）</li><li>複雜系統與法規限制下優化體驗與提升轉換</li></ul></div></div>
-      <div class="bg-block"><div class="bg-subtitle">使用者 &amp; 利害關係人</div><p class="prose">消費者（C 端前台用戶）、經銷商、Panasonic 內部行銷 / 服務 / IT 等多個部門，以及客戶高層。</p></div>
+      <div class="proj-section-title" data-zh="專案背景" data-en="Project Background">專案背景</div>
+      <div class="bg-block">
+        <div class="bg-subtitle" data-zh="簡介" data-en="Overview">簡介</div>
+        <p class="prose"><span data-zh="Panasonic 於 2024 年推出全新會員分級制度，並整合線上線下會員服務，包含電商、門市等多通路體驗，打造完整的會員生態系。我負責會員網站改版，並在上線後持續透過研究與數據，優化會員經營策略。" data-en="Panasonic launched a new membership tier system in 2024, integrating online and offline member services across multiple channels including e-commerce and physical stores to build a comprehensive membership ecosystem. I was responsible for redesigning the membership website, and continued to optimize the membership strategy through ongoing research and data analysis after launch.">Panasonic 於 2024 年推出全新會員分級制度，並整合線上線下會員服務，包含電商、門市等多通路體驗，打造完整的會員生態系。我負責會員網站改版，並在上線後持續透過研究與數據，優化會員經營策略。</span></p>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle" data-zh="任務" data-en="Task">任務</div>
+        <div class="prose"><ul>
+          <li><strong class="text-highlight" data-zh="C 端前台網頁：" data-en="Consumer-facing platform (C-end):">C 端前台網頁：</strong><span data-zh="會員中心、點數兌換與訂單、心得投稿系統、線上報修表單等。" data-en="Delivering an intuitive interface featuring member center, points redemption and order management, review submission system, and an online repair request form.">會員中心、點數兌換與訂單、心得投稿系統、線上報修表單等。</span></li>
+          <li><strong class="text-highlight" data-zh="B 端後台管理系統：" data-en="Admin backend system (B-end):">B 端後台管理系統：</strong><span data-zh="針對前台客戶需求建置首頁輪播、活動頁面、點數兌換訂單、問卷系統、心得審核等管理單元，以及文章上稿、訊息通知等 CMS 模組。" data-en="Constructing tailored management modules to support front-end workflows, including homepage carousel management, campaign pages, points redemption orders, survey system, and review moderation as well as CMS for article publishing and message notifications.">針對前台客戶需求建置首頁輪播、活動頁面、點數兌換訂單、問卷系統、心得審核等管理單元，以及文章上稿、訊息通知等 CMS 模組。</span></li>
+          <li><strong class="text-highlight" data-zh="多元研究與策略：" data-en="Multi-pronged research and strategy:">多元研究與策略：</strong><span data-zh="從消費者與經銷商的角度，多方探索會員服務與消費體驗。在競爭激烈的家電市場中，增加 Panasonic 的會員黏著度與品牌忠誠度。" data-en="Exploring the membership experience from both the consumer and dealer perspectives, aiming to boost user engagement and brand loyalty for Panasonic in a highly competitive home-appliance market.">從消費者與經銷商的角度，多方探索會員服務與消費體驗。在競爭激烈的家電市場中，增加 Panasonic 的會員黏著度與品牌忠誠度。</span></li>
+        </ul></div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle" data-zh="挑戰" data-en="Challenges">挑戰</div>
+        <div class="prose"><ul>
+          <li><span data-zh="多方利害關係人（客戶高層和行銷、IT、服務、經銷商等多個單位）" data-en="Multiple stakeholders (dealers, and Panasonic internal departments including marketing, service, and IT, as well as senior client leadership)">多方利害關係人（客戶高層和行銷、IT、服務、經銷商等多個單位）</span></li>
+          <li><span data-zh="線上與線下整合（OMO）" data-en="Online-merge-offline integration (OMO)">線上與線下整合（OMO）</span></li>
+          <li><span data-zh="複雜系統與法規限制下優化體驗與提升轉換" data-en="Optimizing experience and improving conversion under complex system constraints and regulatory requirements">複雜系統與法規限制下優化體驗與提升轉換</span></li>
+        </ul></div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle" data-zh="使用者 &amp; 利害關係人" data-en="Users &amp; Stakeholders">使用者 &amp; 利害關係人</div>
+        <p class="prose"><span data-zh="消費者、經銷商、Panasonic 內部行銷 / 服務 / IT 等多個部門，以及高層。" data-en="Consumers, dealers, and multiple Panasonic internal departments including marketing, service, and IT, as well as senior client leadership.">消費者、經銷商、Panasonic 內部行銷 / 服務 / IT 等多個部門，以及客戶高層。</span></p>
+      </div>
     </div>
+
     <div class="proj-section">
-      <div class="proj-section-title">設計過程</div>
-      <div class="process-heading">工作內容</div>
-      <div class="bg-block"><div class="bg-subtitle">體驗設計（2023 - 2025）</div><div class="prose"><ul><li>梳理複雜流程、規劃資訊架構、Flowchart、Wireframe、UI flow、Prototype</li><li>撰寫 Spec</li><li>進行 UAT 測試</li><li>和 UI 設計師、工程師、業務團隊協作</li><li>製作簡報、向客戶提案</li></ul></div></div>
-      <div class="bg-block"><div class="bg-subtitle">體驗研究（2024 - 2025）</div><div class="prose"><ul><li>規劃並執行易用性測試、一對一訪談、焦點團體訪談、利害關係人（經銷商）訪談等質化研究</li><li>進行問卷調查、觀察會員網站的 GA 數據等量化研究</li><li>分析、擬定策略與建議，撰寫報告</li></ul></div></div>
-      <div class="process-heading">洞察與決策</div>
-      <div class="insight-item"><div class="insight-title">融入商業目標</div><div class="insight-body"><p class="prose">增加會員數量與活躍度是專案的重要目標，因此在各種類型的使用者旅程中，規劃註冊會員的機會點，同時避免暗黑設計，在商業和體驗中取得平衡。另外，透過訪談發現，原本的會員宣傳概念較抽象而難以吸引消費者，因此建議團隊<span class="text-highlight">將溝通概念從點數改為具體且實惠的咖啡，使 MGM 成長至 230%。</span></p><img src="img/pan/01.png" alt="融入商業目標" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">數據驅動設計</div><div class="insight-body"><p class="prose"><span class="text-highlight">除了易用性測試，我也運用 GA 數據來輔助設計。</span>例如透過數據找出點擊率較高的區塊，將新功能「電子票券」規劃在此處，達到宣傳效果，且方便會員快速使用。</p><img src="img/pan/02.png" alt="數據驅動設計" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">可擴展的 CMS 系統</div><div class="insight-body"><p class="prose">滿足客戶持續擴增單元與管理內容的營運需求，<span class="text-highlight">規劃具有一致性、擴充性的後台系統，幫助減少約 50% 的開發時程。</span></p><img src="img/pan/03.png" alt="可擴展的CMS系統" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">面對資料限制的解法</div><div class="insight-body"><p class="prose">由於必須先產生投稿資料 ID，資料庫才能儲存後續的投稿內容，因此透過彈窗與流程設計，<span class="text-highlight">在技術限制與使用者理解之間取得平衡</span>。</p><img src="img/pan/04.png" alt="面對資料限制的解法" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">Spec 文件管理</div><div class="insight-body"><p class="prose">將重複的開發規格邏輯，歸納成表格，幫助工程師快速掌握開發規則，打造簡潔的規格文件瀏覽體驗。</p><img src="img/pan/05.png" alt="Spec文件管理" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">將多元研究轉化為商業策略</div><div class="insight-body"><p class="prose">不僅透過會員訪談與問卷調查，探索全通路體驗，也深入第一線和經銷商進行利害關係人訪談，傾聽實務營運痛點。在商業框架下，平衡多方利益，發展出品牌、經銷商、消費者三方的共贏策略。</p><img src="img/pan/06.png" alt="將多元研究轉化為商業策略" class="insight-img"></div></div>
+      <div class="proj-section-title" data-zh="設計過程" data-en="Design Process">設計過程</div>
+      <div class="process-heading" data-zh="工作內容" data-en="Work Scope">工作內容</div>
+      <div class="bg-block">
+        <div class="bg-subtitle" data-zh="體驗設計（2023 - 2025）" data-en="UX Design (2023–2025)">體驗設計（2023 - 2025）</div>
+        <div class="prose"><ul>
+          <li><span data-zh="梳理複雜流程、規劃資訊架構、Flowchart、Wireframe、UI flow、Prototype" data-en="Mapped complex flows, defined information architecture, created flowcharts, wireframes, UI flows, and prototypes">梳理複雜流程、規劃資訊架構、Flowchart、Wireframe、UI flow、Prototype</span></li>
+          <li><span data-zh="撰寫 Spec" data-en="Wrote specs">撰寫 Spec</span></li>
+          <li><span data-zh="進行 UAT 測試" data-en="Conducted UAT testing">進行 UAT 測試</span></li>
+          <li><span data-zh="和 UI 設計師、工程師、業務團隊協作" data-en="Collaborated with UI designers, engineers, and the business team">和 UI 設計師、工程師、業務團隊協作</span></li>
+          <li><span data-zh="製作簡報、向客戶提案" data-en="Presented to clients">製作簡報、向客戶提案</span></li>
+        </ul></div>
+      </div>
+      <div class="bg-block">
+        <div class="bg-subtitle" data-zh="體驗研究（2024 - 2025）" data-en="UX Research (2024–2025)">體驗研究（2024 - 2025）</div>
+        <div class="prose"><ul>
+          <li><span data-zh="規劃並執行易用性測試、一對一訪談、焦點團體訪談、利害關係人（經銷商）訪談等質化研究" data-en="Planned and conducted usability testing, one-on-one interviews, focus groups, and stakeholder (dealer) interviews">規劃並執行易用性測試、一對一訪談、焦點團體訪談、利害關係人（經銷商）訪談等質化研究</span></li>
+          <li><span data-zh="進行問卷調查、觀察會員網站的 GA 數據等量化研究" data-en="Conducted surveys and monitored GA data on the membership website">進行問卷調查、觀察會員網站的 GA 數據等量化研究</span></li>
+          <li><span data-zh="分析、擬定策略與建議，撰寫報告" data-en="Analyzed findings, developed strategies, and authored reports">分析、擬定策略與建議，撰寫報告</span></li>
+        </ul></div>
+      </div>
+
+      <div class="process-heading" data-zh="洞察與決策" data-en="Insights &amp; Decisions">洞察與決策</div>
+
+      <div class="insight-item">
+        <div class="insight-title" data-zh="融入商業目標" data-en="Pursuing Business Goals">融入商業目標</div>
+        <div class="insight-body">
+          <p class="prose"><span data-zh="增加會員數量與活躍度是專案的重要目標，因此在各種類型的使用者旅程中，規劃註冊會員的機會點，同時避免暗黑設計，在商業和體驗中取得平衡。另外，透過訪談發現，原本的會員宣傳概念較抽象而難以吸引消費者，因此建議團隊" data-en="Growing membership count and engagement was a key project objective. I identified registration touchpoints across various user journeys while avoiding dark patterns, striking a balance between business and experience goals. Through interviews, I also discovered that the original membership promotion concept was too abstract to attract consumers Thus, I suggested the team shift the messaging to something concrete and tangible instead: coffee.">增加會員數量與活躍度是專案的重要目標，因此在各種類型的使用者旅程中，規劃註冊會員的機會點，同時避免暗黑設計，在商業和體驗中取得平衡。另外，透過訪談發現，原本的會員宣傳概念較抽象而難以吸引消費者，因此建議團隊</span><span class="text-highlight" data-zh="將溝通概念從點數改為具體且實惠的咖啡，使 MGM 成長至 230%。" data-en="This helped grow MGM to 230%.">將溝通概念從點數改為具體且實惠的咖啡，使 MGM 成長至 230%。</span></p>
+          <img src="img/pan/01.png" alt="融入商業目標" class="insight-img" data-zh-src="img/pan/01.png" data-en-src="img/pan/01en.png">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title" data-zh="數據驅動設計" data-en="Data-Driven Design">數據驅動設計</div>
+        <div class="insight-body">
+          <p class="prose"><span class="text-highlight" data-zh="除了易用性測試，我也運用 GA 數據來輔助設計。" data-en="Beyond usability testing, I also leveraged GA data to make design decisions.">除了易用性測試，我也運用 GA 數據來輔助設計。</span><span data-zh="例如透過數據找出點擊率較高的區塊，將新功能「電子票券」規劃在此處，達到宣傳效果，且方便會員快速使用。" data-en="For example, data revealed high-CTR sections of the page where the new &quot;digital voucher&quot; feature was strategically placed for maximum visibility and easy access.">例如透過數據找出點擊率較高的區塊，將新功能「電子票券」規劃在此處，達到宣傳效果，且方便會員快速使用。</span></p>
+          <img src="img/pan/02.png" alt="數據驅動設計" class="insight-img" data-zh-src="img/pan/02.png" data-en-src="img/pan/02en.png">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title" data-zh="可擴展的 CMS 系統" data-en="Scalable CMS System">可擴展的 CMS 系統</div>
+        <div class="insight-body">
+          <p class="prose"><span data-zh="滿足客戶持續擴增單元與管理內容的營運需求，" data-en="To meet the client's ongoing need to add and manage new feature modules,">滿足客戶持續擴增單元與管理內容的營運需求，</span><span class="text-highlight" data-zh="規劃具有一致性、擴充性的後台系統，幫助減少約 50% 的開發時程。" data-en="I designed a consistent, extensible backend architecture, which helped cut development timelines by roughly 50%.">規劃具有一致性、擴充性的後台系統，幫助減少約 50% 的開發時程。</span></p>
+          <img src="img/pan/03.png" alt="可擴展的 CMS 系統" class="insight-img" data-zh-src="img/pan/03.png" data-en-src="img/pan/03.png">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title" data-zh="面對資料限制的解法" data-en="Designing Around a Data Constraint">面對資料限制的解法</div>
+        <div class="insight-body">
+          <p class="prose"><span data-zh="由於必須先產生投稿資料 ID，資料庫才能儲存後續的投稿內容，因此透過彈窗與流程設計，" data-en="The database required a ID to be generated before it could store any follow-up submission content. I designed modal dialogs and flow to">由於必須先產生投稿資料 ID，資料庫才能儲存後續的投稿內容，因此透過彈窗與流程設計，</span><span class="text-highlight" data-zh="在技術限制與使用者理解之間取得平衡" data-en="balance this technical constraint with user experience.">在技術限制與使用者理解之間取得平衡</span></p>
+          <img src="img/pan/04.png" alt="面對資料限制的解法" class="insight-img" data-zh-src="img/pan/04.png" data-en-src="img/pan/04en.png">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title" data-zh="Spec 文件管理" data-en="Spec Documentation Optimization">Spec 文件管理</div>
+        <div class="insight-body">
+          <p class="prose"><span data-zh="將重複的開發規格邏輯，歸納成表格，幫助工程師快速掌握開發規則，打造簡潔的規格文件瀏覽體驗。" data-en="I consolidated repetitive development logic into structured tables, helping engineers quickly grasp the rules and creating a cleaner spec-reviewing experience.">將重複的開發規格邏輯，歸納成表格，幫助工程師快速掌握開發規則，打造簡潔的規格文件瀏覽體驗。</span></p>
+          <img src="img/pan/05.png" alt="Spec 文件管理" class="insight-img" data-zh-src="img/pan/05.png" data-en-src="img/pan/05en.png">
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-title" data-zh="將多元研究轉化為商業策略" data-en="Turning Diverse Research into Business Strategies">將多元研究轉化為商業策略</div>
+        <div class="insight-body">
+          <p class="prose"><span data-zh="不僅透過會員訪談與問卷調查，探索全通路體驗，也深入第一線和經銷商進行利害關係人訪談，傾聽實務營運痛點。在商業框架下，平衡多方利益，發展出品牌、經銷商、消費者三方的共贏策略。" data-en="Beyond member interviews and surveys on the omnichannel experience, I conducted stakeholder interviews directly with frontline dealers to understand real operational pain points. Within a business framework, I made a trade-off between the interests of multiple parties to develop a win-win strategy for the brand, dealers, and consumers.">不僅透過會員訪談與問卷調查，探索全通路體驗，也深入第一線和經銷商進行利害關係人訪談，傾聽實務營運痛點。在商業框架下，平衡多方利益，發展出品牌、經銷商、消費者三方的共贏策略。</span></p>
+          <img src="img/pan/06.png" alt="將多元研究轉化為商業策略" class="insight-img" data-zh-src="img/pan/06.png" data-en-src="img/pan/06en.png">
+        </div>
+      </div>
     </div>
+
     <div class="proj-section">
-      <div class="proj-section-title">反思</div>
-      <div class="reflection-item"><div class="reflection-title">主動探索 AI</div><p class="prose">除了運用 AI 整理研究資料提升作業效率，我也嘗試結合親和圖與後端的資料思維，建置質化訪談的資料表模板，期待未來能利用 AI 輔助，進行自動化交叉分析，更高效、深度的探索洞察。</p></div>
-      <div class="reflection-item"><div class="reflection-title">漫漫轉型路</div><p class="prose">改版過程中，受到開發架構、法務規定、部門協商等因素影響，有些優化體驗的設計無法馬上實現。但我透過訪談、數據等資料，佐證使用者的需求與商業效應，持續推動產品策略的發展。</p></div>
-      <div class="reflection-item"><div class="reflection-title">品牌與 OMO 整合</div><p class="prose">培養品牌與行銷思維，透過多渠道行銷連結會員網站、官網、官方商城、服務網、內部平台等多個系統，延伸更多品牌接觸點。串連線上與線下，善用資料，優化服務體驗。</p></div>
+      <div class="proj-section-title" data-zh="反思" data-en="Reflection">反思</div>
+      <div class="reflection-item">
+        <div class="reflection-title" data-zh="主動探索 AI" data-en="Exploring AI Proactively">主動探索 AI</div>
+        <p class="prose"><span data-zh="除了運用 AI 整理研究資料提升作業效率，我也嘗試結合親和圖與後端的資料思維，建置質化訪談的資料表模板，期待未來能利用 AI 輔助，進行自動化交叉分析，更高效、深度的探索洞察。" data-en="Beyond using AI to organize research data and improve operational efficiency, I experimented with combining affinity diagrams and backend data thinking to build a qualitative interview data template. I look forward to leveraging AI in the future to enable automated cross-analysis for deeper, more efficient discovery of insight.">除了運用 AI 整理研究資料提升作業效率，我也嘗試結合親和圖與後端的資料思維，建置質化訪談的資料表模板，期待未來能利用 AI 輔助，進行自動化交叉分析，更高效、深度的探索洞察。</span></p>
+      </div>
+      <div class="reflection-item">
+        <div class="reflection-title" data-zh="漫漫轉型路" data-en="A Long Road of Transformation">漫漫轉型路</div>
+        <p class="prose"><span data-zh="改版過程中，受到開發架構、法務規定、部門協商等因素影響，有些優化體驗的設計無法馬上實現。但我透過訪談、數據等資料，佐證使用者的需求與商業效應，持續推動產品策略的發展。" data-en="Development architecture, legal requirements, and inter-departmental negotiation meant that not every experience improvement could ship right away. I used interview findings and data to substantiate user needs and business impact, continuously driving the product strategy forward.">改版過程中，受到開發架構、法務規定、部門協商等因素影響，有些優化體驗的設計無法馬上實現。但我透過訪談、數據等資料，佐證使用者的需求與商業效應，持續推動產品策略的發展。</span></p>
+      </div>
+      <div class="reflection-item">
+        <div class="reflection-title" data-zh="品牌與 OMO 整合" data-en="Brand &amp; OMO Integration">品牌與 OMO 整合</div>
+        <p class="prose"><span data-zh="培養品牌與行銷思維，透過多渠道行銷連結會員網站、官網、官方商城、服務網、內部平台等多個系統，延伸更多品牌接觸點。串連線上與線下，善用資料，優化服務體驗。" data-en="I cultivated a brand and marketing mindset by connecting the membership website, official website, online store, service website, and internal platforms through multi-channel marketing and extending brand touchpoints. By linking online and offline data, I optimized the overall service experience.">培養品牌與行銷思維，透過多渠道行銷連結會員網站、官網、官方商城、服務網、內部平台等多個系統，延伸更多品牌接觸點。串連線上與線下，善用資料，優化服務體驗。</span></p>
+      </div>
     </div>
+
   </div>
-  <div class="more-works-section">
-    <div class="more-works-title">瀏覽其他作品</div>
-    <div class="more-works-grid">
-      <div class="work-card" data-action="project" data-project="crm">
-        <div class="card-thumb card-thumb-crm" style="aspect-ratio:4/3;">
-          <img src="img/nl/00.png" alt="新聯陽 CRM" onerror="this.style.display='none'">
-          <div class="card-thumb-inner"><svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="8" y="16" width="64" height="48" rx="2"/><line x1="8" y1="24" x2="72" y2="24"/></svg></div>
-        </div>
-        <div class="card-body">
-          <div class="card-title">新聯陽 CRM 系統迭代</div>
-          <div class="card-year">2025</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
-        </div>
-      </div>
-      <div class="work-card" data-action="project" data-project="tbs">
-        <div class="card-thumb card-thumb-tbs" style="aspect-ratio:4/3;">
-          <div class="card-thumb-inner">
-            <img src="img/tbs/00.png" alt="臺北轉運站" class="card-thumb-cover">
-            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="8" y="14" width="64" height="52" rx="3"/><rect x="18" y="24" width="44" height="8" rx="2"/></svg>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-title">臺北轉運站 App Redesign</div>
-          <div class="card-year">2022</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
-        </div>
-      </div>
-      <div class="work-card" data-action="project" data-project="tpe">
-        <div class="card-thumb card-thumb-tpe" style="aspect-ratio:4/3;">
-          <div class="card-thumb-inner">
-            <img src="img/tpe/00.png" alt="台北說書人" class="card-thumb-cover">
-            <svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><circle cx="40" cy="32" r="16"/><path d="M28 50q12 8 24 0"/></svg>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-title">台北說書人 &amp; 城市特調</div>
-          <div class="card-year">2020 — 2021</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+  
   <footer><p class="footer-tagline">Turn ambiguity into clarity.<br>Bridging user needs and business goals.</p><p>© 2026 Pei-Ling</p></footer>
 </div>
 
 
 <!-- ═══ PAGE: CRM ═══ -->
-<div class="page" id="page-crm">
+<div class="page en-hide" id="page-crm">
   <div class="project-hero hero-crm">
     <img src="img/nl/00.png" alt="" class="project-hero-bg">
     <div class="project-hero-text">
-      <h1 class="project-title-main">新聯陽<br>CRM 系統迭代</h1>
+      <h1 class="project-title-main" data-zh="新聯陽<br>CRM 系統迭代" data-en="Newland<br>CRM System Iteration">新聯陽<br>CRM 系統迭代</h1>
       <div class="project-meta-block">
         <div class="meta-year">2025</div>
         <div class="project-chips">
-          <span class="chip">#2B</span><span class="chip">#CRM</span><span class="chip">#UX</span>
-          <span class="chip">#客戶聯繫</span><span class="chip">#項目管理</span>
+          <span class="chip">#B2B</span><span class="chip">#CRM</span><span class="chip">#UX</span><span class="chip">#Client-facing</span>
         </div>
       </div>
     </div>
   </div>
   <div class="project-content">
     <div class="proj-section">
-      <div class="proj-section-title">成果</div>
+      <div class="proj-section-title" data-zh="成果" data-en="Results">成果</div>
       <div class="outcome-grid">
-        <div class="outcome-item"><p class="outcome-desc">趨近於零的使用者學習成本</p><span class="outcome-num">≈0</span></div>
-        <div class="outcome-item"><p class="outcome-desc">提升資料傳送效能約</p><span class="outcome-num">66%</span></div>
+        <div class="outcome-item"><p class="outcome-desc" data-zh="趨近於零的使用者學習成本" data-en="Near-zero user learning curve">趨近於零的使用者學習成本</p><span class="outcome-num">≈0</span></div>
+        <div class="outcome-item"><p class="outcome-desc" data-zh="提升資料傳送效能約" data-en="Improved data transmission efficiency by approx.">提升資料傳送效能約</p><span class="outcome-num">66%</span></div>
       </div>
     </div>
     <div class="proj-section">
-      <div class="proj-section-title">專案背景</div>
-      <div class="bg-block"><div class="bg-subtitle">簡介</div><p class="prose">新聯陽是知名的房地產代銷企業，代理建商銷售建案，使用 CRM 系統來管理預約賞屋與銷售的資料。我負責處理系統的各種迭代需求，本頁以「貴賓預約賞屋通知優化」的項目進行說明。</p></div>
-      <div class="bg-block"><div class="bg-subtitle">任務</div><p class="prose">因應 LINE Notify 功能停用，利用 LINE OA 打造「貴賓預約賞屋通知」的替代方案，讓新聯陽團隊能即時收到貴賓預約賞屋的通知，並且串連多個內部系統，進行後續的資料管理。</p></div>
-      <div class="bg-block"><div class="bg-subtitle">挑戰</div><div class="prose"><ul><li>專案執行必須考慮後續成本、開發可行性、平台生態系的連結等。</li><li>在現有系統的框架下開發，且其中包含房地產交易複雜的業務規則邏輯與客戶高度客製化的規格。</li></ul></div></div>
-      <div class="bg-block"><div class="bg-subtitle">使用者 &amp; 利害關係人</div><p class="prose">新聯陽內部銷售團隊、建商客戶、賞屋貴賓。</p></div>
+      <div class="proj-section-title" data-zh="專案背景" data-en="Project Background">專案背景</div>
+      <div class="bg-block"><div class="bg-subtitle" data-zh="簡介" data-en="Overview">簡介</div><p class="prose"><span data-zh="新聯陽是知名的房地產代銷企業，代理建商銷售建案，使用 CRM 系統來管理預約賞屋與銷售的資料。我負責處理系統的各種迭代需求，本頁以「貴賓預約賞屋通知優化」的項目進行說明。" data-en="Newland is a leading real estate sales agency representing developers to market housing projects. They rely on a CRM system to manage VIP viewing appointments and sales data. I was responsible for handling various system iteration requests; this page focuses on the &quot;VIP Appointment Notification Optimization&quot; initiative.">新聯陽是知名的房地產代銷企業，代理建商銷售建案，使用 CRM 系統來管理預約賞屋與銷售的資料。我負責處理系統的各種迭代需求，本頁以「貴賓預約賞屋通知優化」的項目進行說明。</span></p></div>
+      <div class="bg-block"><div class="bg-subtitle" data-zh="任務" data-en="Objectives">任務</div><p class="prose"><span data-zh="因應 LINE Notify 功能停用，利用 LINE OA 打造「貴賓預約賞屋通知」的替代方案，讓新聯陽團隊能即時收到貴賓預約賞屋的通知，並且串連多個內部系統，進行後續的資料管理。" data-en="In response to LINE Notify's discontinuation, the goal was to build a replacement &quot;VIP Appointment Notification&quot; solution using LINE OA, enabling the Newland team to receive real-time appointment alerts and integrate multiple internal systems for subsequent data management.">因應 LINE Notify 功能停用，利用 LINE OA 打造「貴賓預約賞屋通知」的替代方案，讓新聯陽團隊能即時收到貴賓預約賞屋的通知，並且串連多個內部系統，進行後續的資料管理。</span></p></div>
+      <div class="bg-block"><div class="bg-subtitle" data-zh="挑戰" data-en="Challenges">挑戰</div><div class="prose"><ul><li><span data-zh="專案執行必須考慮後續成本、開發可行性、平台生態系的連結等。" data-en="Project execution required consideration of ongoing costs, development feasibility, and platform ecosystem integration.">專案執行必須考慮後續成本、開發可行性、平台生態系的連結等。</span></li><li><span data-zh="在現有系統的框架下開發，且其中包含房地產交易複雜的業務規則邏輯與客戶高度客製化的規格。" data-en="Development within the existing system framework, encompassing complex real estate business logic and highly customized client specifications.">在現有系統的框架下開發，且其中包含房地產交易複雜的業務規則邏輯與客戶高度客製化的規格。</span></li></ul></div></div>
+      <div class="bg-block"><div class="bg-subtitle" data-zh="使用者 &amp; 利害關係人" data-en="Users &amp; Stakeholders">使用者 &amp; 利害關係人</div><p class="prose"><span data-zh="新聯陽內部銷售團隊、建商客戶、賞屋貴賓。" data-en="Newland's internal sales team, developer clients, VIP homebuyers.">新聯陽內部銷售團隊、建商客戶、賞屋貴賓。</span></p></div>
     </div>
     <div class="proj-section">
-      <div class="proj-section-title">設計過程</div>
-      <div class="process-heading">工作內容</div>
-      <div class="bg-block"><div class="bg-subtitle">體驗設計</div><p class="prose">梳理 Flow、規劃資訊架構、Wireframe，撰寫 Spec，進行 UAT 測試，和工程師、業務團隊協作。</p></div>
-      <div class="bg-block"><div class="bg-subtitle">設計提案</div><p class="prose">發展解方與策略，以及製作簡報，向客戶提案。</p></div>
-      <div class="bg-block"><div class="bg-subtitle">客戶聯繫</div><p class="prose">作為窗口，直接與客戶溝通、互動，釐清客戶需求。</p></div>
-      <div class="process-heading">洞察與決策</div>
-      <div class="insight-item"><div class="insight-title">聚焦核心問題</div><div class="insight-body"><p class="prose">公司過去曾經和客戶討論過建立 LINE OA，善用行銷與訊息發佈工具。因此我研究 LINE OA 的各種功能，例如圖文選單、客製化通知型訊息等，思考是否能在專案中為客戶提供更多價值。但經過分析評估後，仍決定聚焦、回歸到重點需求——解決通知的問題。</p><img src="img/nl/01.png" alt="聚焦核心問題" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">方案評估</div><div class="insight-body"><p class="prose">思考產品沿革與專案需求後，初步發想出 2 種方案，方案 A 為群組訊息，方案 B 為個人訊息。考量到客戶使用習慣、後端資料架構，最後選擇方案 A，降低客戶的學習成本，並簡化開發工程。</p><img src="img/nl/02.png" alt="方案評估" class="insight-img"><p class="prose" style="margin-top:16px;">後續，梳理 LINE OA 與各系統平台的複雜流程，包含在貴賓操作介面後，如何觸發資料傳送、資料如何在多個平台間進行處理，確保銷售團隊能獲得通知，並讓資料成功接收與儲存。</p><img src="img/nl/021.png" alt="方案評估流程圖" class="insight-img"></div></div>
-      <div class="insight-item"><div class="insight-title">協力解決開發問題</div><div class="insight-body"><p class="prose">當工程師提出可行性的問題，我保持開放的心態，和工程師聊聊，深入理解困難的本質。再研究 LINE Messaging API，綜合零散的資訊，以終為始，從需求出發，以目標為核心，提出運用 Webhook 的流程建議，解決後端的 groupID 與 CaseName 資料串接問題。</p><img src="img/nl/03.png" alt="解決開發問題" class="insight-img"></div></div>
+      <div class="proj-section-title" data-zh="設計過程" data-en="Design Process">設計過程</div>
+      <div class="process-heading" data-zh="工作內容" data-en="Work Scope">工作內容</div>
+      <div class="bg-block"><div class="bg-subtitle" data-zh="體驗設計" data-en="UX Design">體驗設計</div><p class="prose"><span data-zh="梳理 Flow、規劃資訊架構、Wireframe，撰寫 Spec，進行 UAT 測試，和工程師、業務團隊協作。" data-en="Mapped user flows, defined information architecture and wireframes, wrote specs, conducted UAT, and collaborated with engineers and the business team.">梳理 Flow、規劃資訊架構、Wireframe，撰寫 Spec，進行 UAT 測試，和工程師、業務團隊協作。</span></p></div>
+      <div class="bg-block"><div class="bg-subtitle" data-zh="設計提案" data-en="Design Proposal">設計提案</div><p class="prose"><span data-zh="發展解方與策略，以及製作簡報，向客戶提案。" data-en="Developed solutions and strategies, and presented to clients via slide decks.">發展解方與策略，以及製作簡報，向客戶提案。</span></p></div>
+      <div class="bg-block"><div class="bg-subtitle" data-zh="客戶聯繫" data-en="Client Communication">客戶聯繫</div><p class="prose"><span data-zh="作為窗口，直接與客戶溝通、互動，釐清客戶需求。" data-en="Served as the primary point of contact, directly communicating with clients to clarify requirements.">作為窗口，直接與客戶溝通、互動，釐清客戶需求。</span></p></div>
+      <div class="process-heading" data-zh="洞察與決策" data-en="Insights &amp; Decisions">洞察與決策</div>
+      <div class="insight-item"><div class="insight-title" data-zh="聚焦核心問題" data-en="Focus on the Core Problem">聚焦核心問題</div><div class="insight-body"><p class="prose"><span data-zh="公司過去曾經和客戶討論過建立 LINE OA，善用行銷與訊息發佈工具。因此我研究 LINE OA 的各種功能，例如圖文選單、客製化通知型訊息等，思考是否能在專案中為客戶提供更多價值。但經過分析評估後，仍決定聚焦、回歸到重點需求——解決通知的問題。" data-en="The company had previously discussed building a LINE OA with the client to leverage marketing and messaging tools. I researched LINE OA features such as rich menus and custom notification messages to explore additional value opportunities. However, after analysis, I decided to focus on the essential need — resolving the notification issue.">公司過去曾經和客戶討論過建立 LINE OA，善用行銷與訊息發佈工具。因此我研究 LINE OA 的各種功能，例如圖文選單、客製化通知型訊息等，思考是否能在專案中為客戶提供更多價值。但經過分析評估後，仍決定聚焦、回歸到重點需求——解決通知的問題。</span></p><img src="img/nl/01.png" alt="聚焦核心問題" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title" data-zh="方案評估" data-en="Solution Evaluation">方案評估</div><div class="insight-body"><p class="prose"><span data-zh="思考產品沿革與專案需求後，初步發想出 2 種方案，方案 A 為群組訊息，方案 B 為個人訊息。考量到客戶使用習慣、後端資料架構，最後選擇方案 A，降低客戶的學習成本，並簡化開發工程。" data-en="After reviewing the product history and project requirements, I identified 2 initial approaches: Option A (group messaging) and Option B (individual messaging). Considering client usage habits and backend data architecture, Option A was selected to minimize the learning curve and simplify development.">思考產品沿革與專案需求後，初步發想出 2 種方案，方案 A 為群組訊息，方案 B 為個人訊息。考量到客戶使用習慣、後端資料架構，最後選擇方案 A，降低客戶的學習成本，並簡化開發工程。</span></p><img src="img/nl/02.png" alt="方案評估" class="insight-img"><p class="prose" style="margin-top:16px;"><span data-zh="後續，梳理 LINE OA 與各系統平台的複雜流程，包含在貴賓操作介面後，如何觸發資料傳送、資料如何在多個平台間進行處理，確保銷售團隊能獲得通知，並讓資料成功接收與儲存。" data-en="Subsequently, I mapped out the complex flow between LINE OA and various system platforms — including how actions in the VIP interface trigger data transmission, how data is processed across platforms, and how the sales team receives notifications with data successfully received and stored.">後續，梳理 LINE OA 與各系統平台的複雜流程，包含在貴賓操作介面後，如何觸發資料傳送、資料如何在多個平台間進行處理，確保銷售團隊能獲得通知，並讓資料成功接收與儲存。</span></p><img src="img/nl/021.png" alt="方案評估流程圖" class="insight-img"></div></div>
+      <div class="insight-item"><div class="insight-title" data-zh="協力解決開發問題" data-en="Collaborating to Solve Development Challenges">協力解決開發問題</div><div class="insight-body"><p class="prose"><span data-zh="當工程師提出可行性的問題，我保持開放的心態，和工程師聊聊，深入理解困難的本質。再研究 LINE Messaging API，綜合零散的資訊，以終為始，從需求出發，以目標為核心，提出運用 Webhook 的流程建議，解決後端的 groupID 與 CaseName 資料串接問題。" data-en="When the engineer raised feasibility concerns, I stayed open-minded and had an in-depth conversation to understand the root of the difficulty. I then researched the LINE Messaging API, synthesized the scattered information, and — starting from the requirement and centering on the goal — proposed a Webhook-based flow to resolve the backend groupID and CaseName data integration issue.">當工程師提出可行性的問題，我保持開放的心態，和工程師聊聊，深入理解困難的本質。再研究 LINE Messaging API，綜合零散的資訊，以終為始，從需求出發，以目標為核心，提出運用 Webhook 的流程建議，解決後端的 groupID 與 CaseName 資料串接問題。</span></p><img src="img/nl/03.png" alt="解決開發問題" class="insight-img"></div></div>
     </div>
     <div class="proj-section">
-      <div class="proj-section-title">反思</div>
-      <div class="reflection-item"><div class="reflection-title">需求釐清</div><p class="prose">我負責直接和客戶溝通產品需求，客戶有時會用自己習慣的語言或方式表達，或突然提出想做某個項目。但項目的背後可能隱藏著真正的需求，唯有了解客戶，才能找出最佳解，這也幫助我累積和客戶、利害關係人溝通的能力。</p></div>
-      <div class="reflection-item"><div class="reflection-title">問題解決</div><p class="prose">雖然一開始工程師說方案不可行，但我相信可能還是有機會。儘管後端不是我的專長，然而善用邏輯思考、過去的資料學習經驗，努力找方法，提升可能性，最終成功讓解方落地。同時也證明設計師不只能優化體驗，還有解決問題的價值！</p></div>
-      <div class="reflection-item"><div class="reflection-title">團隊合作</div><p class="prose">同理、了解工程師所說的「開發困難」，並深入思考後，再一起討論、動腦，實現解決方案，滿足客戶的需求。和跨職能夥伴協作、突破困難很開心，是很棒的團隊合作經驗。</p></div>
+      <div class="proj-section-title" data-zh="反思" data-en="Reflection">反思</div>
+      <div class="reflection-item"><div class="reflection-title" data-zh="需求釐清" data-en="Clarifying Requirements">需求釐清</div><p class="prose"><span data-zh="我負責直接和客戶溝通產品需求，客戶有時會用自己習慣的語言或方式表達，或突然提出想做某個項目。但項目的背後可能隱藏著真正的需求，唯有了解客戶，才能找出最佳解，這也幫助我累積和客戶、利害關係人溝通的能力。" data-en="I was responsible for communicating product requirements directly with the client. Clients sometimes express themselves in their own terms or raise requests unexpectedly. Behind each request, however, lies a real need — understanding clients deeply is the only way to find the best solution. This experience helped me build stronger communication skills with clients and stakeholders.">我負責直接和客戶溝通產品需求，客戶有時會用自己習慣的語言或方式表達，或突然提出想做某個項目。但項目的背後可能隱藏著真正的需求，唯有了解客戶，才能找出最佳解，這也幫助我累積和客戶、利害關係人溝通的能力。</span></p></div>
+      <div class="reflection-item"><div class="reflection-title" data-zh="問題解決" data-en="Problem Solving">問題解決</div><p class="prose"><span data-zh="雖然一開始工程師說方案不可行，但我相信可能還是有機會。儘管後端不是我的專長，然而善用邏輯思考、過去的資料學習經驗，努力找方法，提升可能性，最終成功讓解方落地。同時也證明設計師不只能優化體驗，還有解決問題的價值！" data-en="Although the engineer initially said the solution wasn't feasible, I believed there was still a possibility. Despite backend development not being my specialty, I applied logical thinking and prior data experience to find a way forward, ultimately bringing the solution to life. This also demonstrated that designers aren't limited to optimizing experience — they can solve problems too.">雖然一開始工程師說方案不可行，但我相信可能還是有機會。儘管後端不是我的專長，然而善用邏輯思考、過去的資料學習經驗，努力找方法，提升可能性，最終成功讓解方落地。同時也證明設計師不只能優化體驗，還有解決問題的價值！</span></p></div>
+      <div class="reflection-item"><div class="reflection-title" data-zh="團隊合作" data-en="Teamwork">團隊合作</div><p class="prose"><span data-zh="同理、了解工程師所說的「開發困難」，並深入思考後，再一起討論、動腦，實現解決方案，滿足客戶的需求。和跨職能夥伴協作、突破困難很開心，是很棒的團隊合作經驗。" data-en="By empathizing with the engineer&#39;s development difficulties, thinking deeply, and then brainstorming together, we successfully implemented the solution and met the client&#39;s needs. Collaborating across functions to overcome challenges was a genuinely rewarding teamwork experience.">同理、了解工程師所說的「開發困難」，並深入思考後，再一起討論、動腦，實現解決方案，滿足客戶的需求。和跨職能夥伴協作、突破困難很開心，是很棒的團隊合作經驗。</span></p></div>
     </div>
   </div>
   <div class="more-works-section">
-    <div class="more-works-title">瀏覽其他作品</div>
+    <div class="more-works-title" data-zh="瀏覽其他作品" data-en="More Projects">瀏覽其他作品</div>
     <div class="more-works-grid">
       <div class="work-card" data-action="project" data-project="panasonic">
         <div class="card-thumb card-thumb-panasonic" style="aspect-ratio:4/3;">
@@ -719,9 +819,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="card-thumb-inner"><svg width="50" height="50" viewBox="0 0 80 80" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="0.8"><rect x="10" y="10" width="60" height="60" rx="2"/><rect x="20" y="20" width="18" height="14" rx="1"/></svg></div>
         </div>
         <div class="card-body">
-          <div class="card-title">Panasonic 會員研究與網站改版</div>
+          <div class="card-title" data-zh="Panasonic 會員研究與網站改版" data-en="Panasonic Membership Research &amp; Website Redesign">Panasonic 會員研究與網站改版</div>
           <div class="card-year">2023 — 2025</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+          <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
         </div>
       </div>
       <div class="work-card" data-action="project" data-project="tbs">
@@ -732,9 +832,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="card-body">
-          <div class="card-title">臺北轉運站 App Redesign</div>
+          <div class="card-title" data-zh="臺北轉運站 App Redesign" data-en="Taipei Bus Station (TBS) App Redesign">臺北轉運站 App Redesign</div>
           <div class="card-year">2022</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+          <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
         </div>
       </div>
       <div class="work-card" data-action="project" data-project="tpe">
@@ -747,7 +847,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="card-body">
           <div class="card-title">台北說書人 &amp; 城市特調</div>
           <div class="card-year">2020 — 2021</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+          <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
         </div>
       </div>
     </div>
@@ -757,16 +857,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ═══ PAGE: TBS ═══ -->
-<div class="page" id="page-tbs">
+<div class="page en-hide" id="page-tbs">
 
   <div class="project-hero hero-tbs">
     <img src="img/tbs/00.png" alt="" class="project-hero-bg">
     <div class="project-hero-text">
-      <h1 class="project-title-main">臺北轉運站<br>App Redesign</h1>
+      <h1 class="project-title-main" data-zh="臺北轉運站<br>App Redesign" data-en="Taipei Bus Station (TBS)<br>App Redesign">臺北轉運站<br>App Redesign</h1>
       <div class="project-meta-block">
         <div class="meta-year">2022</div>
         <div class="project-chips">
-          <span class="chip">#Redesign</span><span class="chip">#2C</span><span class="chip">#UX</span><span class="chip">#UI</span><span class="chip">#訪談</span>
+          <span class="chip">#Redesign</span><span class="chip">#2C</span><span class="chip">#UX</span><span class="chip">#UI</span><span class="chip">#Interview</span>
         </div>
       </div>
     </div>
@@ -776,19 +876,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- 成果 -->
     <div class="proj-section">
-      <div class="proj-section-title">成果</div>
+      <div class="proj-section-title" data-zh="成果" data-en="Results">成果</div>
       <div class="outcome-grid">
-        <div class="outcome-item"><p class="outcome-desc">易用性分數提升</p><span class="outcome-num">35.7%</span></div>
-        <div class="outcome-item"><p class="outcome-desc">NPS 提升</p><span class="outcome-num">+60分</span></div>
+        <div class="outcome-item"><p class="outcome-desc" data-zh="易用性分數提升" data-en="SUS score improved by">易用性分數提升</p><span class="outcome-num">35.7%</span></div>
+        <div class="outcome-item"><p class="outcome-desc" data-zh="NPS 提升" data-en="NPS increased by">NPS 提升</p><span class="outcome-num">+60分</span></div>
       </div>
     </div>
 
     <!-- 專案背景 -->
     <div class="proj-section">
-      <div class="proj-section-title">專案背景</div>
+      <div class="proj-section-title" data-zh="專案背景" data-en="Project Background">專案背景</div>
       <div class="bg-block">
         <div class="bg-subtitle">簡介</div>
-        <p class="prose">臺北轉運站 App 由萬達通實業公司推出，是整合多家業者的客運購票服務，範圍涵蓋全台。初期透過公路運輸服務數位化，解決尖峰時刻臨櫃排隊的痛點；現今則以客運為主、旅運電商為輔，提供一站式服務。</p>
+        <p class="prose"><span data-zh="臺北轉運站 App 由萬達通實業公司推出，是整合多家業者的客運購票服務，範圍涵蓋全台。初期透過公路運輸服務數位化，解決尖峰時刻臨櫃排隊的痛點；現今則以客運為主、旅運電商為輔，提供一站式服務。" data-en="The TBS App, launched by Wandatong Industrial Co., is an intercity bus ticketing service that integrates multiple operators and covers all of Taiwan. It was initially launched to digitize road transport services and eliminate peak-hour counter queues. Today, it primarily serves as an intercity bus platform with travel e-commerce as a supplementary offering, providing a one-stop service.">臺北轉運站 App 由萬達通實業公司推出，是整合多家業者的客運購票服務，範圍涵蓋全台。初期透過公路運輸服務數位化，解決尖峰時刻臨櫃排隊的痛點；現今則以客運為主、旅運電商為輔，提供一站式服務。</span></p>
       </div>
             <div class="bg-block">
         <div class="bg-subtitle">任務</div>
@@ -812,19 +912,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="bg-block">
         <div class="bg-subtitle">使用者 &amp; 利害關係人</div>
-        <p class="prose">梳理企業目標與各方利害關係人的需求，作為設計方向的依據。</p>
+        <p class="prose"><span data-zh="梳理企業目標與各方利害關係人的需求，作為設計方向的依據。" data-en="Mapping business objectives and stakeholder needs to inform the design direction.">梳理企業目標與各方利害關係人的需求，作為設計方向的依據。</span></p>
         <div class="embed-wrap"><iframe src="https://whimsical.com/embed/QFNseTt3iRY6mYTYbmSVPs@VsSo8s35WvokiEs8UN2mXE" allowfullscreen loading="lazy"></iframe></div>
       </div>
     </div>
 
     <!-- 設計過程 -->
     <div class="proj-section">
-      <div class="proj-section-title">設計過程</div>
+      <div class="proj-section-title" data-zh="設計過程" data-en="Design Process">設計過程</div>
 
-      <div class="process-heading">現況分析</div>
+      <div class="process-heading" data-zh="現況分析" data-en="Current State Analysis">現況分析</div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">競品分析 - 客運</div>
+        <div class="bg-subtitle" data-zh="競品分析 - 客運" data-en="Competitor Analysis — Intercity Bus">競品分析 - 客運</div>
         <p class="prose">臺北轉運站的優勢為功能齊全、不須另外取票、客運業者數量多，且有獨特的旅運加值服務。</p>
         <div class="table-wrap"><table class="table">
   <thead><tr>
@@ -843,7 +943,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ∆ 表示有該功能但較不齊全，或在部分情境下符合標題描述。</p>
       </div>
       <div class="bg-block">
-        <div class="bg-subtitle">競品分析 - 大眾運輸</div>
+        <div class="bg-subtitle" data-zh="競品分析 - 大眾運輸" data-en="Competitor Analysis — Public Transportation">競品分析 - 大眾運輸</div>
         <p class="prose">票券功能齊全是客運 App 的優勢，但高鐵、台鐵不收訂票手續費，手續費在無優惠活動時會成為阻力；且公路客運較難掌握時間。</p>
         <div class="table-wrap"><table class="table">
   <thead><tr>
@@ -865,7 +965,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ∆ 表示有該功能但較不齊全，或在部分情境下符合標題描述。</p>
       </div>
       <div class="bg-block">
-        <div class="bg-subtitle">競品分析 - 旅遊電商</div>
+        <div class="bg-subtitle" data-zh="競品分析 - 旅遊電商" data-en="Competitor Analysis — Travel E-Commerce">競品分析 - 旅遊電商</div>
         <p class="prose">旅遊商品種類較少、價格未必較便宜。競品有較完整的商品資訊及層級設計，值得參考。</p>
         <div class="table-wrap"><table class="table">
   <thead><tr>
@@ -884,9 +984,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">桌面研究</div>
+        <div class="bg-subtitle" data-zh="桌面研究" data-en="Desk Research">桌面研究</div>
         <div class="prose">
-          <p>從 App Store 評論，以及 Dcard、PTT 等論壇，初步了解使用者與潛在使用者的想法。</p>
+          <p><span data-zh="從 App Store 評論，以及 Dcard、PTT 等論壇，初步了解使用者與潛在使用者的想法。" data-en="Gathered initial insights into users and potential users through App Store reviews and forums such as Dcard and PTT.">從 App Store 評論，以及 Dcard、PTT 等論壇，初步了解使用者與潛在使用者的想法。</span></p>
           <ul>
             <li><strong>產品價值：</strong>邀請碼、不定期活動等優惠；購票、驗票都能在手機完成；票券無紙化較環保。</li>
             <li><strong>阻力：</strong>需要手續費；習慣購買實體定期票、來回票；不常搭客運或使用其他交通工具。</li>
@@ -895,7 +995,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">使用者訪談</div>
+        <div class="bg-subtitle" data-zh="使用者訪談" data-en="User Interviews">使用者訪談</div>
         <div class="prose">
           <ul>
             <li><strong>體驗：</strong>多數使用者能順利購票，但不完全直觀，仍有潛在問題。對蓋版廣告較反感，認為有強迫觀看的感覺。</li>
@@ -906,7 +1006,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">Persona</div>
+        <div class="bg-subtitle" data-zh="Persona" data-en="Persona">Persona</div>
         <img src="img/tbs/persona.png" alt="Persona" class="insight-img" style="margin-top:16px;border-radius:4px;">
         <div class="prose" style="margin-top:16px;">
           <ul>
@@ -954,10 +1054,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <div class="process-heading">設計決策</div>
+      <div class="process-heading" data-zh="設計決策" data-en="Design Decisions">設計決策</div>
 
       <div class="insight-item">
-        <div class="insight-title">首頁：提升易讀性、改善分類</div>
+        <div class="insight-title" data-zh="首頁：提升易讀性、改善分類" data-en="Homepage: Improving Readability &amp; Classification">首頁：提升易讀性、改善分類</div>
         <div class="insight-body">
           <div class="prose">
             <p><strong>改造前（左）：</strong>廣告排版擁擠、分類模糊、看不出可以右滑。購票按鈕明顯，容易忽略其他訊息。</p>
@@ -968,7 +1068,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="insight-item">
-        <div class="insight-title">搜尋客運：優化引導、改善易用性</div>
+        <div class="insight-title" data-zh="搜尋客運：優化引導、改善易用性" data-en="Search: Optimizing Guidance &amp; Usability">搜尋客運：優化引導、改善易用性</div>
         <div class="insight-body">
           <div class="prose">
             <p><strong>改造前（左）：</strong>起訖站的 UX 文案為「台北到高雄」，但非預設值，仍需點選。Picker 沒有顯示星期幾，無法對照。</p>
@@ -979,7 +1079,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="insight-item">
-        <div class="insight-title">選擇班次：介面簡潔、優惠清楚</div>
+        <div class="insight-title" data-zh="選擇班次：介面簡潔、優惠清楚" data-en="Select Departure: Cleaner Interface, Clearer Promotions">選擇班次：介面簡潔、優惠清楚</div>
         <div class="insight-body">
           <div class="prose">
             <p><strong>改造前（左）：</strong>許多重複的資訊。優惠折抵字太小，且需另外計算價格。</p>
@@ -990,7 +1090,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="insight-item">
-        <div class="insight-title">選擇座位：更直覺、友善的操作</div>
+        <div class="insight-title" data-zh="選擇座位：更直覺、友善的操作" data-en="Seat Selection: More Intuitive &amp; Accessible">選擇座位：更直覺、友善的操作</div>
         <div class="insight-body">
           <div class="prose">
             <p><strong>改造前（左）：</strong>座位的按鈕狀態不符主流規範與色彩心理學。禁用狀態應呈現忽略的引導效果，但紅色具警示意味，引人注目。</p>
@@ -1001,7 +1101,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="insight-item">
-        <div class="insight-title">確認訂單：改善資訊層級</div>
+        <div class="insight-title" data-zh="確認訂單：改善資訊層級" data-en="Order Confirmation: Improving Information Hierarchy">確認訂單：改善資訊層級</div>
         <div class="insight-body">
           <div class="prose">
             <p><strong>改造前（左）：</strong>計費資訊不方便理解。按鈕的 UX 文案突然從「確定」變成「開立發票」。</p>
@@ -1012,7 +1112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="insight-item">
-        <div class="insight-title">訂購結果：綠色行銷、個人化廣告</div>
+        <div class="insight-title" data-zh="訂購結果：綠色行銷、個人化廣告" data-en="Order Result: Green Marketing &amp; Personalized Ads">訂購結果：綠色行銷、個人化廣告</div>
         <div class="insight-body">
           <div class="prose">
             <p><strong>改造前（左）：</strong>只有訂購成功訊息與明細。</p>
@@ -1022,10 +1122,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <div class="process-heading">設計規範</div>
+      <div class="process-heading" data-zh="設計規範" data-en="Design Specifications">設計規範</div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">設計原則</div>
+        <div class="bg-subtitle" data-zh="設計原則" data-en="Design Principles">設計原則</div>
         <div class="prose">
           <ul>
             <li><strong>iOS / Android：</strong>延續原本的開發模式，字體和部分元件將依據系統分別設計。</li>
@@ -1035,7 +1135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">色彩</div>
+        <div class="bg-subtitle" data-zh="色彩" data-en="Colors">色彩</div>
         <div style="margin-top:4px;">
           <span class="color-swatch" style="background:#5693E9;">#5693E9 主要色</span>
           <span class="color-swatch" style="background:#77C2EB;">#77C2EB 次要色</span>
@@ -1044,7 +1144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">字體</div>
+        <div class="bg-subtitle" data-zh="字體" data-en="Typography">字體</div>
         <div class="prose">
           <ul>
             <li><strong>iOS：</strong>中文｜蘋方體 &nbsp; 英文｜SF Pro</li>
@@ -1079,25 +1179,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- 反思 -->
     <div class="proj-section">
-      <div class="proj-section-title">反思</div>
+      <div class="proj-section-title" data-zh="反思" data-en="Reflection">反思</div>
       <div class="reflection-item">
-        <div class="reflection-title">繪製 Wireframe</div>
-        <p class="prose">過去我習慣用紙筆繪製 Wireframe，這次嘗試用 Figma。Wireframe 以規劃架構、功能為主，常以低保真形式出現。但當我使用電腦繪製，常常會在意視覺細節。未來應根據情境，以方便溝通為基礎，更有效率的製作 Wireframe。</p>
+        <div class="reflection-title" data-zh="繪製 Wireframe" data-en="Sketching Wireframes">繪製 Wireframe</div>
+        <p class="prose"><span data-zh="過去我習慣用紙筆繪製 Wireframe，這次嘗試用 Figma。Wireframe 以規劃架構、功能為主，常以低保真形式出現。但當我使用電腦繪製，常常會在意視覺細節。未來應根據情境，以方便溝通為基礎，更有效率的製作 Wireframe。" data-en="I used to sketch wireframes by hand. This time, I tried Figma. Wireframes are primarily about structuring architecture and functionality, often in low-fidelity form — but working digitally, I found myself getting caught up in visual details. Going forward, I'll adapt the approach to context, prioritizing communication efficiency.">過去我習慣用紙筆繪製 Wireframe，這次嘗試用 Figma。Wireframe 以規劃架構、功能為主，常以低保真形式出現。但當我使用電腦繪製，常常會在意視覺細節。未來應根據情境，以方便溝通為基礎，更有效率的製作 Wireframe。</span></p>
       </div>
       <div class="reflection-item">
-        <div class="reflection-title">研究的心態轉換</div>
-        <p class="prose">過去進行研究測試，雖然對於使用者提出的困惑感到好奇，但如果回饋牽涉到產品背後的限制，我也會想向使用者解釋原因。這次發現自己很融入測試過程，想解釋的念頭不再困擾我，能專注在收集使用者的聲音。</p>
+        <div class="reflection-title" data-zh="研究的心態轉換" data-en="A Shift in Research Mindset">研究的心態轉換</div>
+        <p class="prose"><span data-zh="過去進行研究測試，雖然對於使用者提出的困惑感到好奇，但如果回饋牽涉到產品背後的限制，我也會想向使用者解釋原因。這次發現自己很融入測試過程，想解釋的念頭不再困擾我，能專注在收集使用者的聲音。" data-en="In previous research sessions, I was curious about user confusion but felt the urge to explain the product's constraints when feedback touched on limitations. This time, I found myself fully immersed in the testing process — the impulse to explain no longer bothered me, allowing me to focus on listening to users' voices.">過去進行研究測試，雖然對於使用者提出的困惑感到好奇，但如果回饋牽涉到產品背後的限制，我也會想向使用者解釋原因。這次發現自己很融入測試過程，想解釋的念頭不再困擾我，能專注在收集使用者的聲音。</span></p>
       </div>
       <div class="reflection-item">
-        <div class="reflection-title">設計的價值與限制</div>
-        <p class="prose">一位受試者提到，雖然 Redesign 改善了使用體驗並增加美感，但不會讓他改變 NPS 分數，因為手續費的痛點沒有被解決。突然感覺設計的價值被磨滅，這讓我再次思考設計的成本和價值，又想起某位設計前輩曾說，「創新是找麻煩」，為了實現設計，必須進行大工程，增加同事工作量。綜觀此次專案的驗證數據，確實提升了易用性和滿意度。設計有其價值，但實際反映的效益很可能會受到發揮空間、專案限制的影響。</p>
+        <div class="reflection-title" data-zh="設計的價值與限制" data-en="The Value and Limits of Design">設計的價值與限制</div>
+        <p class="prose"><span data-zh="一位受試者提到，雖然 Redesign 改善了使用體驗並增加美感，但不會讓他改變 NPS 分數，因為手續費的痛點沒有被解決。突然感覺設計的價值被磨滅，這讓我再次思考設計的成本和價值，又想起某位設計前輩曾說，「創新是找麻煩」，為了實現設計，必須進行大工程，增加同事工作量。綜觀此次專案的驗證數據，確實提升了易用性和滿意度。設計有其價值，但實際反映的效益很可能會受到發揮空間、專案限制的影響。" data-en="One participant noted that while the redesign improved usability and aesthetics, it would not change their NPS score because the service fee pain point remained unresolved. That moment made me reconsider the cost and value of design — a senior designer once said, &quot;Innovation is asking for trouble.&quot; Looking at the validation data holistically, usability and satisfaction did improve. Design has real value — but the impact it delivers in practice can be shaped and limited by the space it's given to operate within.">一位受試者提到，雖然 Redesign 改善了使用體驗並增加美感，但不會讓他改變 NPS 分數，因為手續費的痛點沒有被解決。突然感覺設計的價值被磨滅，這讓我再次思考設計的成本和價值，又想起某位設計前輩曾說，「創新是找麻煩」，為了實現設計，必須進行大工程，增加同事工作量。綜觀此次專案的驗證數據，確實提升了易用性和滿意度。設計有其價值，但實際反映的效益很可能會受到發揮空間、專案限制的影響。</span></p>
       </div>
     </div>
 
   </div><!-- /project-content -->
 
   <div class="more-works-section">
-    <div class="more-works-title">瀏覽其他作品</div>
+    <div class="more-works-title" data-zh="瀏覽其他作品" data-en="More Works">瀏覽其他作品</div>
     <div class="more-works-grid">
       <div class="work-card" data-action="project" data-project="panasonic">
         <div class="card-thumb card-thumb-panasonic" style="aspect-ratio:4/3;">
@@ -1107,9 +1207,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="card-body">
-          <div class="card-title">Panasonic 會員研究與網站改版</div>
+          <div class="card-title" data-zh="Panasonic 會員研究與網站改版" data-en="Panasonic Membership Research &amp; Website Redesign">Panasonic 會員研究與網站改版</div>
           <div class="card-year">2023 — 2025</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+          <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
         </div>
       </div>
       <div class="work-card" data-action="project" data-project="crm">
@@ -1120,9 +1220,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="card-body">
-          <div class="card-title">新聯陽 CRM 系統迭代</div>
+          <div class="card-title" data-zh="新聯陽 CRM 系統迭代" data-en="Newland CRM System Iteration">新聯陽 CRM 系統迭代</div>
           <div class="card-year">2025</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+          <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
         </div>
       </div>
       <div class="work-card" data-action="project" data-project="tpe">
@@ -1135,7 +1235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="card-body">
           <div class="card-title">台北說書人 &amp; 城市特調</div>
           <div class="card-year">2020 — 2021</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+          <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
         </div>
       </div>
     </div>
@@ -1146,16 +1246,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ═══ PAGE: TPE ═══ -->
-<div class="page" id="page-tpe">
+<div class="page en-hide" id="page-tpe">
 
   <div class="project-hero hero-tpe">
     <img src="img/tpe/00.png" alt="" class="project-hero-bg">
     <div class="project-hero-text">
-      <h1 class="project-title-main">台北說書人<br>&amp; 城市特調網站</h1>
+      <h1 class="project-title-main" data-zh="台北說書人<br>&amp; 城市特調網站" data-en="Taipei Story-teller<br>&amp; Citea Website">台北說書人<br>&amp; 城市特調網站</h1>
       <div class="project-meta-block">
         <div class="meta-year">2020 — 2021</div>
         <div class="project-chips">
-          <span class="chip">#2C</span><span class="chip">#網站</span><span class="chip">#UX</span><span class="chip">#UI</span><span class="chip">#PM</span><span class="chip">#BD</span><span class="chip">#從0到1</span>
+          <span class="chip">#2C</span><span class="chip">#Web</span><span class="chip">#UX</span><span class="chip">#UI</span><span class="chip">#PM</span><span class="chip">#BD</span><span class="chip">#0 to 1</span>
         </div>
       </div>
     </div>
@@ -1165,42 +1265,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- 成果 -->
     <div class="proj-section">
-      <div class="proj-section-title">成果</div>
+      <div class="proj-section-title" data-zh="成果" data-en="Results">成果</div>
       <div class="outcome-grid">
-        <div class="outcome-item"><p class="outcome-desc">O2O 轉換率</p><span class="outcome-num">25%</span></div>
-        <div class="outcome-item"><p class="outcome-desc">入圍決選前</p><span class="outcome-num">12%</span></div>
+        <div class="outcome-item"><p class="outcome-desc" data-zh="O2O 轉換率" data-en="O2O conversion rate">O2O 轉換率</p><span class="outcome-num">25%</span></div>
+        <div class="outcome-item"><p class="outcome-desc" data-zh="入圍決選前" data-en="Shortlisted in top">入圍決選前</p><span class="outcome-num">12%</span></div>
       </div>
     </div>
 
     <!-- 專案背景 -->
     <div class="proj-section">
-      <div class="proj-section-title">專案背景</div>
+      <div class="proj-section-title" data-zh="專案背景" data-en="Project Background">專案背景</div>
       <div class="bg-block">
-        <div class="bg-subtitle">簡介</div>
-        <p class="prose">可瀏覽、分享在地故事與旅遊資訊的平台，有趣的特調遊戲，並結合在地的手搖飲優惠券！</p>
+        <div class="bg-subtitle" data-zh="簡介" data-en="Overview">簡介</div>
+        <p class="prose"><span data-zh="可瀏覽、分享在地故事與旅遊資訊的平台，有趣的特調遊戲，並結合在地的手搖飲優惠券！" data-en="A platform for browsing and sharing local stories and travel information, featuring a fun drink-mixing game paired with local bubble tea discount coupons!">可瀏覽、分享在地故事與旅遊資訊的平台，有趣的特調遊戲，並結合在地的手搖飲優惠券！</span></p>
       </div>
       <div class="bg-block">
-        <div class="bg-subtitle">任務</div>
+        <div class="bg-subtitle" data-zh="任務" data-en="Objectives">任務</div>
         <div class="prose"><ul><li>運用設計思考，解決「認為：人與地方的連結很重要——想要幫助年輕人，從旅遊資訊中認識地方故事。」的 HMW。</li><li>從 0 到 1，發展台北說書人與城市特調 Citea 的創意策略，把對在地的感覺融入台灣特色—手搖飲，打造網站 Prototype。</li></ul></div>
       </div>
       <div class="bg-block">
-        <div class="bg-subtitle">挑戰</div>
+        <div class="bg-subtitle" data-zh="挑戰" data-en="Challenges">挑戰</div>
         <div class="prose">
           <ul>
-            <li>創造現有社群媒體無法取代的獨特性與誘因</li>
-            <li>滿足使用者與各方利害關係人的需求</li>
-            <li>陌生開發在地店家作為 O2O 機制夥伴</li>
+            <li><span data-zh="創造現有社群媒體無法取代的獨特性與誘因" data-en="Creating a unique value proposition that existing social media cannot replace">創造現有社群媒體無法取代的獨特性與誘因</span></li>
+            <li><span data-zh="滿足使用者與各方利害關係人的需求" data-en="Meeting the needs of both users and various stakeholders">滿足使用者與各方利害關係人的需求</span></li>
+            <li><span data-zh="陌生開發在地店家作為 O2O 機制夥伴" data-en="Cold outreach to local businesses to establish O2O partnership">陌生開發在地店家作為 O2O 機制夥伴</span></li>
           </ul>
         </div>
       </div>
       <div class="bg-block">
-        <div class="bg-subtitle">使用者 &amp; 利害關係人</div>
+        <div class="bg-subtitle" data-zh="使用者 &amp; 利害關係人" data-en="Users &amp; Stakeholders">使用者 &amp; 利害關係人</div>
         <div class="prose">
           <ul>
-            <li>具有認識在地意願的族群</li>
-            <li>內容創作者</li>
-            <li>在地店家（成功提案並合作）</li>
-            <li>Flytech 基金會（提供經費資源）</li>
+            <li><span data-zh="具有認識在地意願的族群" data-en="People with an interest in discovering local culture">具有認識在地意願的族群</span></li>
+            <li><span data-zh="內容創作者" data-en="Content creators">內容創作者</span></li>
+            <li><span data-zh="在地店家（成功提案並合作）" data-en="Local businesses (successfully pitched and partnered)">在地店家（成功提案並合作）</span></li>
+            <li><span data-zh="Flytech 基金會（提供經費資源）" data-en="Flytech Foundation (provided funding resources)">Flytech 基金會（提供經費資源）</span></li>
           </ul>
         </div>
       </div>
@@ -1208,12 +1308,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- 設計過程 -->
     <div class="proj-section">
-      <div class="proj-section-title">設計過程</div>
+      <div class="proj-section-title" data-zh="設計過程" data-en="Design Process">設計過程</div>
 
-      <div class="process-heading">現況分析</div>
+      <div class="process-heading" data-zh="現況分析" data-en="Current State Analysis">現況分析</div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">背景研究</div>
+        <div class="bg-subtitle" data-zh="背景研究" data-en="Background Research">背景研究</div>
         <div class="prose">
           <p>從背景研究發現以下趨勢：</p>
           <ul>
@@ -1225,7 +1325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">訪談與問卷</div>
+        <div class="bg-subtitle" data-zh="訪談與問卷" data-en="Interviews &amp; Surveys">訪談與問卷</div>
         <div class="prose">
           <p>從訪談、問卷發現年輕族群：</p>
           <ul>
@@ -1238,7 +1338,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">競品分析</div>
+        <div class="bg-subtitle" data-zh="競品分析" data-en="Competitor Analysis">競品分析</div>
         <div class="prose">
           <ul>
             <li><strong>微笑台灣：</strong>透過廣告刊登、雜誌訂閱、微笑選品等方式營利。以電子和紙本記錄台灣在地美好，也有製作 podcast。雜誌專欄與投稿門檻較高。</li>
@@ -1251,13 +1351,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">目標族群</div>
-        <p class="prose"><strong>Persona Matrix：</strong>TA 為有認識在地意願、旅行實踐的「在地旅遊家」。</p>
+        <div class="bg-subtitle" data-zh="目標族群" data-en="Target Audience">目標族群</div>
+        <p class="prose"><strong>Persona Matrix：</strong><span data-zh="TA 為有認識在地意願、旅行實踐的「在地旅遊家」" data-en="The TA is the &quot;Local Explorer&quot; — someone with genuine interest in local culture and who actively travels.">TA 為有認識在地意願、旅行實踐的「在地旅遊家」</span>。</p>
         <img src="img/tpe/pm.svg" alt="Persona Matrix" class="insight-img" style="margin-top:16px;">
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">Persona</div>
+        <div class="bg-subtitle" data-zh="Persona" data-en="Persona">Persona</div>
 
         <div style="margin-bottom:28px;">
           <p class="prose"><strong>阿豪，22 歲大學生</strong></p>
@@ -1296,10 +1396,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <div class="process-heading">洞察整理</div>
+      <div class="process-heading" data-zh="洞察整理" data-en="Insight Summary">洞察整理</div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">三大洞察</div>
+        <div class="bg-subtitle" data-zh="三大洞察" data-en="Three Key Insights">三大洞察</div>
         <div class="prose">
           <ul>
             <li><strong>需求：認識地方</strong> — 根據背景研究與問卷、訪談，發現 TA 對在地感到好奇，有認識地方、旅遊資訊的需求。</li>
@@ -1310,7 +1410,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">三大目標</div>
+        <div class="bg-subtitle" data-zh="三大目標" data-en="Three Design Goals">三大目標</div>
         <div class="prose">
           <ul>
             <li><strong>連結在地：</strong>產品需包含地方資訊、在地旅遊資訊等，來滿足 TA 需求。</li>
@@ -1321,7 +1421,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">設計方向</div>
+        <div class="bg-subtitle" data-zh="設計方向" data-en="Design Direction">設計方向</div>
         <div class="prose">
           <ul>
             <li><strong>台北說書人：</strong>線上為可瀏覽、分享在地與旅遊資訊的平台。線下則結合特調優惠券，增加使用者走入在地的機會。</li>
@@ -1331,10 +1431,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <div class="process-heading">設計決策</div>
+      <div class="process-heading" data-zh="設計決策" data-en="Design Decisions">設計決策</div>
 
       <div class="insight-item">
-        <div class="insight-title">首頁：可瀏覽、分享在地故事與旅遊資訊</div>
+        <div class="insight-title" data-zh="首頁：可瀏覽、分享在地故事與旅遊資訊" data-en="Homepage: Browse &amp; share local stories and travel info">首頁：可瀏覽、分享在地故事與旅遊資訊</div>
         <div class="insight-body">
           <div class="prose">
             <ul>
@@ -1347,7 +1447,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="insight-item">
-        <div class="insight-title">發文：可使用文字、相片、影片、聲音來發布</div>
+        <div class="insight-title" data-zh="發文：可使用文字、相片、影片、聲音來發布" data-en="Post: Publish with text, photos, video, or audio">發文：可使用文字、相片、影片、聲音來發布</div>
         <div class="insight-body">
           <div class="prose">
             <ul>
@@ -1360,7 +1460,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="insight-item">
-        <div class="insight-title">我的特調：有趣的特調和在地飲品優惠券</div>
+        <div class="insight-title" data-zh="我的特調：有趣的特調和在地飲品優惠券" data-en="My Citea: Fun drink customization &amp; local drink coupons">我的特調：有趣的特調和在地飲品優惠券</div>
         <div class="insight-body">
           <div class="prose">
             <ul>
@@ -1374,7 +1474,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="insight-item">
-        <div class="insight-title">調製特調：調出屬於你的台北，看見更多故事</div>
+        <div class="insight-title" data-zh="調製特調：調出屬於你的台北，看見更多故事" data-en="Mix Your Citea: Brew your Taipei, discover more stories">調製特調：調出屬於你的台北，看見更多故事</div>
         <div class="insight-body">
           <div class="prose">
             <ul>
@@ -1387,10 +1487,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <div class="process-heading">設計規範</div>
+      <div class="process-heading" data-zh="設計規範" data-en="Design Specifications">設計規範</div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">設計原則</div>
+        <div class="bg-subtitle" data-zh="設計原則" data-en="Design Principles">設計原則</div>
         <div class="prose">
           <ul>
             <li><strong>品牌概念：</strong>以色彩帶出「在地」、「茶飲」的概念。並在說書的介面設計加上對話框，以引號來傳達「說書」的概念。</li>
@@ -1401,7 +1501,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">色彩</div>
+        <div class="bg-subtitle" data-zh="色彩" data-en="Colors">色彩</div>
         <div style="margin-top:4px;">
           <span class="color-swatch" style="background:#724E39;">#724E39 在地棕（主要色）</span>
           <span class="color-swatch" style="background:#598214;">#598214 特調綠（次要色）</span>
@@ -1409,7 +1509,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="bg-block">
-        <div class="bg-subtitle">字體</div>
+        <div class="bg-subtitle" data-zh="字體" data-en="Typography">字體</div>
         <div class="prose">
           <ul>
             <li><strong>中文：</strong>思源黑體</li>
@@ -1421,25 +1521,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- 反思 -->
     <div class="proj-section">
-      <div class="proj-section-title">反思</div>
+      <div class="proj-section-title" data-zh="反思" data-en="Reflection">反思</div>
       <div class="reflection-item">
-        <div class="reflection-title">設計思考非線性步驟</div>
-        <p class="prose">一開始學到設計思考的步驟是「同理、定義、發想、原型、測試」，回頭整理專案的時候有點卡住，感覺有些東西難以被特定分類到單一步驟。在前輩的分享中，聽到設計思考不是線性，而是反覆的過程。這解開了我的困惑，也提醒我要把設計思考當成一種思維，帶著同理心、勇於嘗試的精神活用它。</p>
+        <div class="reflection-title" data-zh="設計思考非線性步驟" data-en="Design Thinking Is Not Linear">設計思考非線性步驟</div>
+        <p class="prose">一開始學到設計思考的步驟是「同理、定義、發想、原型、測試」，回頭整理專案的時候有點卡住，感覺有些東西難以被特定分類到單一步驟。在前輩的分享中，聽到<span data-zh="設計思考不是線性，而是反覆的過程。這解開了我的困惑，也提醒我要把設計思考當成一種思維，帶著同理心、勇於嘗試的精神活用它。" data-en="Design thinking is iterative, not linear — resolving my confusion and reminding me to treat it as a mindset: approach it with empathy and a spirit of experimentation.">設計思考不是線性，而是反覆的過程。這解開了我的困惑，也提醒我要把設計思考當成一種思維，帶著同理心、勇於嘗試的精神活用它。</span></p>
       </div>
       <div class="reflection-item">
-        <div class="reflection-title">Scope Creep</div>
-        <p class="prose">專案中後期，剛好遇到疫情大爆發，多了很多時間在家，讓我更想把設計做得更完整，於是不小心擴大 scope。初出茅廬，雄心壯志，什麼都想做到最好。雖然廢寢忘食的調整設計、畫 Figma 很快樂，但也讓我反思專案管理。這次專案較彈性、時間充裕，提供我探索的機會。未來應該考慮到情境和資源，更有效率、更敏捷的執行專案。</p>
+        <div class="reflection-title" data-zh="Scope Creep" data-en="Scope Creep">Scope Creep</div>
+        <p class="prose"><span data-zh="專案中後期，剛好遇到疫情大爆發，多了很多時間在家，讓我更想把設計做得更完整，於是不小心擴大 scope。初出茅廬，雄心壯志，什麼都想做到最好。雖然廢寢忘食的調整設計、畫 Figma 很快樂，但也讓我反思專案管理。這次專案較彈性、時間充裕，提供我探索的機會。未來應該考慮到情境和資源，更有效率、更敏捷的執行專案。" data-en="In the later stages, the COVID-19 outbreak gave me more time at home — and I ended up expanding the project scope. Fresh and ambitious, I wanted everything to be perfect. Obsessing over Figma was genuinely fun, but it also prompted reflection on project management. This project was flexible and time-rich, which gave me room to explore. Going forward, I'll be more context-aware and execute projects with greater efficiency and agility.">專案中後期，剛好遇到疫情大爆發，多了很多時間在家，讓我更想把設計做得更完整，於是不小心擴大 scope。初出茅廬，雄心壯志，什麼都想做到最好。雖然廢寢忘食的調整設計、畫 Figma 很快樂，但也讓我反思專案管理。這次專案較彈性、時間充裕，提供我探索的機會。未來應該考慮到情境和資源，更有效率、更敏捷的執行專案。</span></p>
       </div>
       <div class="reflection-item">
-        <div class="reflection-title">新的領域與挑戰</div>
-        <p class="prose">第一次深入接觸 UI/UX、設計思考和商業概念，這些都是在助人背景不太會碰到的。雖然起步有些艱難，但這一年從使用者研究到體驗設計，做了很多嘗試，也收穫滿滿！發現到好的設計背後除了貼近使用者需求，也要考量利害關係人跟技術限制，並且有商業模式支撐。</p>
+        <div class="reflection-title" data-zh="新的領域與挑戰" data-en="New Territory &amp; Challenges">新的領域與挑戰</div>
+        <p class="prose"><span data-zh="第一次深入接觸 UI/UX、設計思考和商業概念，這些都是在助人背景不太會碰到的。雖然起步有些艱難，但這一年從使用者研究到體驗設計，做了很多嘗試，也收穫滿滿！發現到好的設計背後除了貼近使用者需求，也要考量利害關係人跟技術限制，並且有商業模式支撐。" data-en="This was my first deep dive into UI/UX, design thinking, and business concepts — areas rarely encountered in my helping-professions background. The start was tough, but a year of going from user research to experience design brought countless experiments and learning. Good design, I discovered, requires not only empathy with users, but consideration of stakeholder needs, technical constraints, and a viable business model.">第一次深入接觸 UI/UX、設計思考和商業概念，這些都是在助人背景不太會碰到的。雖然起步有些艱難，但這一年從使用者研究到體驗設計，做了很多嘗試，也收穫滿滿！發現到好的設計背後除了貼近使用者需求，也要考量利害關係人跟技術限制，並且有商業模式支撐。</span></p>
       </div>
     </div>
 
   </div><!-- /project-content -->
 
   <div class="more-works-section">
-    <div class="more-works-title">瀏覽其他作品</div>
+    <div class="more-works-title" data-zh="瀏覽其他作品" data-en="More Works">瀏覽其他作品</div>
     <div class="more-works-grid">
       <div class="work-card" data-action="project" data-project="panasonic">
         <div class="card-thumb card-thumb-panasonic" style="aspect-ratio:4/3;">
@@ -1449,9 +1549,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="card-body">
-          <div class="card-title">Panasonic 會員研究與網站改版</div>
+          <div class="card-title" data-zh="Panasonic 會員研究與網站改版" data-en="Panasonic Membership Research &amp; Website Redesign">Panasonic 會員研究與網站改版</div>
           <div class="card-year">2023 — 2025</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+          <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
         </div>
       </div>
       <div class="work-card" data-action="project" data-project="tbs">
@@ -1462,9 +1562,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="card-body">
-          <div class="card-title">臺北轉運站 App Redesign</div>
+          <div class="card-title" data-zh="臺北轉運站 App Redesign" data-en="Taipei Bus Station (TBS) App Redesign">臺北轉運站 App Redesign</div>
           <div class="card-year">2022</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+          <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
         </div>
       </div>
       <div class="work-card" data-action="project" data-project="crm">
@@ -1475,9 +1575,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="card-body">
-          <div class="card-title">新聯陽 CRM 系統迭代</div>
+          <div class="card-title" data-zh="新聯陽 CRM 系統迭代" data-en="Newland CRM System Iteration">新聯陽 CRM 系統迭代</div>
           <div class="card-year">2025</div>
-          <div class="card-footer"><button class="btn-view">查看更多 →</button></div>
+          <div class="card-footer"><button class="btn-view" data-zh="查看更多" data-en="More →">查看更多</button></div>
         </div>
       </div>
     </div>
@@ -1575,6 +1675,11 @@ document.addEventListener('DOMContentLoaded', function() {
         closeMobileMenu();
         return;
       }
+      if (action === 'lang') {
+        var lang = el.getAttribute('data-lang');
+        if (lang) setLang(lang);
+        return;
+      }
       el = el.parentElement;
     }
   });
@@ -1631,6 +1736,76 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', setContactPadding, { passive: true });
 
 });
+
+/* ══ LANGUAGE TOGGLE ══ */
+var currentLang = localStorage.getItem('pei_lang') || 'zh';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('pei_lang', lang);
+
+  /* Update all bilingual elements */
+  var els = document.querySelectorAll('[data-zh][data-en]');
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    var content = el.getAttribute('data-' + lang);
+    if (content !== null) el.innerHTML = content;
+  }
+
+  /* Switch insight images for EN */
+  var imgs = document.querySelectorAll('img[data-en-src]');
+  for (var i = 0; i < imgs.length; i++) {
+    imgs[i].src = (lang === 'en')
+      ? imgs[i].getAttribute('data-en-src')
+      : imgs[i].getAttribute('data-zh-src');
+  }
+
+  /* Switch bilingual images (data-zh-src / data-en-src) */
+  var biImgs = document.querySelectorAll('[data-zh-src][data-en-src]');
+  for (var ii = 0; ii < biImgs.length; ii++) {
+    var imgSrc = biImgs[ii].getAttribute('data-' + lang + '-src');
+    if (imgSrc) biImgs[ii].src = imgSrc;
+  }
+
+  /* Add body class for EN hiding */
+  if (lang === 'en') {
+    document.body.classList.add('lang-en');
+    /* If currently on a hidden page, close it */
+    var hiddenPages = ['page-crm','page-tbs','page-tpe'];
+    var activePage = document.querySelector('.page.active');
+    if (activePage && hiddenPages.indexOf(activePage.id) >= 0) {
+      hidePages();
+    }
+  } else {
+    document.body.classList.remove('lang-en');
+  }
+
+  /* Update toggle button active state */
+  var btnZH = document.getElementById('btnZH');
+  var btnEN = document.getElementById('btnEN');
+  if (btnZH && btnEN) {
+    if (lang === 'zh') {
+      btnZH.classList.add('active');
+      btnEN.classList.remove('active');
+    } else {
+      btnEN.classList.add('active');
+      btnZH.classList.remove('active');
+    }
+  }
+
+  /* GA4 via GTM dataLayer */
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'language_switch',
+    language: lang
+  });
+}
+
+/* Apply saved language on page load */
+window.addEventListener('DOMContentLoaded', function() {
+  if (currentLang === 'en') setLang('en');
+});
+
 </script>
 </body>
 </html>
