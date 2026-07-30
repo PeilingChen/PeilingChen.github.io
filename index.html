@@ -378,6 +378,73 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .lang-btn:not(.active):hover {
     background:var(--cream-dark);
   }
+
+  /* ── Testimonials ── */
+  .testimonials {
+    margin-top: 56px;
+    padding-top: 48px;
+    border-top: 1px solid var(--sand);
+  }
+  .testimonials-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .testimonials-label::before {
+    content: ''; width: 28px; height: 1px; background: var(--accent);
+  }
+  .testimonials-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 300; color: var(--espresso);
+    margin-bottom: 36px; line-height: 1.2;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .testimonial-card {
+    background: var(--warm-white);
+    border: 1px solid var(--sand);
+    border-radius: 4px;
+    padding: 24px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .testimonial-person {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .testimonial-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--sand);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 400;
+    color: var(--brown-dark);
+    user-select: none;
+  }
+  .testimonial-meta { display: flex; flex-direction: column; gap: 2px; }
+  .testimonial-name {
+    font-size: 15px; font-weight: 500; color: var(--espresso);
+    line-height: 1.3;
+  }
+  .testimonial-role {
+    font-size: 12px; color: var(--accent);
+    letter-spacing: 0.06em;
+  }
+  .testimonial-quote {
+    font-size: 15px; line-height: 1.85;
+    color: var(--charcoal);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+  }
+  @media (max-width: 900px) {
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonials { margin-top: 40px; padding-top: 36px; }
+  }
+
 </style>
 </head>
 <body>
@@ -576,6 +643,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+
+  <div class="testimonials">
+    <div class="testimonials-label" data-zh="夥伴眼中的我" data-en="Recommendations">夥伴眼中的我</div>
+
+    <div class="testimonials-grid">
+
+      <!-- L. Tsai -->
+      <div class="testimonial-card">
+        <div class="testimonial-person">
+          <div class="testimonial-avatar">L</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">L. Tsai</div>
+            <div class="testimonial-role" data-zh="Designer" data-en="Designer">Designer</div>
+          </div>
+        </div>
+        <p class="testimonial-quote" data-zh="珮翎是一個仔細縝密、有求知慾、會想要查證事實或找方法驗證的人，也很貼心、會觀察大家的需求♡" data-en="Pei-Ling is a meticulous and curious professional who always seeks to verify facts and validate solutions. She is also incredibly thoughtful, subtly observing team needs to offer timely support. ♡">珮翎是一個仔細縝密、有求知慾、會想要查證事實或找方法驗證的人，也很貼心、會觀察大家的需求♡</p>
+      </div>
+
+      <!-- R. Huang -->
+      <div class="testimonial-card">
+        <div class="testimonial-person">
+          <div class="testimonial-avatar">R</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">R. Huang</div>
+            <div class="testimonial-role" data-zh="Account Executive" data-en="Account Executive">Account Executive</div>
+          </div>
+        </div>
+        <p class="testimonial-quote" data-zh="珮翎是一個很注重細節，而且思考很全面的人，規劃事情的時候不會只看眼前的需求，還會考慮到不同角色的感受和後續可能發生的狀況，所以能把事情想得很完整。&#10;珮翎有同理心、有責任感，而且很替別人著想！很多事情都會默默先想到、先準備好，是很貼心的人 ♥" data-en="Pei-Ling pays great attention to detail and is a highly comprehensive thinker. When planning, she looks beyond immediate requirements to consider the feelings of different stakeholders and future scenarios. She is empathetic, responsible, and deeply considerate, always thinking ahead and preparing in advance. ♥">珮翎是一個很注重細節，而且思考很全面的人，規劃事情的時候不會只看眼前的需求，還會考慮到不同角色的感受和後續可能發生的狀況，所以能把事情想得很完整。<br>珮翎有同理心、有責任感，而且很替別人著想！很多事情都會默默先想到、先準備好，是很貼心的人 ♥</p>
+      </div>
+
+      <!-- Y. Chang -->
+      <div class="testimonial-card">
+        <div class="testimonial-person">
+          <div class="testimonial-avatar">Y</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Y. Chang</div>
+            <div class="testimonial-role" data-zh="Engineer" data-en="Engineer">Engineer</div>
+          </div>
+        </div>
+        <p class="testimonial-quote" data-zh="珮翎是一個不會侷限自己的職能 「只該做什麼」 的人。會連同系統的 flow 一起思考，所以也能給合作的工程師一些 input，一起激盪出更好的解決方式。珮翎會 empower 自己去承擔一些責任讓專案的推進更順利！" data-en="Pei-Ling never limits herself to a rigid job description. She proactively considers the entire system workflow, allowing her to provide valuable input to engineers and brainstorm optimal solutions together. She takes the initiative to shoulder responsibilities that drive the project forward smoothly.">珮翎是一個不會侷限自己的職能 「只該做什麼」 的人。會連同系統的 flow 一起思考，所以也能給合作的工程師一些 input，一起激盪出更好的解決方式。珮翎會 empower 自己去承擔一些責任讓專案的推進更順利！</p>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- CONTACT -->
